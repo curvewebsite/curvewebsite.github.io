@@ -1,0 +1,49 @@
+var subscribeunlock_suffix = "";
+var subscribeunlock_soft_mode = "";
+var subscribeunlock_busy = false;
+function subscribeunlock_clickhandler(suffix, soft_mode, action, ajax_loader) {
+	if (subscribeunlock_busy == true) return;
+	subscribeunlock_busy = true;
+	subscribeunlock_suffix = suffix;
+	subscribeunlock_soft_mode = soft_mode;
+	jQuery("#submit"+suffix).attr("disabled","disabled").after("<im"+"g src='"+ajax_loader+"' class='subscribeunlock_loader' width='16' height='16'/>");
+	jQuery("#message"+suffix).slideUp("slow");
+	jQuery.post(action, {
+		subscribeunlock_email: jQuery("#email"+suffix).val(),
+		subscribeunlock_name: jQuery("#name"+suffix).val(),
+		subscribeunlock_suffix: suffix,
+		action: "subscribeunlock_submit"
+	},
+	function(data) {
+		jQuery("#subscribeunlock"+subscribeunlock_suffix+" img.subscribeunlock_loader").fadeOut("fast",function(){jQuery(this).remove()});
+		jQuery("#submit"+subscribeunlock_suffix).removeAttr("disabled");
+		if(data.match("subscribeunlock_confirmation_info") != null) {
+			if (subscribeunlock_soft_mode == "on") {
+				jQuery(".subscribeunlock_container").fadeOut(500, function() {
+					jQuery(".subscribeunlock_content").removeClass("subscribeunlock_invisible");
+				});
+			} else {
+				jQuery("#subscribeunlock_signup_form"+subscribeunlock_suffix).fadeOut(500, function() {
+					jQuery("#subscribeunlock_confirmation_container"+subscribeunlock_suffix).html(data);
+					jQuery("#subscribeunlock_confirmation_container"+subscribeunlock_suffix).fadeIn(500, function() {
+						location.reload();
+					});
+				});
+			}
+		} else {
+			jQuery("#message"+subscribeunlock_suffix).html(data);
+			jQuery("#message"+subscribeunlock_suffix).slideDown("slow");
+		}
+		subscribeunlock_busy = false;
+	});
+}
+
+function subscribeunlock_read_cookie(key) {
+	var pairs = document.cookie.split("; ");
+	for (var i = 0, pair; pair = pairs[i] && pairs[i].split("="); i++) {
+		if (pair[0] === key) return pair[1] || "";
+	}
+	return null;
+}
+
+var subscribeunlock_cookie = subscribeunlock_read_cookie("subscribeunlock");

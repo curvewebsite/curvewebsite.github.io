@@ -1,0 +1,201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="cache-control" content="no-cache">
+<link href="../../control/css/global.css" rel="stylesheet" type="text/css" />
+<link href="../../control/css/news2.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/JavaScript" src="../../control/js/common.js"></script>
+<script language="JavaScript" type="text/JavaScript" src="../../control/js/flash.js"></script>
+<script type="text/javascript" src="../../control/js/ticker.js"></script>
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="../../css/lightwindow.css" />
+    
+<!-- JavaScript -->
+<script type="text/javascript" src="../../javascript/prototype.js"></script>
+<script type="text/javascript" src="../../javascript/effects.js"></script>
+<script type="text/javascript" src="../../javascript/lightwindow.js"></script>
+
+<script type="text/javascript" src="../../control/js/slideshow.js"></script>
+
+<title>Optima Legal - latest news</title>
+</head>
+
+<body id="latest_news">
+	<div id="wrap">
+		
+		<div id="header">
+	<a href="index.asp"><h1 title="Welcome to Optima Legal"><span>Optima Legal</span></h1></a>
+	<p class="topTel" ></p>
+	<hr />
+</div><!-- end Header -->
+		
+		<div id="inner">
+			
+			<div id="innerRight">
+				<h2 id="t_news">Optima News</h2>
+				<div id="paging" style="margin-bottom:0px;">
+					<div id="pageBack"><a href="news_and_insight.asp">Back to News and Publications</a></div>
+				</div><!-- END PAGING -->
+				
+				
+				
+					<div id="newsBlock">
+					<div id="strap"></div>
+					<div id="newsDetails">
+						
+						<div class="newsRow" style="border:none;">
+							
+							
+							<div class="rowImg"><img src="../../content/cms/uploads/small/21193.jpg"  /></div>
+							<div class="rowTxt">
+							
+							
+							
+								<p class="newsHead">Optima Legal recruits more litigation lawyers in response to lender demand </p>
+								<p class="newsDate">May&nbsp;2009</p>
+								<p><p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 150%"><span style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Arial; mso-ansi-language: EN-GB">The firm, previously part of </span><stockticker /><span style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Arial; mso-ansi-language: EN-GB">DLA</span></stockticker /><span style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Arial; mso-ansi-language: EN-GB"> Piper, is responding to a ten per cent increase in dispute resolution and professional negligence cases from banks, building societies and other financial organisations, by increasing its lawyer intake.<span style="mso-spacerun: yes">  </span>Three new appointments have been made since the start of the year with three further appointments pending.</span></p><p /><p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 150%"><span style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Arial; mso-ansi-language: EN-GB"></span></p><p /><p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 150%"><span style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Arial; mso-ansi-language: EN-GB">Optima Legal Partner Kate Wright comments: “We’re continuing to develop a successful banking, finance and litigation department, in response to client demand. Adding more specialist lawyers to our dispute resolution and professional negligence teams reflects our increased workload on mis-selling claims, mortgage shortfalls, title defects and mortgage fraud.<span style="mso-spacerun: yes">  </span>We’re also anticipating a sharp increase in work from June/July, particularly in mortgage shortfall”.</span></p><p /><p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 150%"><span style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Arial; mso-ansi-language: EN-GB"></span></p><p /><p class="MsoNormal" style="MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 150%"><span style="FONT-SIZE: 9pt; LINE-HEIGHT: 150%; FONT-FAMILY: Arial; mso-ansi-language: EN-GB">“The nature of our business model means that specialist lawyers can focus on those complex litigation portfolios, whilst highly-trained non-lawyer teams deliver the wider requirements of our client base more cost-effectively. Clients who have traditionally used us for volume legal work are increasingly seeing the value of briefing us at claim and counter-claim stage.” </span></p><p /><p> </p><p /><p> </p></p>
+								
+								
+								<img src="../../content/cms/uploads/large/21163.jpg"  />
+								
+							</div>
+						</div><!-- end newsRow -->
+
+				
+					</div>
+				</div>				
+				
+				<hr />
+			</div><!-- end InnerRight -->
+			
+			
+			
+			<div id="innerLeft">
+				
+				<div id="navigation">
+	<h2 title="Optima Legal Options"><span>Navigation</span></h2>
+	<ul>
+		<li><a href="index.asp" title="Optima Legal Home" >Home</a>
+        	<!--<ul>
+            	<li><a href="about.asp" title="about <\%=clientName%>" <\% if  UCASE(secondarySection) =  UCASE("about_us") then %>class="navon"<\% end if %>>About Us</a></li>
+        		<li><a href="full_360.asp" title="Legal solutions" <\% if  UCASE(secondarySection) =  UCASE("full_360_&deg;") then %>class="navon"<\% end if %>>360<sup>o</sup> Legal solutions</a></li>
+        		<li><a href="sectors.asp" title="Sectors" <\% if  UCASE(secondarySection) =  UCASE("sectors") then %>class="navon"<\% end if %>>Sectors</a></li>
+        		<li><a href="our_clients.asp" title="Clients" <\% if  UCASE(secondarySection) =  UCASE("our_clients") then %>class="navon"<\% end if %>> Clients</a></li>
+        		<li><a href="values_promises.asp" title="Our promises and values" <\% if  UCASE(secondarySection) =  UCASE("promises_and_values") then %>class="navon"<\% end if %>>Our business values</a></li>
+             </ul>-->
+       	</li>
+        <!--<li><a href="about.asp" title="about Optima Legal" >About Us</a></li>-->
+		<li><a href="our_people.asp" title="Our People" >Our People</a></li>
+		<li><a href="online_case_tracking.asp" title="online case tracking" >Online Case Tracking</a></li>
+		<li><a href="news_and_insight.asp" title="latest Optima Legal news" class="navon">News and Publications</a></li>
+		<li><a href="contact.asp" title="Contact Optima Legal" >Contact Us</a></li>
+	</ul>
+	<hr />
+</div><!-- end navigation --><!--
+
+<\%
+
+if(ourPeople <> 1) then
+sqlNews = "SELECT * FROM NewsItems ORDER BY NewsDate DESC"
+else
+sqlNews = "SELECT TOP 1 * FROM NewsItems ORDER BY NewsDate DESC"
+end if
+
+' :: CREATE RECORDSET
+Set RsNews = Server.CreateObject("ADODB.Recordset")
+RsNews.open sqlNews, objConn,3,3
+if RsNews.RecordCount > 1 then
+%>
+<script type="text/javascript">
+/*Example message arrays for the two demo scrollers*/
+var pausecontent2=new Array();
+<\%
+counter1 = 0
+Do While NOT RsNews.EOF
+%>	
+pausecontent2[<\%=counter1%>]='<a href="latest_details.asp?id=<\%=RsNews("Index")%>" class="imgBtn"><img src="../cms/uploads/small/<\%=RsNews("SmallPic")%>" /></a><p><\%=Left(RsNews("Title"), 50)%>...</p><a class="readMore" href="latest_details.asp?id=<\%=RsNews("Index")%>">READ MORE</a>';
+<\%
+counter1 = counter1 + 1
+RsNews.MoveNext
+Loop
+
+end if
+%>
+</script>
+
+
+
+<div class="leftList1">
+<div class="leftListTop"></div>
+	<h2 title="<\%=clientName%> News"><span>Optima Legal News</span></h2>
+	
+	<\% if RsNews.RecordCount > 1 then %>
+	<script type="text/javascript">
+	//new pausescroller(name_of_message_array, CSS_ID, CSS_classname, pause_in_miliseconds)
+	new pausescroller(pausecontent2, "pscroller2", "pscroller3", 3000)
+	</script>
+	<\% else %>
+	<a href="latest_details.asp?id=<\%=RsNews("Index")%>" class="imgBtn"><img src="../cms/uploads/small/<\%=RsNews("SmallPic")%>" /></a><p><\%=Left(RsNews("Title"), 55)%>...</p><a class="readMore" href="latest_details.asp?id=<\%=RsNews("Index")%>">READ MORE</a>
+	<\% end if %>
+	<hr />
+</div> -->
+<div id="clientflash">
+ddd
+</div>
+<script type="text/javascript">
+  var FO = { movie:"../flash/clients.swf", width:"181", height:"102",
+  majorversion:"6", build:"0", flashvars:"", wmode:"transparent" };
+  UFO.create(FO, "clientflash");
+</script>
+
+
+
+
+			</div><!-- end InnerLeft -->
+			
+			
+			<div class="breaker"></div><!-- end breaker to clear inner floats -->
+		</div><!-- end Inner -->
+		<div class="breaker">&nbsp;</div>
+<div id="peopleListContainer">
+    <div id="peopleList">
+        <ul>
+            <li id="personA"><a href="index.asp?p=1&s=2" title="Optima Property Lender Services"><b>Property Lender Services</b></a></li>
+            <li id="personB"><a href="index.asp?p=1&s=3" title="Optima Other Asset Lender Services"><b>Other Asset Lender Services</b></a></li>
+            <li id="personC"><a href="index.asp?p=1&s=1" title="Optima Unsecured Lender Services"><b>Unsecured Lender Services</b></a></li>
+            <li id="personD"><a href="index.asp?p=2&s=1" title="Optima Other Business Services"><b>Other Business Services</b></a></li>
+        </ul>
+        <div id="peopleimages">
+            <script type="text/javascript">
+            //new fadeshow(IMAGES_ARRAY_NAME, slideshow_width, slideshow_height, borderwidth, delay, pause (0=no, 1=yes), optionalRandomOrder)
+            new fadeshow(fadeimages, 666, 100, 0, 3000, 1, "");				 
+            </script>	
+        </div>
+    </div>
+</div>
+
+
+<!-- end peopleList --><div id="footer">
+	<ul>
+		<li class="first"><a href="index.asp" title="home">Home</a></li>
+		<li><a href="about.asp" title="About  Optima Legal">About</a></li>
+		<li><a href="latest_news.asp" title="Latest News">Latest News</a></li>
+		<li><a href="online_case_tracking.asp" title="Online Case Tracking">Online Case Tracking</a></li>
+		<li><a href="contact.asp" title="Contact Us">Contact Us</a></li>
+		<li><a href="privacy.asp" title="Privacy Policy">Privacy Policy</a></li>
+		<li><a href="terms.asp" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+	</ul>
+	<p>Registered Office: Optima Legal Services Ltd, Arndale House, Charles Street, Bradford, BD1 1UN. Registered in England and Wales (Registered No. 05781608, VAT No. 882657186). Regulated by the Solicitors Regulation Authority in accordance with the Solicitors' Code of Conduct 2007 which can be viewed at www.sra.org.uk</p>
+ <br />
+<p>Optima Legal Services Ltd maintains professional indemnity insurance arranged by Lockton Companies International, Lockton House, 6 Bevis Marks, London EC3A 7AF. Details of the insurers and the territorial coverage are available for inspection at our registered office.</p>
+
+	<hr />
+</div><!-- end footer --> 
+	</div>
+	<!-- end Wrap -->
+</body>
+</html>
