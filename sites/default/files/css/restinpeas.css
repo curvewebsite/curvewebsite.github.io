@@ -1,7 +1,35 @@
 /* CSS Document */
+
+/* Large desktop */
+
+@media (min-width: 1440px)
+{	
+.pea-home-h1 {
+	font-size: 2.0em;
+}
+.pea-home-h2 {
+	font-size: 1.4em;
+}	
+}
+
+
+/* Mobile */
+
+@media (max-width: 738px)
+{
+.pea-home-h1 {
+	font-size: 1.0em;
+}
+.pea-home-h2 {
+	font-size: 0.9em;
+}	
+}
+
+/* In the middle */
+
 .pea-home-h1 {
 	font-size: 1.5em;
 }
 .pea-home-h2 {
 	font-size: 1.3em;
-}
+}	
