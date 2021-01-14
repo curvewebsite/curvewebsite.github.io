@@ -1,0 +1,142 @@
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+  Main
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+#menu-toggle {
+  display: none;
+}
+
+/* .front #navigation { margin-top: 40px; } */
+
+#navigation { 
+  margin-top: 13px;
+}
+
+#navigation .navigation-wrapper {
+  display: inline-block;
+  /* background: #008aff; */
+}
+
+#navigation .navigation-container {
+  text-align: right;
+  display: block;
+  margin: 0 auto;
+}
+
+#navigation .navigation-wrapper, #navigation ul.menu, #navigation ul.menu li, #navigation ul.menu li.last {
+  margin: 0;
+  padding: 0;
+}
+
+#navigation header {
+  display: none;
+}
+
+#navigation ul.menu {
+  display: inline-block;
+  list-style: none;
+  vertical-align: top;
+    transition: all .4s linear;
+    -webkit-transition: all .4s linear;
+    -moz-transition: all .4s linear;
+    -o-transition: all .4s linear;  
+}
+
+#header.mini ul.menu{
+  padding: 12px 0 8px 0;
+}
+
+#navigation ul.menu li {
+  display: inline-block;
+  list-style: none;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+#navigation ul.menu li a.active:after,
+.node-type-case-study #navigation ul.menu li a.case-studies:after,
+.node-type-article #navigation ul.menu li a.blog:after,
+.blog #navigation ul.menu li a.blog:after {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  bottom: 9px;
+  left: 50%;
+  margin-left: -3px;
+  content: "";
+  border-radius: 5px;
+  -webkit-transition: all 0.4s ease;
+     -moz-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+}
+
+#navigation ul.menu li a:after {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  margin-left: -3px;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-transition: all 0.4s ease;
+     -moz-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+}
+
+#navigation ul.menu li a:hover:after {
+  bottom: 9px;
+  -webkit-transition: all 0.4s ease;
+     -moz-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+}
+
+#navigation ul.menu li a {
+  padding: 0 16px 25px 16px;
+  display: block;
+  color: white;
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.large #navigation ul.menu li a {
+  padding: 14px 22px;
+  font-size: 20px;
+}
+
+#navigation .menu-copyright {
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+.front #header {
+  position: fixed;
+  float: left;
+  width: 100%;
+  height: 124px;
+  padding: 0;
+  z-index: 21;
+  -webkit-transition: all 0.4s ease;
+     -moz-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+}
+
+#header {
+  position: fixed;
+  float: left;
+  width: 100%;
+  height: 60px;
+  padding: 0;
+}
+
+

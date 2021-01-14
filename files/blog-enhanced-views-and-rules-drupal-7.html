@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="en" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="en" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+
+  <!--[if IE]><![endif]-->
+<meta charset="utf-8"/>
+<meta name="HandheldFriendly" content="true"/>
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab"/>
+<meta name="MobileOptimized" content="width"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed-144x144.png" sizes="144x144"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed-114x114.png" sizes="114x114"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed-72x72.png" sizes="72x72"/>
+<meta http-equiv="cleartype" content="on"/>
+<link rel="shortcut icon" href="/sites/all/themes/curve_omega/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta name="twitter:title" content="Enhanced Views and Rules in Drupal 7"/>
+<meta name="twitter:description" content="How to enhance Views and Rules in Drupal by creating custom modules."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:url" content="/blog/enhanced-views-and-rules-drupal-7"/>
+<meta name="generator" content="Drupal 7 (http://drupal.org)"/>
+<link rel="shortlink" href="/node/604"/>
+<link rel="canonical" href="/blog/enhanced-views-and-rules-drupal-7"/>
+<meta name="description" content="How to enhance Views and Rules in Drupal by creating custom modules."/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Views and Rules in Drupal 7</title>
+  <link type="text/css" rel="stylesheet" href="/sites/default/files/advagg_css/css__06SOYmdYplZeQPEqVDRUiUA1u8cUYrthgsqve-Kwe28__oO9K8RKTxPWL8ybtipsPXindwF2HTGUz_pxPgDINtjM__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/advagg_css/css__06SOYmdYplZeQPEqVDRUiUA1u8cUYrthgsqve-Kwe28__oO9K8RKTxPWL8ybtipsPXindwF2HTGUz_pxPgDINtjM__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.css" media="all"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/advagg_js/js__5bFwodvCm1LC9HoI_faGGtZPshq1v0p0_UKyeb8fN-8__K4cFgR-cEPBnADjm9ptFSZeiFSZ6Cu5X1glBsXVheWI__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27427361-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/advagg_js/js__WE7Mbx0R6v5Clk19JwlHrJPVt2sMy-KX267JvMQGw_M__vpkrREnSTl_oHisnrCYy6g5Hofek21doQ2HAVuH7YjU__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"radioactivity":{"emitters":{"emitDefault":[{"accuracy":100,"bundle":"article","energy":10,"entity_id":"604","entity_type":"node","field_name":"field_radioactivity","language":"und","storage":"File","type":"none","checksum":"f088e67d628f8255c12bdfd35c089e9f"}]},"config":{"emitPath":"\/sites\/all\/modules\/radioactivity\/emit.php","fpEnabled":1,"fpTimeout":"60"}},"ajaxPageState":{"js":{"https:\/\/web.archive.org\/web\/20160620140516\/https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.9.1\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/omega\/omega\/js\/no-js.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"sites\/all\/modules\/radioactivity\/js\/radioactivity.js":1,"sites\/all\/themes\/curve_omega\/js\/jquery.matchHeight.js":1,"sites\/all\/themes\/curve_omega\/js\/jquery.ba-throttle-debounce.min.js":1,"sites\/all\/themes\/curve_omega\/js\/touche.min.js":1,"sites\/all\/themes\/curve_omega\/js\/curve-omega.behaviors.js":1}}});
+//--><!]]>
+</script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "",
+      "logo": "/sites/all/themes/curve_omega/logo.png"
+    }
+    </script>
+
+</head>
+<body class="html not-front not-logged-in page-node page-node- page-node-604 node-type-article blog section-inner section-blog two-sidebars">
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+<div class="dark-screen"><label for="drawer-toggle" id="drawer-toggle-label"><b></b></label><div class="curvedrop"></div></div>
+<header role="banner" class="page-header">
+      <h1 class="site-name">
+      <a href="/" title="Home" rel="home"><span>Curve Agency</span></a>
+    </h1>
+  
+  
+  
+
+      <navigation role="navigation">
+
+
+              <a href="/" title="Home" rel="home" class="logo">
+          <img src="/sites/all/themes/curve_omega/logo.png" alt="Home"/>
+        </a>
+      
+        <div class="l-region l-region--navigation">
+    <nav id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu">
+      
+  <ul class="menu"><li class="primary-nav__list-item"><a href="/drupal-8" class="primary-nav__link">Drupal 8</a></li>
+<li class="primary-nav__list-item"><a href="/drupal-case-studies" class="primary-nav__link">Case Studies</a></li>
+<li class="primary-nav__list-item"><a href="/blog" class="primary-nav__link">Blog</a></li>
+<li class="primary-nav__list-item"><a href="/about-curve" class="primary-nav__link">About</a></li>
+<li class="primary-nav__list-item"><a href="/project-enquiry" class="primary-nav__link">Contact</a></li>
+</ul></nav>
+<div id="block-block-1" class="block block--block clearfix grids block--block-1">
+        <h2 class="block__title">Discuss your project</h2>
+      <div class="block__content">
+    <div class="grid-12">
+  <div class="contact-info">
+    <div class="email-link"><a href="mailto:hello@curveagency.com">hello@curveagency.com</a></div>
+    <div class="curve-address">Curve Agency<br/><br/>Leeds &amp;<br/>London</div>
+  </div>
+</div>  </div>
+</div>
+  </div>
+    </navigation>
+  
+</header> <!-- /#header -->
+
+<div id="page-wrapper">
+
+      <nav id="breadcrumb">
+      <div id="breadcrumb-inner" class="wrapper">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><span class="breadcrumb-0"><a href="/">Home</a></span><span class="breadcrumb-separator breadcrumb-separator-0">›</span><span class="breadcrumb-1"><a href="/blog">Blog</a></span><span class="breadcrumb-separator breadcrumb-separator-1">›</span><span class="breadcrumb-2"><a href="/blog/drupal-development">Drupal</a></span><span class="breadcrumb-separator breadcrumb-separator-2">›</span><span class="breadcrumb-3">Enhanced Views and Rules in Drupal 7</span></div>      </div>
+    </nav> <!-- /#breadcrumb -->
+  
+  <div id="page">
+
+    
+          <nav role="navigation">
+              </nav>
+    
+    
+    
+    
+    
+    
+    <div id="main-content" class="wrapper">
+      
+      
+      
+      <article role="article" class="node node--article node--full node--article--full">
+  
+  
+  <div class="node__content">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field__items" id="md3"><div class="field__item even" itemprop="headline"><h1>Enhanced Views and Rules in Drupal 7</h1>
+</div></div></div><div class="created">9<sup>th</sup> October, 2014</div><div class="field field--name-field-subtitle field--type-text field--label-hidden"><div class="field__items" id="md2"><div class="field__item even" itemprop="description"><h2>How to enhance Views and Rules in Drupal by creating custom modules.</h2>
+</div></div></div><div class="field field--name-body field--type-text-with-summary field--label-hidden"><div class="field__items" id="md1"><div class="field__item even" itemprop="text"><p dir="ltr"><img alt="An enhanced view of a tropical paradise. Not Drupal related in any way." height="600" src="/sites/default/files/blog/view-different-tropical.jpg" width="899"/></p>
+<h2 dir="ltr">Setting up the site</h2>
+<p dir="ltr">To start, we'll create a new composite field (or pseudo-field) for Views. To develop this module we first install Drupal and a few modules.</p>
+<p>Drupal 7.31</p>
+<p>Module list</p>
+<ul><li>Chaos tools (<a href="https://www.drupal.org/project/ctools">https://www.drupal.org/project/ctools</a>)</li>
+<li>Devel (<a href="https://www.drupal.org/project/devel">https://www.drupal.org/project/devel</a>)</li>
+<li>Entity API (<a href="https://www.drupal.org/project/entity">https://www.drupal.org/project/entity</a>)</li>
+<li>Module Filter (<a href="https://www.drupal.org/project/module_filter">https://www.drupal.org/project/module_filter</a>)</li>
+<li>Rules<span class="Apple-tab-span" style="white-space:pre"> </span>(<a href="https://www.drupal.org/project/rules">https://www.drupal.org/project/rules</a>)</li>
+<li>Token (<a href="https://www.drupal.org/project/token">https://www.drupal.org/project/token</a>)</li>
+<li>Views (<a href="https://www.drupal.org/project/views">https://www.drupal.org/project/views</a>)</li>
+</ul><p>Other</p>
+<ul><li>Drush (<a href="https://github.com/drush-ops/drush">https://github.com/drush-ops/drush</a>)</li>
+</ul><p>Or use Drush with <a href="https://dl.dropboxusercontent.com/u/787883/part1.make">the make file which you can download using this link</a> or from the files link at the bottom of this article.</p>
+<p>You will next need to enable the following modules:</p>
+<ul><li>Administration   </li>
+<li>Module filter (module_filter)</li>
+<li>Chaos tool suite</li>
+<li>Chaos tools (ctools)</li>
+<li>Development</li>
+<li>Devel (devel)</li>
+<li>Devel generate (devel_generate)</li>
+<li>Other</li>
+<li>Entity API (entity)</li>
+<li>Entity tokens (entity_token)</li>
+<li>Token (token)</li>
+<li>Rules</li>
+<li>Rules (rules)</li>
+<li>Rules UI (rules_admin)</li>
+<li>Views</li>
+<li>Views (views)</li>
+<li>Views UI (views_ui)</li>
+<li>drush</li>
+<li>en</li>
+<li>module_filter</li>
+<li>ctools</li>
+<li>devel</li>
+<li>devel_generate</li>
+<li>entity</li>
+<li>entity_token</li>
+<li>token</li>
+<li>rules</li>
+<li>rules_admin</li>
+<li>mymodule</li>
+<li>views</li>
+<li>views_ui</li>
+</ul><p>Then create some node types – type 1 and type 2 – each one with some integer fields. The fields use the default settings, but can be changed if required.</p>
+<p>NOTE: this module will only expect single value fields. Adapting for multiple value fields is left as an exercise for the reader.</p>
+<p><img alt="Drupal Field Type 1" height="321" src="/sites/default/files/blog/Type%201.png" width="718"/></p>
+<p><img alt="Drupal Field Type 2" height="353" src="/sites/default/files/blog/Type%202_0.png" width="716"/></p>
+<p> </p>
+<h2>Add some dummy content using drush and devel.</h2>
+<p>$ drush genc 10 –types=type_1,type_2</p>
+<p> </p>
+<h2>Then create a new view.</h2>
+<p><img alt="Create a View in Drupal 7" height="730" src="/sites/default/files/blog/View%20Create%201.png" width="1110"/></p>
+<p> </p>
+<p><img alt="View now created in Drupal 7" height="351" src="/sites/default/files/blog/The%20View%201_0.png" width="702"/></p>
+<p>On this View, we want to display the the total of the numeric fields on all the nodes, so we'll get to work developing our module.</p>
+<h2>Telling Drupal about the module</h2>
+<p>To start, we go through the standard way to create a new module (<a href="https://www.drupal.org/developing/modules/7">https://www.drupal.org/developing/modules/7</a>).</p>
+<p>So in our sites/all/modules directory we create a new folder called mymodule. And in there, create two files called mymodule.info and mymodule.module.</p>
+<p><img alt="info and module files created in D7" height="329" src="/sites/default/files/blog/Files%20created_0.png" width="565"/></p>
+<p>In mymodule.module add the php start tag</p>
+<p>&lt;?php</p>
+<p>And in mymodule.info we add</p>
+<p>name = My Module</p>
+<p>description = Tutorial module for extending views</p>
+<p>core = 7.x</p>
+<p>package = Tutorial</p>
+<p> </p>
+<h2>Now we can see our module at /admin/modules.</h2>
+<p><img alt="The module is now in the module list in Drupal 7" height="86" src="/sites/default/files/blog/Module%20list%201_0.png" width="799"/></p>
+<p> </p>
+<p>Before activating it, we tell Drupal that Views is required to enable the module, so add a line to mymodule.info.</p>
+<p>dependencies[] = views</p>
+<p>After refreshing /admin/modules, we can enable the module.</p>
+<p><img alt="Module now enabled in the module view in Drupal" height="91" src="/sites/default/files/blog/Module%20list%202.png" width="799"/></p>
+<p>The module, of course, does nothing right now, so let's disable it and then we can tell Views about it.</p>
+<h2> </h2>
+<h2>Telling Views</h2>
+<p>To let Views know about our module, we need to add some code to mymodule.module.</p>
+<p>/**</p>
+<p>* Implements hook_views_api().</p>
+<p>*/</p>
+<p>function mymodule_views_api() {</p>
+<p> return array(</p>
+<p>   'api' =&gt; 3,</p>
+<p>   'path' =&gt; drupal_get_path('module', 'mymodule') . '/views',</p>
+<p> );</p>
+<p>}</p>
+<p>With this, Views will try to load views/mymodule.views.inc, so we should now create this.</p>
+<p><img alt="Creating files for Views to find in Drupal module development" height="430" src="/sites/default/files/blog/Files%202%20_%203_0.png" width="836"/></p>
+<p> </p>
+<p>&lt;?php</p>
+<p>/**</p>
+<p>* Implements hook_views_data</p>
+<p>*</p>
+<p>* Registers field to get progress from Entityform</p>
+<p>*/</p>
+<p>function mymodule_views_data() {</p>
+<p> $data = array();</p>
+<p> return $data;</p>
+<p>}</p>
+<p>Now we have a “complete” Views plug-in. Unfortunately it still does nothing. So next, we need to specify something for it to do.</p>
+<p>To define our new field we add to the views/mymodule.views.inc file.</p>
+<p> $data['node']['total'] = array(</p>
+<p>   'title' =&gt; t('Total'),</p>
+<p>   'help' =&gt; t('Sums the numeric fields in a node'),</p>
+<p>   'field' =&gt; array(</p>
+<p>     'handler' =&gt; 'mymodule_sum_fields',</p>
+<p>   ),</p>
+<p> );</p>
+<p> </p>
+<p>Now when the module is enabled, we can find the new field in the list.</p>
+<p><img alt="Add Field 1 for this Drupal Views and Rules tutorial" height="274" src="/sites/default/files/blog/Add%20Field%201.png" width="758"/></p>
+<p>But if we try to add it we get:</p>
+<p><img alt="Message returned in Field from Views in Drupal" height="207" src="/sites/default/files/blog/Add%20Field%202_0.png" width="759"/></p>
+<p>As suggested, a “handler” needs to be created.</p>
+<h2>Creating a Handler</h2>
+<p>A handler contains the code which needs to be run. There are a few different handlers for views (<a href="https://api.drupal.org/api/views/views.api.php/group/views_handlers/7">https://api.drupal.org/api/views/views.api.php/group/views_handlers/7</a>) but, for the moment, we are only interested in field handlers.</p>
+<p>So let's create a file for the handler.</p>
+<p><img alt="File created for handler - Fields, Views and Rules in Drupal 7" height="329" src="/sites/default/files/blog/Files%204.png" width="565"/></p>
+<p>And tell Drupal about it in mymodule.info.</p>
+<p>files[] = views/mymodule_sum_fields.inc</p>
+<p>Now, in views/mymodule_sum_fields.inc, we'll sub-class one of the standard handlers, views_handler_field_numeric, and start to implement the handler.</p>
+<p>Now when the module is enabled and the field is added, a lot of extra functionality is added from the parent class.</p>
+<p><img alt="Field 3 screenshot for Drupal tutorial" height="759" src="/sites/default/files/blog/Add%20Field%203.png" width="759"/></p>
+<p>But a new problem has come up:</p>
+<p>SQLSTATE[42S22]: Column not found: 1054 Unknown column 'node.total' in 'field list'</p>
+<p>To fix this, we'll over-ride the query function in our handler and stop the addition of the field to the SQL query.</p>
+<p> /**</p>
+<p>  * {@inheritdoc}</p>
+<p>  */</p>
+<p> function query() {</p>
+<p>   $this-&gt;ensure_my_table();</p>
+<p>   $this-&gt;add_additional_fields();</p>
+<p> }</p>
+<p> </p>
+<p>Now, with the module enabled and the field added we get can see the view.</p>
+<p><img alt="The View almost complete Drupal 7 tutorial" height="349" src="/sites/default/files/blog/The%20View%202.png" width="698"/></p>
+<p>All is going well except the output is correct. We are getting 0 for everything.</p>
+<p>Another over-ridden function is needed. This time it's the render method.</p>
+<p>To keep the added functionality of the numeric field handler, we'll copy the super class's code into our module and then change it as necessary.</p>
+<p> /**</p>
+<p>  * {@inheritdoc}</p>
+<p>  */</p>
+<p> function render($values) {</p>
+<p>   $value = $this-&gt;get_value($values);</p>
+<p>   if (!empty($this-&gt;options['set_precision'])) {</p>
+<p>     $value = number_format($value, $this-&gt;options['precision'], $this-&gt;options['decimal'], $this-&gt;options['separator']);</p>
+<p>   }</p>
+<p>   else {</p>
+<p>     $remainder = abs($value) - intval(abs($value));</p>
+<p>     $value = $value &gt; 0 ? floor($value) : ceil($value);</p>
+<p>     $value = number_format($value, 0, '', $this-&gt;options['separator']);</p>
+<p>     if ($remainder) {</p>
+<p>       // The substr may not be locale safe.</p>
+<p>       $value .= $this-&gt;options['decimal'] . substr($remainder, 2);</p>
+<p>     }</p>
+<p>   }</p>
+<p>  </p>
+<p>   // Check to see if hiding should happen before adding prefix and suffix.</p>
+<p>   if ($this-&gt;options['hide_empty'] &amp;&amp; empty($value) &amp;&amp; ($value !== 0 || $this-&gt;options['empty_zero'])) {</p>
+<p>     return '';</p>
+<p>   }</p>
+<p> </p>
+<p>   // Should we format as a plural.</p>
+<p>   if (!empty($this-&gt;options['format_plural'])) {</p>
+<p>     $value = format_plural($value, $this-&gt;options['format_plural_singular'], $this-&gt;options['format_plural_plural']);</p>
+<p>   }</p>
+<p>  </p>
+<p>   return $this-&gt;sanitize_value($this-&gt;options['prefix'], 'xss') . $this-&gt;sanitize_value($value) . $this-&gt;sanitize_value($this-&gt;options['suffix'], 'xss');</p>
+<p> }</p>
+<p> </p>
+<p>The piece of code that needs changing is the first line:</p>
+<p>   $value = $this-&gt;get_value($values);</p>
+<p> </p>
+<p>As it stands, this gets the value from the database, but we don't want that.</p>
+<p> </p>
+<p>First, we set $value to be 0 and load the node and put it into an entity wrapper.</p>
+<p>   $value = 0;</p>
+<p>   $node = entity_load('node', array($values-&gt;nid))[$values-&gt;nid];</p>
+<p>   $wnode = entity_metadata_wrapper('node', $node);</p>
+<p> </p>
+<p>Next, set up a loop to go through each property and check if it is a field and it is an integer. And for each of these, add the field's value to the $value variable.</p>
+<p>   foreach ($wnode-&gt;getPropertyInfo() as $key =&gt; $val) {</p>
+<p>     if (isset($val['field']) &amp;&amp; $val['type'] == 'integer') {</p>
+<p>       $value += $wnode-&gt;$key-&gt;value();</p>
+<p>     }</p>
+<p>   }</p>
+<p> </p>
+<p>A refresh of the view shows us desired output.</p>
+<p><img alt="The final View outputting as desired. Drupal 7 tutorial complete!" height="351" src="/sites/default/files/blog/The%20View%203_0.png" width="697"/></p>
+<p>We hope you found that useful. Happy Drupal-ing!</p>
+</div></div></div>  </div>
+
+    </article>
+<div id="block-views-blog-mk2-blog-post" class="block block--views block--views-blog-mk2-blog-post">
+        <div class="block__content">
+    <div class="view view-blog-mk2 view-id-blog_mk2 view-display-id-blog_post blog-footer view-dom-id-abcfc754ff5ded06c2a61a6269410dca">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-call-to-action-1">        <h3 class="field-content"></h3>  </div>  
+  <div class="views-field views-field-field-headshot">        <div class="field-content"><a href="/blog/contributors/john"><img typeof="foaf:Image" src="/sites/default/files/styles/thumbnail/public/john-cook.jpg?itok=1J_Ona0M" alt=""/></a></div>  </div>  
+  <span class="views-field views-field-field-user-first-name">        <span class="field-content">John</span>  </span>  
+  <span class="views-field views-field-field-user-last-name">        <span class="field-content">Cook</span>  </span>  
+  <div class="views-field views-field-field-job-title">        <div class="field-content">Drupal Developer</div>  </div>  
+  <div class="views-field views-field-field-bio">        <div class="field-content"><p>John is an accomplished standards-driven developer specialising in Drupal backend.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <!--<p class="meet-link"><a href="/blog/contributors">Meet the people behind the Curve blog</a></p>-->    </div>
+  
+  
+</div>  </div>
+</div>
+<meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/enhanced-views-and-rules-drupal-7" itemref="md1 md2 md3 md10"/><meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/perfect-progression" itemref="md9"/><meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/business-stuff/new-site-launched-nemog-york-university" itemref="md11"/><meta itemscope="" itemref="md4 md5 md6 md7 md8"/>
+    </div>
+
+  </div> <!-- /#main-content -->
+
+        <aside class="l-region l-region--sidebar-first">
+    <div id="block-views-blog-popular-block-1" class="block block--views block--views-blog-popular-block-1">
+        <h2 class="block__title">Popular Blog Articles</h2>
+      <div class="block__content">
+    <div class="view view-blog-popular view-id-blog_popular view-display-id-block_1 blog-popular-articles view-dom-id-742b0abd54130d47cd86f4e8a8b40d37">
+        
+  
+  
+      <div class="view-content">
+      <ul class="popular-blog-articles">  <li class="popular-blog-articles--item">  
+          <a href="/blog/perfect-progression"><div class="counter"><b>1</b><img typeof="foaf:Image" src="/sites/default/files/styles/blog_thumb_mini/public/blog/CTI-OfficeShot---early-2016.jpg?itok=5vaVZvRU" width="48" height="48" alt="CTI Digital Drupal Development Team Manchester and London"/></div><h5>A Perfect Partnership of UX and Drupal</h5></a>  </li>
+  <li class="popular-blog-articles--item">  
+          <a href="/blog/enhanced-views-and-rules-drupal-7" class="active"><div class="counter"><b>2</b><img typeof="foaf:Image" src="/sites/default/files/styles/blog_thumb_mini/public/blog/view-different-tropical.jpg?itok=O6Yvq_Ks" width="48" height="48" alt="An enhanced view of a tropical paradise. Not Drupal related in any way."/></div><h5>Enhanced Views and Rules in Drupal 7</h5></a>  </li>
+  <li class="popular-blog-articles--item">  
+          <a href="/blog/business-stuff/new-site-launched-nemog-york-university"><div class="counter"><b>3</b><img typeof="foaf:Image" src="/sites/default/files/styles/blog_thumb_mini/public/blog/NEMOG_logo_layered.jpg?itok=iRY5RnVr" width="48" height="48" alt="York University NEMOG logo by Curve Agency Leeds"/></div><h5>Drupal 8 site launched for University of York</h5></a>  </li>
+</ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-views-blog-categories-menu-block" class="block block--views block--views-blog-categories-menu-block">
+        <h2 class="block__title">Categories</h2>
+      <div class="block__content">
+    <div class="view view-blog-categories-menu view-id-blog_categories_menu view-display-id-block view-dom-id-89a7f175869e9e4f399002c855a491c7">
+        
+  
+  
+      <div class="view-content">
+      <div class="categories-menu"><ul>  <li>  
+          <a href="/blog/business-stuff">Community &amp; Events<b>18</b></a>  </li>
+  <li>  
+          <a href="/blog/drupal-development">Drupal<b>40</b></a>  </li>
+  <li>  
+          <a href="/blog/front-end">Front-end &amp; Design<b>21</b></a>  </li>
+  <li>  
+          <a href="/blog/digital-strategy">Strategy &amp; Management<b>17</b></a>  </li>
+  <li>  
+          <a href="/blog/user-experience-design">User Experience<b>16</b></a>  </li>
+</ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-simple-twitter-simple-twitter-block" class="block block--simple-twitter block--simple-twitter-simple-twitter-block">
+        <h2 class="block__title">Recent Tweets</h2>
+      <div class="block__content">
+    <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"The User's Journey broken down in detail (case study: FitCounter)<a href="https://t.co/Dv8sZ2uC50">https://t.co/Dv8sZ2uC50</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=740986160533639168" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=740986160533639168" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Factors In Selecting A Mobile Prototyping Tool <a href="https://t.co/Uj2odbaiXl">https://t.co/Uj2odbaiXl</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=739706389329793024" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=739706389329793024" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa fa-twitter-square"></i>Follow @CurveAgency</a>
+
+  </div>
+</div>
+  </aside>
+  
+
+        <aside class="l-region l-region--sidebar-second">
+    <div id="block-simple-twitter-simple-twitter-block--2" class="block block--simple-twitter block--simple-twitter-simple-twitter-block--2">
+        <h2 class="block__title">Recent Tweets</h2>
+      <div class="block__content">
+    <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"The User's Journey broken down in detail (case study: FitCounter)<a href="https://t.co/Dv8sZ2uC50">https://t.co/Dv8sZ2uC50</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=740986160533639168" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=740986160533639168" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Factors In Selecting A Mobile Prototyping Tool <a href="https://t.co/Uj2odbaiXl">https://t.co/Uj2odbaiXl</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=739706389329793024" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=739706389329793024" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa fa-twitter-square"></i>Follow @CurveAgency</a>
+
+  </div>
+</div>
+  </aside>
+  
+  
+  
+  
+  
+    <div class="l-region l-region--footer">
+    <div id="block-block-13" class="block block--block block--block-13">
+        <h2 class="block__title">Connect with Curve</h2>
+      <div class="block__content">
+    <ul class="footer-links-wrapper footer-links-social"><li class="google"><a rel="publisher" href="https://plus.google.com/+Curveagency/"><i class=" fa  fa-google-plus-square"></i></a></li>
+<li class="facebook"><a href="https://www.facebook.com/curveagency"><i class="fa  fa-facebook-square"></i></a></li>
+<li class="twitter"><a href="https://twitter.com/CurveAgency"><i class="fa  fa-twitter-square"></i></a></li>
+</ul><ul class="footer-links-wrapper footer-links-drupal"><li class="daom"><a rel="publisher" href="https://assoc.drupal.org/">Drupal Association Organisation Member</a></li>
+<li class="drupal_camp"><a href="http://drupalyorkshire.org.uk/">Drupal Yorkshire</a></li>
+<li class="acquia"><a href="http://www.acquia.com/partners/showcase/curve-agency">Acquia Partner</a></li>
+</ul>  </div>
+</div>
+<div id="block-block-14" class="block block--block footer-copyright block--block-14">
+        <div class="block__content">
+    <p>All content &copy; 2008 - 2016, Curve Agency Leeds and London. All rights reserved.</p>  </div>
+</div>
+  </div>
+
+</div> <!-- /#page -->
+
+</div> <!-- /#page-wrapper -->  </body>
+</html>
+
+<!--
+playback timings (ms):
+  RedisCDXSource: 12.782
+  PetaboxLoader3.datanode: 98.252 (4)
+  captures_list: 120.771
+  load_resource: 156.128
+  PetaboxLoader3.resolve: 28.495
+  esindex: 0.013
+  LoadShardBlock: 80.921 (3)
+  exclusion.robots: 0.195
+  exclusion.robots.policy: 0.181
+  CDXLines.iter: 23.163 (3)
+-->

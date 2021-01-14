@@ -1,0 +1,31 @@
+  @media screen and (min-width: 720px) and (max-width: 1395px) {
+
+  	ul.footer-links-wrapper {
+	    text-align: center;
+		width: 100%;
+		left: 0;
+	  }
+	
+	ul.footer-links-wrapper li{
+		float: none;
+	}
+	
+	ul.footer-links-social li {
+		margin: 0 30px 50px;
+	}
+}
+
+
+  @media screen and (min-width: 400px) and (max-width: 719px) {    	
+	  
+	  ul.footer-links-social li {
+		margin: 0 20px 35px;
+		  width: 106px;
+	}
+	  
+ ul.footer-links-wrapper {
+  float: left;
+  width: 50%;
+}
+  
+  }

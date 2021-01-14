@@ -1,0 +1,58 @@
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$WIDE LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$LAYOUT TWEAKS 1024 to 1392
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1024px) {
+
+  .front h1#page-title {
+    font-size: 4em;
+    padding: 1em 1.7em 0.8em;
+  }
+
+  /* --- CONTACT --- */
+  #block-block-1 .contact-map .map {
+    top: 8px;
+    background: url("../../img/map.png") 0 0 no-repeat;
+    width: 320px;
+    height: 320px;
+    display: block;
+    border-radius: 50%;
+  }
+
+  a.map-link {
+    width: 320px;
+    height: 320px;
+    display: block;
+    border-radius: 50%;
+  }
+
+  /* --- BRANDS --- */
+  #brands {
+    margin-top: 0;
+  }
+
+
+  /* --- PARALLAX --- */
+  #block-parallax-front-parallax .parallax--content { max-width: 1392px; }
+
+  #block-parallax-front-parallax .parallax--content p {
+    max-width: 755px;
+  }
+
+  .front #content h1#page-title { 
+    font-size: 85px;
+    line-height: 105px;
+  }
+
+  /** --- FLEXSLIDER --- **/
+  .flex-nav-container {
+    max-width: 900px;
+  }
+
+
+}
+
+
+

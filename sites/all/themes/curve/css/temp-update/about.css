@@ -1,0 +1,258 @@
+/* --- about.css ------------------------ */
+
+/* -------------------------------------------------------------------------- //
+//
+//  This is a stylesheet created for curveagency.com and should not be in use
+//  for any more than 6-8 weeks. Therefore, it's going to be a mess down there...
+//
+// -------------------------------------------------------------------------- */
+
+/* 1. Meet Your Team */
+
+.meet-your-team {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.meet-your-team p, .meet-your-team h1, .meet-your-team h2, .meet-your-team h3, .meet-your-team h4, 
+.meet-your-team span, .meet-your-team img, .meet-your-team div {
+	margin: 0;
+	padding: 0;
+}
+
+.meet-your-team h2 {
+	font-family: "Roboto", sans-serif;
+	font-size: 32px;
+	font-weight: 100;
+	line-height: 1em;
+	margin: 25px 0 40px;
+	text-transform: uppercase;
+}
+
+.meet-your-team h3 {
+	font-size: 1.75em;
+	font-weight: bold;
+}
+
+.meet-your-team--item {
+	padding: 20px 0 !important;
+	border-bottom: 1px dashed #dfdfdf;
+}
+
+.meet-your-team--item:nth-of-type(1) {
+	padding: 0 0 20px 0 !important;
+}
+
+	.meet-your-team--item img {
+		float: left;
+		height: 125px;
+		width: 125px;
+		padding: 0 1em 1em 0;
+	}
+
+	.meet-your-team--item:nth-child(odd) img {
+		float: right;
+		padding: 0 0 1em 1em;
+	}
+
+	.meet-your-team--item h3 + p {
+		font-weight: 700 !important;
+		margin-bottom: 1em;
+		letter-spacing: 1px;
+	}
+
+	.meet-your-team--item p + p {
+		margin-top: 1em;
+	}
+
+	.meet-your-team--item ul.social {
+		clear: both;
+		float: left;
+
+		margin: 0;
+		padding: 0 1em 1em 0;
+
+		width: 125px;
+	}
+
+	.meet-your-team--item:nth-child(odd) ul.social {
+		float: right;
+		padding: 0 0 1em 1em;
+	}
+
+		.meet-your-team--item ul.social li {
+			display: inline-block;
+			width: 30%;
+		}
+
+		.meet-your-team--item .icon {
+			width: 24px;
+			height: 24px;
+
+			display: block;
+
+			text-indent: -9999px;
+			background-image: url(../../img/temp-update/social-sprite.png);
+			background-repeat: no-repeat;
+
+			margin: 0 auto;
+
+		}
+
+			.meet-your-team--item .twitter {
+				background-position: 0 0;
+			}
+
+			.meet-your-team--item .google {
+				background-position: -25px 0;
+			}
+
+			.meet-your-team--item .linkedin {
+				background-position: -50px 0;
+			}
+
+			/* Edits for John & Lea - only have 1 social link */
+
+			.john ul.social li, .lea ul.social li {
+				width: 100%;
+			}
+
+
+.meet-your-team .button--home {
+	max-width: none;
+	margin: 20px 0;
+	border: 1px solid #000;
+}
+
+
+
+/* 1.1 Meet Your Team - Media Queries */
+
+@media screen and (max-width: 420px) {
+
+	.meet-your-team--item {
+		text-align: center;
+	}
+
+		.meet-your-team--item img, .meet-your-team--item:nth-child(odd) img, .meet-your-team--item:nth-child(odd) ul.social {
+			float: none;
+			padding: 0 0 1em 0;
+		}
+
+		.meet-your-team--item ul.social {
+			float: none;
+
+			padding: 0 0 1em 0;
+			margin: 0 auto;
+		}
+}
+
+/* 2. Skills */
+
+.skills {
+
+}
+
+.skills h2 {
+	font-size: 3em;
+	margin: 0;
+	font-weight: 100;
+
+	width: 80%;
+
+	display: inline-block;
+}
+
+.skills p {
+	font-size: 1em !important;
+	margin: 1em 0;
+}
+
+.skills--item {
+	margin: 30px 0;
+}
+
+.skills--item + .skills--item {
+	padding-right: 0;
+}
+
+.skills--image {
+	height: 3em;
+	width: 3em;
+
+	display: inline-block;
+
+	margin: 0 20px 0 0;
+
+	position: relative;
+	top: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+	.skills--image {
+		display: block;
+		float: right; 
+		top: 10px;
+		margin: 0;
+	}
+}
+
+	.ux {
+		background: url(../../img/temp-update/userexperience.png);
+		background-repeat: no-repeat;
+	}
+
+	.designbranding {
+		background: url(../../img/temp-update/designbranding.png);
+		background-repeat: no-repeat;
+	}
+
+	.strategicpartnerships {
+		background: url(../../img/temp-update/strategicpartnerships.png);
+		background-repeat: no-repeat;
+	}
+
+
+/* 3. Drupal */
+
+.drupal {
+	margin-top: 30px;
+}
+
+.drupal h2 {
+	font-size: 3em;
+	margin: 0;
+	font-weight: 100;
+
+	width: 80%;
+	display: inline-block;
+}
+
+.drupal h3 {
+	font-weight: bold;
+}
+
+.drupal p {
+	font-size: 1em !important;
+	margin: 1em 0;
+}
+
+.drupal--expertise, .drupal--community {
+	margin: 30px 0;
+}
+
+	.drupalexpertise {
+		background: url(../../img/temp-update/druplicon.png);
+		background-repeat: no-repeat;
+		height: 3.2em;
+	}
+
+	.community {
+		background: url(../../img/temp-update/community.png);
+		background-repeat: no-repeat;
+		width: 3.3em;
+	}
+
+.bold {
+	font-weight: bold;
+}

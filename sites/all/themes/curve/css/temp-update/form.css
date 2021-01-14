@@ -1,0 +1,159 @@
+/* --- form.css ------------------------ */
+
+/* -------------------------------------------------------------------------- //
+//
+//  This is a stylesheet created for curveagency.com and should not be in use
+//  for any more than 6-8 weeks. Therefore, it's going to be a mess down there...
+//
+// -------------------------------------------------------------------------- */
+
+
+	/* 1.1 Layout & Base-ish */
+
+	@media screen and (min-width: 1025px) {
+		.kitchen-sink--form {
+			padding: 40px 0 0;
+		}
+	}
+
+	@media screen and (max-width: 1024px) {
+		.kitchen-sink--form p {
+			text-align: center;
+			font-size: 1em;
+		}
+	}
+
+	.messages {
+		display: none; /* Don't show error message */
+	}
+
+	/* 1.2 Modules */
+
+	.kitchen-sink--form .form-item {
+		margin: 0 0 1em;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	@media screen and (max-width: 1024px) {
+		.kitchen-sink--form .form-item {
+			padding: 0 !important;
+		}
+	}
+
+	.kitchen-sink--form .webform-component--name, .kitchen-sink--form .webform-component--email, 
+	.kitchen-sink--form .webform-component--phone-number {
+		display: inline-block;
+		width: 33%;
+		vertical-align: top;
+	}
+
+		@media screen and (max-width: 1024px) {
+			.kitchen-sink--form .webform-component--name, .kitchen-sink--form .webform-component--email, 
+			.kitchen-sink--form .webform-component--phone-number {
+				width: 100%;
+			}
+		}
+
+	.webform-component--phone-number {
+		float: right;
+	}
+
+	.webform-component--email {
+		padding: 0 1em !important;
+	}
+
+		@media screen and (min-width: 1025px) {
+			.webform-component--email {
+				position: relative;
+				left: 2.5px;
+			}
+		}
+
+	.webform-component--phone-number, .webform-component--message { /* Remove right padding on phone number & message */
+		padding-right: 0 !important;
+	}
+
+	/* 1.3 Labels & Inputs etc. */
+
+	.kitchen-sink--form label {
+		display: none;
+	}
+
+	.kitchen-sink--form input, .kitchen-sink--form textarea {
+		color: #008aff;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+		-webkit-font-smoothing: antialiased;
+		font-family: Roboto, Helvetica, sans-serif;
+
+		background-color: rgba(0,0,0,0.05);
+		border-color: rgba(0,0,0,0.05);
+	}
+
+		.kitchen-sink--form input {
+			font-size: 1.4em !important;
+		}
+
+		.kitchen-sink--form textarea {
+			font-size: 1.1em !important;
+			clear: both;
+		}
+
+		@media screen and (max-width: 1024px) {
+			input, textarea {
+				text-align: center;
+			}
+		}
+
+		.kitchen-sink--form input:focus, .kitchen-sink--form textarea:focus {
+			border-color: #008aff;
+			background-color: rgba(0,0,0,0.1);
+
+			-webkit-transition: all 250ms linear;
+		  	-moz-transition: 	all 250ms linear;
+		  	-o-transition: 		all 250ms linear;
+		 	 transition: 		all 250ms linear;
+		}
+
+		::-webkit-input-placeholder {
+			color: #000 !important;
+			opacity: 0.4 !important;
+			font-family: "Roboto";
+			font-weight: 200;
+		}
+
+		:-moz-placeholder {
+			color: #000 !important;
+			opacity: 0.4 !important;
+			font-family: "Roboto";
+			font-weight: 200;
+		}
+
+		::-moz-placeholder {
+			color: #000 !important;
+			opacity: 0.4 !important;
+			font-family: "Roboto";
+			font-weight: 200;
+		}
+
+		:-ms-input-placeholder {
+			color: #000 !important;
+			opacity: 0.4 !important;
+			font-family: "Roboto";
+			font-weight: 200;
+		}
+
+		.form-item input.error, .form-item textarea.error, .form-item select.error {
+			border: 1px solid red;
+		}
+
+		/* 1.4. Hacks */
+
+		.contact-map {
+			padding-top: 40px;
+		}
+		
+		.contact-info {
+			padding-top: 56px;
+		}

@@ -1,0 +1,111 @@
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+  PARALLAX
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+
+.parallax {
+  background: url(../img/parallax/home.jpg) 50% 0 no-repeat;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+}
+
+.parallax--wrapper {
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+  top: 50%;
+  left: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  margin-top: 100px;
+  height: 300px;
+}
+
+.parallax--title {
+  font-size: 85px;
+  line-height: 105px;
+  display: block;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: white;
+}
+
+.parallax--body p {
+  color: white;
+  /* color: white !important; */
+  font-weight: 300;
+  letter-spacing: 1px;  
+  max-width: 755px;
+  margin: 0 auto;
+  padding: 10px 0 30px 0;
+}
+
+.parallax--bottom {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 20px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 -4px 5px -5px rgba(0,0,0,0.8);
+  z-index: 1;
+}
+  .parallax--bottom header h2 {
+    font-size: 16px; 
+    text-align: center; 
+    text-transform: uppercase;
+    color: #696969;
+    padding-bottom: 10px;
+  }
+  .parallax--bottom header h2 span {
+    position: relative;
+  }  
+  .parallax--bottom header h2 span:before {
+    content: "";
+    background-image: url(../img/parallax/squiggle.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    margin-top: 9px;
+    left: -50px;
+  } 
+  .parallax--bottom header h2 span:after {
+    content: "";
+    background-image: url(../img/parallax/squiggle.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    margin-top: 9px;
+    right: -50px;
+  }  
+  .parallax--bottom .view-block-front-logos {
+    max-width: 1392px;
+    margin: 0 auto;
+  }
+  .parallax--bottom .views-row {
+    display: inline-block;
+    float: left;
+    width: 20%;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+
+.heightHide {
+  display: none;
+}
+
+@media only screen and (device-width: 575px),
+       only screen and (max-width: 575px) {
+		
+		.parallax--wrapper {
+		height: auto;
+		
+		}
+		   
+	   }

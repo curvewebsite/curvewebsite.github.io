@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/*------------------------------------*\
+	IE6.CSS
+\*------------------------------------*/
+
+div{
+	/*border: 1px solid #f00;*/
+}
+
+
+/* --- Main region fixes --- */
+
+
+
+/* --- Brands region fixes --- */
+
+
+.view-display-id-block_brands_worked_with .item-list ul li{
+	float: left;
+}
+
+.view-display-id-block_brands_worked_with .item-list ul li img{
+	width: 140px;
+	height: 73px;
+}
+
+/* --- Contact fixes --- */
+

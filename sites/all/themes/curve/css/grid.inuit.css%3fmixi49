@@ -1,0 +1,384 @@
+/*------------------------------------*\
+	GRID.INUIT.CSS
+\*------------------------------------*/
+
+/*
+grid.inuit.css is an inuit.css igloo
+igloos are CSS plugins which extend the inuit.css framework
+They are released under the Apache License, Version 2.0 -- http://www.apache.org/licenses/LICENSE-2.0
+
+@inuitcss
+inuitcss.com
+*/
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$DEFAULT LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+.wrapper{
+	width:940px;
+	margin:0 auto;
+	padding:0 10px;
+}
+
+.grids{
+	clear:both;
+	width:960px;
+	margin:0 0 0 -20px;
+	list-style:none;
+}
+
+[class^="grid-"]{
+	position: relative;
+	float:left;
+	margin:0 20px 0 0;
+}
+
+.grids [class^="grid-"]{
+	margin:0 0 0 20px;
+}
+
+[class^="grid-"] .grids{
+	width:auto;
+	margin:0 -20px;
+}
+
+.grid-1{ width:20px }
+.grid-2{ width:60px }
+.grid-3{ width:100px }
+.grid-4{ width:140px }
+.grid-5{ width:180px }
+.grid-6{ width:220px }
+.grid-7{ width:260px }
+.grid-8{ width:300px }
+.grid-9{ width:340px }
+.grid-10{ width:380px }
+.grid-11{ width:420px }
+.grid-12{ width:460px }
+.grid-13{ width:500px }
+.grid-14{ width:540px }
+.grid-15{ width:580px }
+.grid-16{ width:620px }
+.grid-17{ width:660px }
+.grid-18{ width:700px }
+.grid-19{ width:740px }
+.grid-20{ width:780px }
+.grid-21{ width:820px }
+.grid-22{ width:860px }
+.grid-23{ width:900px }
+.grid-24{ width:940px; margin:0 }
+
+.suffix-1{ padding-right:40px }
+.suffix-2{ padding-right:80px }
+.suffix-3{ padding-right:120px }
+.suffix-4{ padding-right:160px }
+.suffix-5{ padding-right:200px }
+.suffix-6{ padding-right:240px }
+.suffix-7{ padding-right:280px }
+.suffix-8{ padding-right:320px }
+.suffix-9{ padding-right:360px }
+.suffix-10{ padding-right:400px }
+.suffix-11{ padding-right:440px }
+.suffix-12{ padding-right:480px }
+.suffix-13{ padding-right:520px }
+.suffix-14{ padding-right:560px }
+.suffix-15{ padding-right:600px }
+.suffix-16{ padding-right:640px }
+.suffix-17{ padding-right:680px }
+.suffix-18{ padding-right:720px }
+.suffix-19{ padding-right:760px }
+.suffix-20{ padding-right:800px }
+.suffix-21{ padding-right:840px }
+.suffix-22{ padding-right:880px }
+.suffix-23{ padding-right:920px }
+.suffix-24{ padding-right:960px }
+
+.prefix-1{ padding-left:40px }
+.prefix-2{ padding-left:80px }
+.prefix-3{ padding-left:120px }
+.prefix-4{ padding-left:160px }
+.prefix-5{ padding-left:200px }
+.prefix-6{ padding-left:240px }
+.prefix-7{ padding-left:280px }
+.prefix-8{ padding-left:320px }
+.prefix-9{ padding-left:360px }
+.prefix-10{ padding-left:400px }
+.prefix-11{ padding-left:440px }
+.prefix-12{ padding-left:480px }
+.prefix-13{ padding-left:520px }
+.prefix-14{ padding-left:560px }
+.prefix-15{ padding-left:600px }
+.prefix-16{ padding-left:640px }
+.prefix-17{ padding-left:680px }
+.prefix-18{ padding-left:720px }
+.prefix-19{ padding-left:760px }
+.prefix-20{ padding-left:800px }
+.prefix-21{ padding-left:840px }
+.prefix-22{ padding-left:880px }
+.prefix-23{ padding-left:920px }
+.prefix-24{ padding-left:960px }
+
+.push-1{ left:40px }
+.push-2{ left:80px }
+.push-3{ left:120px }
+.push-4{ left:160px }
+.push-5{ left:200px }
+.push-6{ left:240px }
+.push-7{ left:280px }
+.push-8{ left:320px }
+.push-9{ left:360px }
+.push-10{ left:400px }
+.push-11{ left:440px }
+.push-12{ left:480px }
+.push-13{ left:520px }
+.push-14{ left:560px }
+.push-15{ left:600px }
+.push-16{ left:640px }
+.push-17{ left:680px }
+.push-18{ left:720px }
+.push-19{ left:760px }
+.push-20{ left:800px }
+.push-21{ left:840px }
+.push-22{ left:880px }
+.push-23{ left:920px }
+.push-24{ left:960px }
+
+.pull-1{ left:-40px }
+.pull-2{ left:-80px }
+.pull-3{ left:-120px }
+.pull-4{ left:-160px }
+.pull-5{ left:-200px }
+.pull-6{ left:-240px }
+.pull-7{ left:-280px }
+.pull-8{ left:-320px }
+.pull-9{ left:-360px }
+.pull-10{ left:-400px }
+.pull-11{ left:-440px }
+.pull-12{ left:-480px }
+.pull-13{ left:-520px }
+.pull-14{ left:-560px }
+.pull-15{ left:-600px }
+.pull-16{ left:-640px }
+.pull-17{ left:-680px }
+.pull-18{ left:-720px }
+.pull-19{ left:-760px }
+.pull-20{ left:-800px }
+.pull-21{ left:-840px }
+.pull-22{ left:-880px }
+.pull-23{ left:-920px }
+.pull-24{ left:-960px }
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$WIDE LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+@media (min-width: 1392px){
+	
+	.wrapper {
+		width:1363px;
+		margin:0 auto;
+		padding:0 14.5px;
+	}
+	
+	.grids{
+		width:1392px;
+		clear:both;
+		margin:0 0 0 -29px;
+		list-style: none;
+	}
+	
+	[class^="grid-"]{
+		float:left;
+		margin:0 29px 0 0;
+	}
+	.grids [class^="grid-"]{
+		margin:0 0 0 29px;
+	}
+	
+	[class^="grid-"] .grids{
+		width:auto;
+		margin:0 -29px;
+	}
+	
+	.grid-1{ width:29px }
+	.grid-2{ width:87px }
+	.grid-3{ width:145px }
+	.grid-4{ width:203px }
+	.grid-5{ width:261px }
+	.grid-6{ width:319px }
+	.grid-7{ width:377px }
+	.grid-8{ width:435px }
+	.grid-9{ width:493px }
+	.grid-10{ width:551px }
+	.grid-11{ width:609px }
+	.grid-12{ width:667px }
+	.grid-13{ width:725px }
+	.grid-14{ width:783px }
+	.grid-15{ width:841px }
+	.grid-16{ width:899px }
+	.grid-17{ width:957px }
+	.grid-18{ width:1015px }
+	.grid-19{ width:1073px }
+	.grid-20{ width:1131px }
+	.grid-21{ width:1189px }
+	.grid-22{ width:1247px }
+	.grid-23{ width:1305px }
+	.grid-24{ width:1363px; margin:0; }
+	
+	.suffix-1{ padding-right: 58px }
+	.suffix-2{ padding-right: 116px }
+	.suffix-3{ padding-right: 174px }
+	.suffix-4{ padding-right: 232px }
+	.suffix-5{ padding-right: 290px }
+	.suffix-6{ padding-right: 348px }
+	.suffix-7{ padding-right: 406px }
+	.suffix-8{ padding-right: 464px }
+	.suffix-9{ padding-right: 522px }
+	.suffix-10{ padding-right: 580px }
+	.suffix-11{ padding-right: 638px }
+	.suffix-12{ padding-right: 696px }
+	.suffix-13{ padding-right: 754px }
+	.suffix-14{ padding-right: 812px }
+	.suffix-15{ padding-right: 870px }
+	.suffix-16{ padding-right: 928px }
+	.suffix-17{ padding-right: 986px }
+	.suffix-18{ padding-right: 1044px }
+	.suffix-19{ padding-right: 1102px }
+	.suffix-20{ padding-right: 1160px }
+	.suffix-21{ padding-right: 1218px }
+	.suffix-22{ padding-right: 1276px }
+	.suffix-23{ padding-right: 1334px }
+	.suffix-24{ padding-right: 1392px }
+	
+	.prefix-1{ padding-left: 58px }
+	.prefix-2{ padding-left: 116px }
+	.prefix-3{ padding-left: 174px }
+	.prefix-4{ padding-left: 232px }
+	.prefix-5{ padding-left: 290px }
+	.prefix-6{ padding-left: 348px }
+	.prefix-7{ padding-left: 406px }
+	.prefix-8{ padding-left: 464px }
+	.prefix-9{ padding-left: 522px }
+	.prefix-10{ padding-left: 580px }
+	.prefix-11{ padding-left: 638px }
+	.prefix-12{ padding-left: 696px }
+	.prefix-13{ padding-left: 754px }
+	.prefix-14{ padding-left: 812px }
+	.prefix-15{ padding-left: 870px }
+	.prefix-16{ padding-left: 928px }
+	.prefix-17{ padding-left: 986px }
+	.prefix-18{ padding-left: 1044px }
+	.prefix-19{ padding-left: 1102px }
+	.prefix-20{ padding-left: 1160px }
+	.prefix-21{ padding-left: 1218px }
+	.prefix-22{ padding-left: 1276px }
+	.prefix-23{ padding-left: 1334px }
+	.prefix-24{ padding-left: 1392px }
+	
+	.push-1{ left:58px }
+	.push-2{ left:116px }
+	.push-3{ left:174px }
+	.push-4{ left:232px }
+	.push-5{ left:290px }
+	.push-6{ left:348px }
+	.push-7{ left:406px }
+	.push-8{ left:464px }
+	.push-9{ left:522px }
+	.push-10{ left:580px }
+	.push-11{ left:638px }
+	.push-12{ left:696px }
+	.push-13{ left:754px }
+	.push-14{ left:812px }
+	.push-15{ left:870px }
+	.push-16{ left:928px }
+	.push-17{ left:986px }
+	.push-18{ left:1044px }
+	.push-19{ left:1102px }
+	.push-20{ left:1160px }
+	.push-21{ left:1218px }
+	.push-22{ left:1276px }
+	.push-23{ left:1334px }
+	.push-24{ left:1392px }
+	
+	.pull-1{ left:-58px }
+	.pull-2{ left:-116px }
+	.pull-3{ left:-174px }
+	.pull-4{ left:-232px }
+	.pull-5{ left:-290px }
+	.pull-6{ left:-348px }
+	.pull-7{ left:-406px }
+	.pull-8{ left:-464px }
+	.pull-9{ left:-522px }
+	.pull-10{ left:-580px }
+	.pull-11{ left:-638px }
+	.pull-12{ left:-696px }
+	.pull-13{ left:-754px }
+	.pull-14{ left:-812px }
+	.pull-15{ left:-870px }
+	.pull-16{ left:-928px }
+	.pull-17{ left:-986px }
+	.pull-18{ left:-1044px }
+	.pull-19{ left:-1102px }
+	.pull-20{ left:-1160px }
+	.pull-21{ left:-1218px }
+	.pull-22{ left:-1276px }
+	.pull-23{ left:-1334px }
+	.pull-24{ left:-1392px }
+
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$NARROW LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 1024px){
+	
+	html{
+		font-size:1.125em;
+	}
+	body{
+		-webkit-text-size-adjust:none;
+	}
+	.wrapper{
+		width:705px;
+		margin: 0 auto;
+	}
+	.grids{
+		margin:0;
+		width:auto;
+	}
+	[class^="grid-"],
+	.grids [class^="grid-"]{
+		width:auto;
+		float:none;
+		margin-left:0;
+		padding-left: 0;
+		margin-right:0;
+		padding-right: 0;
+		left: auto;
+		position: inherit;
+	}
+	
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$MOBILE LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 720px){
+
+	.wrapper {
+		width: auto;
+	}
+	
+	.front .wrapper,
+	#header-inner.wrapper {
+		width:300px;
+		margin: 0 auto;
+	}
+	
+}
+
+.grids .alpha { margin-left: 0; }
+.grids .omega { margin-right: 0; }

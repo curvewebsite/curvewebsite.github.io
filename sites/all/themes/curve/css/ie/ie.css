@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/*------------------------------------*\
+	IE.CSS
+\*------------------------------------*/
+
+.view-display-id-block_brands_worked_with .item-list ul li img{
+	width: 140px;
+	height: 73px;
+}

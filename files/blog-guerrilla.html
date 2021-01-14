@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<!---------------------------------------------------------------------------------
+Curve Agency are a UK Drupal Website Design and Development Company based in Leeds.
+-----------------------------------------------------------------------------------
+
+Author: Curve Agency
+Author URL: curveagency.com
+Version: 3.0
+Copyright 2011-2014 Curve Agency Limited.
+
+-->
+
+<html lang="en" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+
+
+	<!-- Meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="canonical" href="/blog/guerrilla"/>
+<link rel="shortlink" href="/node/620"/>
+<meta name="twitter:url" content="/blog/guerrilla"/>
+<link rel="shortcut icon" href="/sites/all/themes/curve/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta name="generator" content="Drupal 7 (http://drupal.org)"/>
+<meta name="twitter:title" content="Guerrilla Testing: under-the-bonnet"/>
+<meta content="Guerrilla Testing: under-the-bonnet" about="/blog/guerrilla" property="dc:title"/>
+<meta name="description" content="A quick, simple guide to the fastest way to test your digital products. How we do it, and why you should too."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="A quick, simple guide to the fastest way to test your digital products. How we do it, and why you should too."/>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	
+	<!-- Title -->
+	<title>Guerrilla Testing: under-the-bonnet | Drupal &amp; UX Prototyping | Curve Agency UK</title>
+	
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed"/>
+	
+	<!-- Styles -->
+	<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css__r408iefJFDp7tkJY64xde0BtyLdHU1-GytpTja6H4w.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_PYDCSebXcnvSgSzEX-Xs4CSmhpu2kBFhJBdNk-xNi4s.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_WANx9e1xtodqBjs0Q86cgxi6IUPBlugjRY9MyXSVe60.css" media="all"/>
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie.css?nsytth" media="all" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie7.css?nsytth" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie6.css?nsytth" media="all" />
+<![endif]-->
+	
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_H7q2xORKmR9AN8Qx5spKEIBp7R_wG2apAswJoCUZY7I.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_JI6TT4VIYJYFe9OJdKt69g6wN-4WknzmZV0qPLv5yDw.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27427361-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/js/js_dr8zclEdzsdvqNg1V4ey7RczFW2mAoJKdmMD6_E-KCk.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_g5FdU7hg09uj5HU1aUoI9KTC2y5l4kxOrDbPPniNrpA.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"curve","theme_token":"MhLNJaoZQ3oneBC1Fk5llZvzkx5Go3mHstPdJTQXDF4","js":{"https:\/\/web.archive.org\/web\/20151128032516\/https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.9.1\/jquery.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/curve\/taxonomy_tree_block\/template\/taxonomy_tree_block.jquery.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/radioactivity\/js\/radioactivity.js":1,"sites\/all\/themes\/curve\/js\/jquery.scrolly.js":1,"sites\/all\/themes\/curve\/js\/scripts.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/curve\/simple_twitter\/template\/simple_twitter.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/radioactivity\/css\/radioactivity.css":1,"sites\/all\/themes\/curve\/css\/gridinuit.css":1,"sites\/all\/themes\/curve\/css\/grid\/grid.inuit.css":1,"sites\/all\/themes\/curve\/fonts\/font-awesome.min.css":1,"sites\/all\/themes\/curve\/css\/blog.css":1,"sites\/all\/themes\/curve\/css\/brands.css":1,"sites\/all\/themes\/curve\/css\/box.css":1,"sites\/all\/themes\/curve\/css\/button.css":1,"sites\/all\/themes\/curve\/css\/case_study.css":1,"sites\/all\/themes\/curve\/css\/flexslider.css":1,"sites\/all\/themes\/curve\/css\/front.css":1,"sites\/all\/themes\/curve\/css\/global.css":1,"sites\/all\/themes\/curve\/css\/highlighted.css":1,"sites\/all\/themes\/curve\/css\/navigation.css":1,"sites\/all\/themes\/curve\/css\/parallax.css":1,"sites\/all\/themes\/curve\/css\/root.css":1,"sites\/all\/themes\/curve\/css\/simple_twitter.css":1,"sites\/all\/themes\/curve\/css\/white_container.css":1,"sites\/all\/themes\/curve\/css\/layout\/desktop.css":1,"sites\/all\/themes\/curve\/css\/layout\/tablet.css":1,"sites\/all\/themes\/curve\/css\/layout\/mobile.css":1,"sites\/all\/themes\/curve\/css\/layout\/social.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/form.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/about.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/home.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie7.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie6.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"radioactivity":{"emitters":{"emitDefault":[{"accuracy":"100","bundle":"article","energy":10,"entity_id":"620","entity_type":"node","field_name":"field_radioactivity","language":"und","storage":"File","type":"none","checksum":"78a8cbc77f26e540730c6b80806f4669"}]},"config":{"emitPath":"\/sites\/all\/modules\/radioactivity\/emit.php","fpEnabled":1,"fpTimeout":"60"}}});
+//--><!]]>
+</script>
+	
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+	<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-620 node-type-article blog section-inner">
+	
+		<div id="skip-link">
+			<a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+		</div>
+        
+        <!-- to overlay content when mobile nav is expanded -->
+        <div class="shadow-curtain active"><span></span></div> 
+		
+				
+		
+<div id="page-wrapper">
+
+  <div id="page">
+  
+    
+    <header role="banner" id="header">
+	
+		<div id="menu-toggle"><a href="#"><span class="strip first"></span><span class="strip mid"></span><span class="strip last"></span></a></div>
+	
+		<div id="header-inner" class="wrapper">
+		
+		  <div class="grids">
+		  
+		  			  <div id="logo-container" class="grid-6">
+			    <a href="/" title="Home" rel="home" id="logo">
+			      <img src="/sites/all/themes/curve/logo.png" alt="Home"/>
+			    </a>
+			  </div>
+		  		  
+						  <navigation role="navigation" id="navigation" class="grid-18">
+			    <div class="navigation-container">
+					<div class="navigation-wrapper">
+					  <div class="navigation-inner">
+						
+	
+<article id="block-system-main-menu" class="block block-system ">
+
+        
+  <ul class="menu"><li class="first leaf"><a href="/">Home</a></li>
+<li class="leaf"><a href="/drupal-case-studies" class="case-studies">Case Studies</a></li>
+<li class="leaf"><a href="/blog" class="blog">Blog</a></li>
+<li class="leaf"><a href="/about-curve">About</a></li>
+<li class="last leaf"><a href="/project-enquiry">Contact</a></li>
+</ul>
+</article>
+					  </div>
+					</div>
+				</div>
+			  </navigation>
+					  
+		  </div>
+		  
+		  		  
+		  		  
+		  		  
+		</div>
+		
+    </header> <!-- /#header -->
+
+    
+		  <nav id="breadcrumb">
+	  	<div id="breadcrumb-inner" class="wrapper">
+	    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><span class="breadcrumb-0"><a href="/">Home</a></span><span class="breadcrumb-separator breadcrumb-separator-0">›</span><span class="breadcrumb-1"><a href="/blog">Blog</a></span><span class="breadcrumb-separator breadcrumb-separator-1">›</span><span class="breadcrumb-2"><a href="/blog/user-experience-design">User Experience</a></span><span class="breadcrumb-separator breadcrumb-separator-2">›</span><span class="breadcrumb-3">Guerrilla Testing: under-the-bonnet</span></div>		</div>
+	  </nav> <!-- /#breadcrumb -->
+	
+    			
+  
+	
+	
+		
+		
+	<div id="main-content" class="wrapper">
+	
+		<div class="grids">
+		
+			
+		
+		
+		<div id="content-wrapper" class="grid-16 suffix-1">
+		
+						
+							<h1 class="title" id="page-title">Guerrilla Testing: under-the-bonnet</h1>
+						
+					
+			
+  <section id="content" class="region region-content">
+	
+<section id="block-views-blog-block-3" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-block_3 view-dom-id-515d5c6ef30e66b37ab9dd011435547c">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-created">        <span class="field-content">Thursday, 2<sup>nd</sup> July, 2015</span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content summary">A quick, simple guide to the fastest way to test your digital products. How we do it, and why you should too.</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+
+<article id="block-system-main" class="block block-system ">
+
+        
+  <article id="node-620" class="node node-article clearfix" about="/blog/guerrilla" typeof="sioc:Item foaf:Document">
+
+  
+  
+  <div class="content">
+    
+<div class="field field-name-body field-type-text-with-summary field-label-hidden clearfix">
+            <blockquote>
+<p>[Guerrilla testing is] the art of pouncing on lone people in cafes and public spaces, [then] quickly filming them whilst they use a website for a couple of minutes”</p>
+<footer>- <a href="http://twitter.com/martinbelam" title="Martin Belam's Twitter profile">@MartinBelam</a></footer>
+</blockquote>
+
+<p>A much more poetic definition than I could ever come up with.</p>
+
+<img src="/sites/default/files/blog/guerrilla-gorrilla.jpg" width="100%" height="auto" alt="An illustration of a gorilla overlain on a green background."/>
+
+<p>Whilst working as a freelancer I occasionally took on projects where there was very little budget for user research and testing. At Curve, this doesn't happen as the clients we work with are very clued-up when it comes to involving users in the design process. However, a scenario where there is little/no budget for testing is, unfortunately, still a real possibility. This is why we want to share our get-out-jail-free test method with you.</p>
+
+<p>Enter, the Guerrilla.</p>
+
+<p>Many of you are likely aware of guerrilla testing and already count it in your toolkit. For those of you who aren’t, or maybe want to brush up on the finer details, I’m going to take you through why, how and when it should be done.</p>
+
+<h2>Why?</h2>
+
+<p>Because it’s fast. Really fast.</p>
+
+<p>We were recently asked to speed up a client's registration process on their website so they could extract it and use it at industry conferences and events. Many of the parties involved had different ideas on how we could do it - a paged form perhaps? “No, a non-paged form is definitely quicker as the user doesn’t have to click through multiple pages.” What about some kind of ‘fill-in-the-gaps’ solution? Pre-completed fields.</p>
+
+<p>We had a lot of ideas on how to do it but not enough time to facilitate and run lab testing; so we took it into the wild.</p>
+
+<iframe src="http://gfycat.com/ifr/UnnaturalLiquidBison" frameborder="0" scrolling="no" width="100%" height="200px" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);"></iframe>
+
+<p>Using <a href="http://macaw.co/" title="Macaw, a code-savvy web-design tool">Macaw</a> as a prototyping tool (it’s already good, and <a href="http://scarlet.macaw.co/" title="Macaw Scarlet">about to get a whole lot better</a>) we created instances of the best form ideas and took them to the park, timing users as well as asking them how long they think it took to complete. So at the end of it, not only did we get a ‘winning form’ by measuring actual times and estimated times, we also already had a working prototype to take to the client - I should also mention that we completed this in just 2 days!</p>
+
+<h2>When?</h2>
+
+<p>You can probably understand when this kind of testing would be useful from what you’ve already read, but just in case: it’s when you have no time! N.B. This can also be translated as ‘no money’.</p>
+
+<p>You can pretty much always make time for guerrilla. All you need to do (and this is going to cover the ‘How’ section) is:</p>
+
+<ul>
+<li>Have a product you want to test - this could be literally anything: I’ve tested paper prototypes, half-finished Android applications and live websites. It doesn’t even have to be digital, you could go out there with a prototype of a cuddly toy or a new coffee mug and ask people about it. Focus groups are dead; long live guerrilla.</li>
+
+<li>Think of somewhere to test it - coffee shops are good, as are University campuses; essentially any public (or not so public, with permission) place there is a build up of people.</li>
+
+<li>Have a general idea of what you want to test - are there specific things you want to find out? e.g. if the navigation works, are the images sexy enough? Think of questions and tasks for the users if this is the case. Maybe you just want general feedback on the product; that’s okay too, just ask users what they think of it. As long as you are open and nice with them, they’ll give you genuine feedback.</li>
+</ul>
+
+<h2>How we do it</h2>
+
+<p>We’re very flexible in how we carry out guerrilla research because we need to be; demographics change, products differ and the depth of research needed is varied across projects. I’ll outline how we generally test a web product - this could be an iOS application, website, component of a website, animation, video etc. You get the idea…</p>
+
+<ol>
+<li>Figure out what we want out of the testing:</li>
+<ul>
+<li>The level/areas of feedback always vary, so we’ll write down some key outcomes we’d like to achieve</li>
+<li>We’ll also produce a brief script/task sheet to take out with us</li>
+</ul>
+<li>Depending on the scale of the tasks for users, decide on an incentive:</li>
+<ul>
+<li>Some chocolate or a drink will usually suffice</li>
+<li>Occasionally we might run a raffle and buy a prize of ~£15</li>
+</ul>
+<li>Scout a location</li>
+<ul>
+<li>Think about your target demographic - where do they hang out?</li>
+</ul>
+<li>Logistics</li>
+<ul>
+<li>What device are we testing on?</li>
+<li>Do we need an internet connection? (Hotspotting your iPhone comes in handy here)</li>
+<li>Who’s free to oversee the testing? We generally like to take a researcher and a designer/developer, but it’s easily achievable on your own.</li>
+<li>Recording/note-taking - how will we record the sessions?</li>
+</ul>
+<li>Go out and do it</li>
+<ul>
+<li>Take our tablet/phone/laptop out and test, test,  test!</li>
+</ul>
+</ol>
+
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">We&#39;re out <a href="https://twitter.com/hashtag/guerrilla?src=hash">#guerrilla</a> testing with students in <a href="https://twitter.com/hashtag/HydePark?src=hash">#HydePark</a> this afternoon. Help us out in return for some tasty treats <a href="http://t.co/gYeuciSFK6">pic.twitter.com/gYeuciSFK6</a></p>&mdash; CURVE (@CurveAgency) <a href="https://twitter.com/CurveAgency/status/608248276119339008">June 9, 2015</a></blockquote>
+<script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>So that’s a quick overview of how we go guerrilla at Curve but, honestly, it’s a case of doing what you can. There’s no definite science to it. Even if you just have a few friends you can take a product to, do that. Just ask them for honest feedback on it: how they might change the product if it was theirs, ask their opinions of the style, the navigation, the functionality, would they buy it?</p>
+
+<p>Like Mr. Belam says, it’s the art of asking the public questions about your thing - put that into practice as best you can, and you’ll come out with some useful results.</p>
+
+<h3>Further reading &amp; resources</h3>
+
+<ul>
+<li><a href="http://www.uxbooth.com/articles/the-art-of-guerrilla-usability-testing/">UX Booth: The Art of Guerrilla Testing</a></li>
+<li><a href="https://www.gov.uk/service-manual/user-centred-design/user-research/guerrilla-testing.html">Gov.uk: Guerrilla Testing</a></li>
+<li><a href="http://www.hongkiat.com/blog/android-screen-recording-apps/">The 5 best screen recording apps for Android</a> (we recommend Shou)</li>
+<li><a href="http://ios.wonderhowto.com/how-to/record-your-ipads-iphones-screen-no-jailbreak-computer-required-0156864/">How to set up screen recording on iOS devices</a></li>
+</ul>    </div>
+  </div>
+
+  
+  
+</article>
+
+</article>
+
+<section id="block-views-blog-blog-post" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-blog_post blog-footer view-dom-id-a531622a87734fa047ae1f0752fd1a43">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-call-to-action-1">        <h3 class="field-content"></h3>  </div>  
+  <div class="views-field views-field-field-headshot">        <div class="field-content"><a href="/blog/contributors/curve-agency"><img typeof="foaf:Image" src="/sites/default/files/styles/thumbnail/public/Curve_square_logo_black_2014.png?itok=399C17lH" width="100" height="100" alt=""/></a></div>  </div>  
+  <span class="views-field views-field-field-user-first-name">        <span class="field-content">Curve</span>  </span>  
+  <span class="views-field views-field-field-user-last-name">        <span class="field-content"></span>  </span>  
+  <div class="views-field views-field-field-job-title">        <div class="field-content">Drupal and UX Design Agency</div>  </div>  
+  <div class="views-field views-field-field-bio">        <div class="field-content"><p>UK Drupal Agency and UX Design Team with our very own usability testing lab in Leeds. We work with national charities, NGOs and private sector clients.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <!--<p class="meet-link"><a href="/blog/contributors">Meet the people behind the Curve blog</a></p>-->    </div>
+  
+  
+</div>
+</section>
+
+<section id="block-views-blog-related-block-1" class="block block-views ">
+
+            <header><h2><span>Related Articles</span></h2></header>
+      
+  <div class="view view-blog-related view-id-blog_related view-display-id-block_1 blog-related-articles view-dom-id-e82ace898d991cccc19de217ff54904e">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-responsive-grid views-responsive-grid-horizontal views-columns-2">
+      <div class="grids row equalheights views-row-1">
+      <div class="grid-8 blog-article box grid-equal views-column-1">
+        
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="views-field views-field-field-images">
+  <div class="field-content"><a href="/blog/theming-drupal-forms-js"><img typeof="foaf:Image" src="/sites/default/files/styles/blog_post_standard/public/blog/Untitled-1_0.png?itok=tnLwVBu6" width="768" height="433" alt="An illustration of a basic form layout"/></a></div>
+</div>
+<div class="views-field views-field-title">
+  <h2 class="field-content"><a href="/blog/theming-drupal-forms-js">Theming #Drupal forms with .js</a></h2>
+</div>
+<div class="views-field views-field-created">
+  <div class="field-content">Wednesday, 12<sup>th</sup> August, 2015</div>
+</div></span>  </div>  
+  <div class="views-field views-field-body">        <p class="field-content">Logically grouping fields in a Drupal user form can be tricky, so we're offering up a simple to implement solution for any newbie themers out there.</p>  </div>  
+  <div>        <div class="overlay-block"><a href="/blog/theming-drupal-forms-js">Read article</a></div>  </div>  
+  <div>        <div class="box--icon"><a href="/blog/theming-drupal-forms-js"><i class="fa fa-eye"></i></a></div>  </div>    </div>
+      <div class="grid-8 blog-article box grid-equal views-column-2">
+        
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="views-field views-field-field-images">
+  <div class="field-content"><a href="/blog/user-experience-design/session-automated-acceptance-tests-behat"><img typeof="foaf:Image" src="/sites/default/files/styles/blog_post_standard/public/blog/drupalcamp.jpg?itok=NiNuEDr-" width="768" height="433" alt="DrupalCon 2013"/></a></div>
+</div>
+<div class="views-field views-field-title">
+  <h2 class="field-content"><a href="/blog/user-experience-design/session-automated-acceptance-tests-behat">Automated Acceptance Tests with Behat</a></h2>
+</div>
+<div class="views-field views-field-created">
+  <div class="field-content">Friday, 22<sup>nd</sup> May, 2015</div>
+</div></span>  </div>  
+  <div class="views-field views-field-body">        <p class="field-content">Notes on automated acceptance tests with Behat (using Gherkin).
+</p>  </div>  
+  <div>        <div class="overlay-block"><a href="/blog/user-experience-design/session-automated-acceptance-tests-behat">Read article</a></div>  </div>  
+  <div>        <div class="box--icon"><a href="/blog/user-experience-design/session-automated-acceptance-tests-behat"><i class="fa fa-eye"></i></a></div>  </div>    </div>
+    </div>
+    </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+  </section>
+			
+		</div>
+		
+				<div id="sidebar-first-wrapper" class="grid-7 ">
+			
+  <aside id="sidebar-second" class="region region-sidebar-second">
+    
+<article id="block-taxonomy-tree-block-taxonomy-tree-block-vid-2" class="block block-taxonomy_tree_block ">
+
+            <header><h2><span>Categories</span></h2></header>
+      
+  <div class="taxonomy-tree-menu"><ul class="menu-2 menu-standard"><li><a href="/blog/business-stuff">Community &amp; Events</a><span>14</span></li><li><a href="/blog/drupal-development">Drupal</a><span>36</span></li><li><a href="/blog/front-end">Front-end &amp; Design</a><span>21</span></li><li><a href="/blog/digital-strategy">Strategy &amp; Management</a><span>12</span></li><li><a href="/blog/user-experience-design">User Experience</a><span>16</span></li></ul></div>
+</article>
+
+<article id="block-simple-twitter-simple-twitter-block" class="block block-simple_twitter ">
+
+            <header><h2><span>Recent Tweets</span></h2></header>
+      
+  <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Memorable launch party for <a href="https://twitter.com/search/Drupal8">#Drupal8</a> last night. Amazing turn out, and amazing cake too &lt;8) <a href="https://twitter.com/search/celebr8d8">#celebr8d8</a> <a href="https://t.co/QC97fMiA7j">https://t.co/QC97fMiA7j</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=667640418239193088" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=667640418239193088" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=667640418239193088" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=667640418239193088" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"RT <a href="http://www.twitter.com/drupal8camp">@drupal8camp</a>: We're pleased to announce Drupal8Camp is coming to Leeds on 21st May 2016. Stay updated <a href="https://t.co/KzJoZMCLZQ">https://t.co/KzJoZMCLZQ</a> <a href="https://twitter.com/search/d8camp">#d8camp</a> <a href="https://twitter.com/search/c">#c</a>…"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=667595292301254657" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=667595292301254657" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=667595292301254657" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=667595292301254657" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa  fa-twitter-square"></i>Follow @CurveAgency<a>
+
+
+</article>
+  </aside>
+		</div>
+		    
+				
+		</div>
+		
+	</div> <!-- /#main-content -->
+	
+	        
+	
+		
+	
+  <section id="contact" class="region region-contact">
+  	<div class="wrapper">
+		
+<article id="block-block-1" class="clearfix grids block block-block ">
+
+            <header><h2><span>Discuss your project</span></h2></header>
+      
+  <div class="grid-12">
+  <div class="contact-info">
+    <div class="telephone"><p>0113 243 2259</p></div>
+    <div class="email-link"><a href="mailto:hello@curveagency.com">hello@curveagency.com</a></div>
+    <div class="curve-address">Curve Agency<br/>46 The Calls<br/>Leeds<br/>LS2 7EY</div>
+  </div>
+</div>
+
+<div class="grid-12">
+  <div class="contact-map">
+    <a class="map-link" href="https://www.google.co.uk/maps/place/Curve+Agency/@53.794628,-1.5374,17z/data=!3m1!4b1!4m2!3m1!1s0x48795c178345fad9:0x7a14688dc7ba0147">
+    <div class="map">map</div>
+</a>
+  </div>
+</div>
+</article>
+	</div>
+  </section>
+	
+        
+	
+	
+  <footer role="contentinfo" id="footer" class="region region-footer">
+	<div id="footer-inner" class="wrapper">
+    	
+<article id="block-block-13" class="block block-block ">
+
+            <header><h2><span>Connect with our community</span></h2></header>
+      
+  <ul class="footer-links-wrapper footer-links-social"><li class="google"><a rel="publisher" href="https://plus.google.com/+Curveagency/"><i class=" fa  fa-google-plus-square"></i></a></li>
+<li class="facebook"><a href="https://www.facebook.com/curveagency"><i class="fa  fa-facebook-square"></i></a></li>
+<li class="twitter"><a href="https://twitter.com/CurveAgency"><i class="fa  fa-twitter-square"></i></a></li>
+</ul><ul class="footer-links-wrapper footer-links-drupal"><li class="daom"><a rel="publisher" href="https://assoc.drupal.org/">Drupal Association Organisation Member</a></li>
+<li class="drupal_camp"><a href="http://drupalyorkshire.org.uk/">Drupal Yorkshire</a></li>
+<li class="acquia"><a href="http://www.acquia.com/partners/showcase/curve-agency">Acquia Partner</a></li>
+</ul>
+</article>
+
+<article id="block-block-14" class="footer-copyright block block-block ">
+
+        
+  <p>Curve Agency is a UK company limited by shares and incorporated in England and Wales.</p>
+<p>&copy; 2008 - 2015, Curve Agency. All rights reserved.</p>
+</article>
+	</div>
+  </footer>
+
+  </div> <!-- /#page -->
+
+</div> <!-- /#page-wrapper -->		
+				
+	</body><!-- /body -->
+
+</html><!-- /html -->
+<!--
+playback timings (ms):
+  RedisCDXSource: 15.108
+  PetaboxLoader3.datanode: 94.329 (4)
+  captures_list: 117.715
+  load_resource: 52.511
+  PetaboxLoader3.resolve: 24.566
+  esindex: 0.016
+  LoadShardBlock: 76.354 (3)
+  exclusion.robots: 0.313
+  exclusion.robots.policy: 0.299
+  CDXLines.iter: 21.755 (3)
+-->

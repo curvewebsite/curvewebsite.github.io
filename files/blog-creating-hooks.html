@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="en" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="en" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+
+  <!--[if IE]><![endif]-->
+<meta charset="utf-8"/>
+<meta name="HandheldFriendly" content="true"/>
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab"/>
+<meta name="MobileOptimized" content="width"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed-144x144.png" sizes="144x144"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed-114x114.png" sizes="114x114"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed-72x72.png" sizes="72x72"/>
+<meta http-equiv="cleartype" content="on"/>
+<link rel="shortcut icon" href="/sites/all/themes/curve_omega/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta name="twitter:title" content="Drupal Hooks Tutorials - Part Two: Creating Hooks"/>
+<meta name="twitter:description" content="Part two of our hands-on tutorial on using Drupal 'hooks' (applicable to Drupal 6, 7 and 8)."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:url" content="/blog/creating-hooks"/>
+<meta name="generator" content="Drupal 7 (http://drupal.org)"/>
+<link rel="shortlink" href="/node/622"/>
+<link rel="canonical" href="/blog/creating-hooks"/>
+<meta name="description" content="Part two of our hands-on tutorial on using Drupal 'hooks' (applicable to Drupal 6, 7 and 8)."/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drupal Hooks Tutorials - Part Two: Creating Hooks</title>
+  <link type="text/css" rel="stylesheet" href="/sites/default/files/advagg_css/css__06SOYmdYplZeQPEqVDRUiUA1u8cUYrthgsqve-Kwe28__oO9K8RKTxPWL8ybtipsPXindwF2HTGUz_pxPgDINtjM__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/advagg_css/css__06SOYmdYplZeQPEqVDRUiUA1u8cUYrthgsqve-Kwe28__oO9K8RKTxPWL8ybtipsPXindwF2HTGUz_pxPgDINtjM__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.css" media="all"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/advagg_js/js__5bFwodvCm1LC9HoI_faGGtZPshq1v0p0_UKyeb8fN-8__K4cFgR-cEPBnADjm9ptFSZeiFSZ6Cu5X1glBsXVheWI__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27427361-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/advagg_js/js__WE7Mbx0R6v5Clk19JwlHrJPVt2sMy-KX267JvMQGw_M__vpkrREnSTl_oHisnrCYy6g5Hofek21doQ2HAVuH7YjU__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"radioactivity":{"emitters":{"emitDefault":[{"accuracy":100,"bundle":"article","energy":10,"entity_id":"622","entity_type":"node","field_name":"field_radioactivity","language":"und","storage":"File","type":"none","checksum":"63f42a8a4f8eea967a19f728def82dd0"}]},"config":{"emitPath":"\/sites\/all\/modules\/radioactivity\/emit.php","fpEnabled":1,"fpTimeout":"60"}},"ajaxPageState":{"js":{"https:\/\/web.archive.org\/web\/20160621081108\/https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.9.1\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/omega\/omega\/js\/no-js.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"sites\/all\/modules\/radioactivity\/js\/radioactivity.js":1,"sites\/all\/themes\/curve_omega\/js\/jquery.matchHeight.js":1,"sites\/all\/themes\/curve_omega\/js\/jquery.ba-throttle-debounce.min.js":1,"sites\/all\/themes\/curve_omega\/js\/touche.min.js":1,"sites\/all\/themes\/curve_omega\/js\/curve-omega.behaviors.js":1}}});
+//--><!]]>
+</script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "",
+      "logo": "/sites/all/themes/curve_omega/logo.png"
+    }
+    </script>
+
+</head>
+<body class="html not-front not-logged-in page-node page-node- page-node-622 node-type-article blog section-inner section-blog two-sidebars">
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+<div class="dark-screen"><label for="drawer-toggle" id="drawer-toggle-label"><b></b></label><div class="curvedrop"></div></div>
+<header role="banner" class="page-header">
+      <h1 class="site-name">
+      <a href="/" title="Home" rel="home"><span>Curve Agency</span></a>
+    </h1>
+  
+  
+  
+
+      <navigation role="navigation">
+
+
+              <a href="/" title="Home" rel="home" class="logo">
+          <img src="/sites/all/themes/curve_omega/logo.png" alt="Home"/>
+        </a>
+      
+        <div class="l-region l-region--navigation">
+    <nav id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu">
+      
+  <ul class="menu"><li class="primary-nav__list-item"><a href="/drupal-8" class="primary-nav__link">Drupal 8</a></li>
+<li class="primary-nav__list-item"><a href="/drupal-case-studies" class="primary-nav__link">Case Studies</a></li>
+<li class="primary-nav__list-item"><a href="/blog" class="primary-nav__link">Blog</a></li>
+<li class="primary-nav__list-item"><a href="/about-curve" class="primary-nav__link">About</a></li>
+<li class="primary-nav__list-item"><a href="/project-enquiry" class="primary-nav__link">Contact</a></li>
+</ul></nav>
+<div id="block-block-1" class="block block--block clearfix grids block--block-1">
+        <h2 class="block__title">Discuss your project</h2>
+      <div class="block__content">
+    <div class="grid-12">
+  <div class="contact-info">
+    <div class="email-link"><a href="mailto:hello@curveagency.com">hello@curveagency.com</a></div>
+    <div class="curve-address">Curve Agency<br/><br/>Leeds &amp;<br/>London</div>
+  </div>
+</div>  </div>
+</div>
+  </div>
+    </navigation>
+  
+</header> <!-- /#header -->
+
+<div id="page-wrapper">
+
+      <nav id="breadcrumb">
+      <div id="breadcrumb-inner" class="wrapper">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><span class="breadcrumb-0"><a href="/">Home</a></span><span class="breadcrumb-separator breadcrumb-separator-0">›</span><span class="breadcrumb-1"><a href="/blog">Blog</a></span><span class="breadcrumb-separator breadcrumb-separator-1">›</span><span class="breadcrumb-2"><a href="/blog/drupal-development">Drupal</a></span><span class="breadcrumb-separator breadcrumb-separator-2">›</span><span class="breadcrumb-3">Drupal Hooks Tutorials - Part Two: Creating Hooks</span></div>      </div>
+    </nav> <!-- /#breadcrumb -->
+  
+  <div id="page">
+
+    
+          <nav role="navigation">
+              </nav>
+    
+    
+    
+    
+    
+    
+    <div id="main-content" class="wrapper">
+      
+      
+      
+      <article role="article" class="node node--article node--full node--article--full">
+  
+  
+  <div class="node__content">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field__items" id="md4"><div class="field__item even" itemprop="headline"><h1>Drupal Hooks Tutorials - Part Two: Creating Hooks</h1>
+</div></div></div><div class="created">4<sup>th</sup> August, 2015</div><div class="field field--name-field-subtitle field--type-text field--label-hidden"><div class="field__items" id="md3"><div class="field__item even" itemprop="description"><h2>Part two of our hands-on tutorial on using Drupal &#039;hooks&#039; (applicable to Drupal 6, 7 and 8).</h2>
+</div></div></div><div class="field field--name-body field--type-text-with-summary field--label-hidden"><div class="field__items" id="md1"><div class="field__item even" itemprop="text"><p>In <a href="/blog/using-hooks">part one of our Drupal hooks tutorial</a>, we took you through how to use hooks. We also briefly mentioned that modules can create their own hooks so here we're going to take you through that process, too!</p>
+<p><img alt="Captain Hook &amp; the Druplicon logo on a purple background." height="250" src="/sites/default/files/blog/druplicon-captain-hook.png" width="899"/></p>
+<h2>Defining a hook</h2>
+<p>First a hook is defined. This consists of the name of the hook, along with any parameters that are passed and what is returned. Drupal does not actually <em>require</em> this, but it's best practice to put them in an .api.php file for documentation.</p>
+<p>Like all functions in Drupal, the hook's name needs to be unique. The design pattern used to create a hook is to use the defining module name in the hook followed by the actual hook name. This is why most hooks look like <em>hook_MODULE_NAME_HOOK_NAME()</em>.</p>
+<h2>Implementing a hook</h2>
+<p>Once the hook has been defined, the defining module needs to call the hook in all of the modules that implement it. There are a few ways to do this, but the simplest is to use <a href="https://api.drupal.org/api/drupal/includes!module.inc/function/module_invoke_all/7">module_invoke_all()</a>. This goes through all the modules that implement the hook and places the returned values in an array.</p>
+<h2>An example</h2>
+<p>I stated in <a href="/blog/using-hooks">Using Hooks</a> that the help text can be created by another hook, so let's do that!</p>
+<h3>Defining</h3>
+<p>So first let's define the hook.</p>
+<p>In <em>mymodule.api.php</em> we create an example hook implementation along with a comment block describing what the hook does:</p>
+<div class="codepen" data-default-tab="js" data-height="268" data-slug-hash="aOPNmE" data-theme-id="14456" data-user="chriddell">
+<pre>
+<code>&lt;?php 
+/**
+ * Hook to add output to mymodule help screen.
+ *  
+ * @return string  
+ */
+
+function hook_mymodule_help() {   
+  return 'Some text'; // The text to add to the help screen.
+}</code></pre><p>See the Pen <a href="http://codepen.io/chriddell/pen/aOPNmE/">Drupal Hooks 2: #1</a> by Chris Liddell (<a href="http://codepen.io/chriddell">@chriddell</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+</div>
+<script async="" src="http://assets.codepen.io/assets/embed/ei.js"></script><p>No parameters are to be passed, but they can be defined here if they are needed - just like in <a href="https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_help/7">hook_help</a>.</p>
+<h3>Invoking</h3>
+<p>The hook needs to be invoked, so I'll change the return value of <em>mymodule_help</em> so that additional text can be easily added.</p>
+<div class="codepen" data-default-tab="js" data-height="268" data-slug-hash="waRGJB" data-theme-id="14456" data-user="chriddell">
+<pre>
+<code>$ret = "This is my help text";
+
+return $ret;</code></pre><p>See the Pen <a href="http://codepen.io/chriddell/pen/waRGJB/">Drupal Hooks 2: #2</a> by Chris Liddell (<a href="http://codepen.io/chriddell">@chriddell</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+</div>
+<script async="" src="http://assets.codepen.io/assets/embed/ei.js"></script><p>Now we add the hook invocation. The parameter to add to module_invoke_all is the name of the hook, with the preceding 'hook_' removed.</p>
+<div class="codepen" data-default-tab="js" data-height="268" data-slug-hash="dowMvg" data-theme-id="14456" data-user="chriddell">
+<pre>
+<code>$extra = module_invoke_all('mymodule_help');</code></pre><p>See the Pen <a href="http://codepen.io/chriddell/pen/dowMvg/">Drupal Hooks 2: #3</a> by Chris Liddell (<a href="http://codepen.io/chriddell">@chriddell</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+</div>
+<script async="" src="http://assets.codepen.io/assets/embed/ei.js"></script><p>And a lovely bit of theming to output the array as a list...</p>
+<div class="codepen" data-default-tab="js" data-height="268" data-slug-hash="bdOpWd" data-theme-id="14456" data-user="chriddell">
+<pre>
+<code>$ret .= theme_item_list(
+  array('items' =&gt; $extra, 
+        'title' =&gt; '', 
+        'type' =&gt; 'ul', 
+        'attributes' =&gt; array(),
+       )
+);</code></pre><p>See the Pen <a href="http://codepen.io/chriddell/pen/bdOpWd/">Drupal Hooks 2: #4</a> by Chris Liddell (<a href="http://codepen.io/chriddell">@chriddell</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+</div>
+<script async="" src="http://assets.codepen.io/assets/embed/ei.js"></script><p>The complete function!</p>
+<div class="codepen" data-default-tab="js" data-height="268" data-slug-hash="JdwXJZ" data-theme-id="14456" data-user="chriddell">
+<pre>
+<code>/**  
+ * Implements hook_help().  
+ */ 
+
+function mymodule_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#mymodule': 
+      $ret = "This is my help text";
+      $extra = module_invoke_all('mymodule_help');
+      $ret .= theme_item_list(
+        array('items' =&gt; $extra, 
+              'title' =&gt; '', 
+              'type' =&gt; 'ul', 
+              'attributes' =&gt; array(),
+        )
+      );
+      return $ret;   
+  }
+}    </code></pre><p>See the Pen <a href="http://codepen.io/chriddell/pen/JdwXJZ/">Drupal Hooks 2: #5</a> by Chris Liddell (<a href="http://codepen.io/chriddell">@chriddell</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+</div>
+<script async="" src="http://assets.codepen.io/assets/embed/ei.js"></script><p>Of course, this will not change the output on the help screen as no modules implement the new hook.</p>
+<h3>Implementing</h3>
+<p>A moodule can implement a hook defined by itself, so that will be added as a test.</p>
+<div class="codepen" data-default-tab="js" data-height="268" data-slug-hash="GJPZEb" data-theme-id="14456" data-user="chriddell">
+<pre>
+<code>/**
+ * Implements hook_mymodule_help().
+ */ 
+
+function mymodule_mymodule_help() {   return 'Additional text from mymodule'; }</code></pre><p>See the Pen <a href="http://codepen.io/chriddell/pen/GJPZEb/">Drupal Hooks 2: #6</a> by Chris Liddell (<a href="http://codepen.io/chriddell">@chriddell</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+</div>
+<script async="" src="http://assets.codepen.io/assets/embed/ei.js"></script><p>Now there is an unordered list with one item on the help screen.</p>
+<h3>Another Module?</h3>
+<p>We'll create a new module (myothermodule) that only implements hook_mymodule_help().</p>
+<p>As the code will be almost identical, I'll just list it with the differences highlighted.</p>
+<p>myothermodule.info:</p>
+<div class="codepen" data-default-tab="js" data-height="268" data-slug-hash="rVoezG" data-theme-id="14456" data-user="chriddell">
+<pre>
+<code>name = My Other Module; 
+description = Tutorial module;
+core = 7.x;
+package = Tutorial;</code></pre><p>See the Pen <a href="http://codepen.io/chriddell/pen/rVoezG/">Drupal Hooks 2: #7</a> by Chris Liddell (<a href="http://codepen.io/chriddell">@chriddell</a>) on <a href="http://codepen.io/">CodePen</a>.</p>
+</div>
+<script async="" src="http://assets.codepen.io/assets/embed/ei.js"></script><p>myothermodule.module:</p>
+<div class="codepen" data-default-tab="js" data-height="268" data-slug-hash="vOvGJP" data-theme-id="14456" data-user="chriddell">
+<pre>
+<code>&lt;?php
+/**  
+ * Implements hook_mymodule_help().
+ */ 
+
+function myothermodule_mymodule_help(); {
+  return 'Additional text from myotherrmodule'; }</code></pre><p>Now, enabling and disabling myothermodule will add and remove the extra text to mymodule's help screen.</p>
+</div>
+<h3>In summary</h3>
+<p>We hope you've found this tutorial useful, and if you have any queries or questions on anything Drupal related then get in touch. We're always happy to help out.</p>
+<p>Tweet us &lt;a href="<a href="http://twitter.com/CurveAgency&quot;">http://twitter.com/CurveAgency"</a> title="Curve Agency Twitter profile"&gt;@CurveAgency&lt;/a&gt; and we'll do our best to help you out.</p>
+</div></div></div><div class="field field--name-field-files field--type-file field--label-above"><div class="field__label">files:&nbsp;</div><div class="field__items" id="md2"><div class="field__item even"><span class="file"><img class="file-icon" alt="Package icon" title="application/zip" src="/modules/file/icons/package-x-generic.png"/> <a href="/sites/default/files/blog_files/creating_hooks.zip" type="application/zip; length=1738">creating_hooks.zip</a></span></div></div></div>  </div>
+
+    </article>
+<div id="block-views-blog-mk2-blog-post" class="block block--views block--views-blog-mk2-blog-post">
+        <div class="block__content">
+    <div class="view view-blog-mk2 view-id-blog_mk2 view-display-id-blog_post blog-footer view-dom-id-dc976f7a209760b63eda505544e2939f">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-call-to-action-1">        <h3 class="field-content"></h3>  </div>  
+  <div class="views-field views-field-field-headshot">        <div class="field-content"><a href="/blog/contributors/john"><img typeof="foaf:Image" src="/sites/default/files/styles/thumbnail/public/john-cook.jpg?itok=1J_Ona0M" alt=""/></a></div>  </div>  
+  <span class="views-field views-field-field-user-first-name">        <span class="field-content">John</span>  </span>  
+  <span class="views-field views-field-field-user-last-name">        <span class="field-content">Cook</span>  </span>  
+  <div class="views-field views-field-field-job-title">        <div class="field-content">Drupal Developer</div>  </div>  
+  <div class="views-field views-field-field-bio">        <div class="field-content"><p>John is an accomplished standards-driven developer specialising in Drupal backend.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <!--<p class="meet-link"><a href="/blog/contributors">Meet the people behind the Curve blog</a></p>-->    </div>
+  
+  
+</div>  </div>
+</div>
+<meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/creating-hooks" itemref="md1 md2 md3 md4"/><meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/perfect-progression" itemref="md10"/><meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/enhanced-views-and-rules-drupal-7" itemref="md11"/><meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/business-stuff/new-site-launched-nemog-york-university" itemref="md12"/><meta itemscope="" itemref="md5 md6 md7 md8 md9"/>
+    </div>
+
+  </div> <!-- /#main-content -->
+
+        <aside class="l-region l-region--sidebar-first">
+    <div id="block-views-blog-popular-block-1" class="block block--views block--views-blog-popular-block-1">
+        <h2 class="block__title">Popular Blog Articles</h2>
+      <div class="block__content">
+    <div class="view view-blog-popular view-id-blog_popular view-display-id-block_1 blog-popular-articles view-dom-id-6869e8178b47807f9927235300ab2348">
+        
+  
+  
+      <div class="view-content">
+      <ul class="popular-blog-articles">  <li class="popular-blog-articles--item">  
+          <a href="/blog/perfect-progression"><div class="counter"><b>1</b><img typeof="foaf:Image" src="/sites/default/files/styles/blog_thumb_mini/public/blog/CTI-OfficeShot---early-2016.jpg?itok=5vaVZvRU" width="48" height="48" alt="CTI Digital Drupal Development Team Manchester and London"/></div><h5>A Perfect Partnership of UX and Drupal</h5></a>  </li>
+  <li class="popular-blog-articles--item">  
+          <a href="/blog/enhanced-views-and-rules-drupal-7"><div class="counter"><b>2</b><img typeof="foaf:Image" src="/sites/default/files/styles/blog_thumb_mini/public/blog/view-different-tropical.jpg?itok=O6Yvq_Ks" width="48" height="48" alt="An enhanced view of a tropical paradise. Not Drupal related in any way."/></div><h5>Enhanced Views and Rules in Drupal 7</h5></a>  </li>
+  <li class="popular-blog-articles--item">  
+          <a href="/blog/business-stuff/new-site-launched-nemog-york-university"><div class="counter"><b>3</b><img typeof="foaf:Image" src="/sites/default/files/styles/blog_thumb_mini/public/blog/NEMOG_logo_layered.jpg?itok=iRY5RnVr" width="48" height="48" alt="York University NEMOG logo by Curve Agency Leeds"/></div><h5>Drupal 8 site launched for University of York</h5></a>  </li>
+</ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-views-blog-categories-menu-block" class="block block--views block--views-blog-categories-menu-block">
+        <h2 class="block__title">Categories</h2>
+      <div class="block__content">
+    <div class="view view-blog-categories-menu view-id-blog_categories_menu view-display-id-block view-dom-id-ce7565dfc02520ba34b660001c19ec12">
+        
+  
+  
+      <div class="view-content">
+      <div class="categories-menu"><ul>  <li>  
+          <a href="/blog/business-stuff">Community &amp; Events<b>18</b></a>  </li>
+  <li>  
+          <a href="/blog/drupal-development">Drupal<b>40</b></a>  </li>
+  <li>  
+          <a href="/blog/front-end">Front-end &amp; Design<b>21</b></a>  </li>
+  <li>  
+          <a href="/blog/digital-strategy">Strategy &amp; Management<b>17</b></a>  </li>
+  <li>  
+          <a href="/blog/user-experience-design">User Experience<b>16</b></a>  </li>
+</ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-simple-twitter-simple-twitter-block" class="block block--simple-twitter block--simple-twitter-simple-twitter-block">
+        <h2 class="block__title">Recent Tweets</h2>
+      <div class="block__content">
+    <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"The User's Journey broken down in detail (case study: FitCounter)<a href="https://t.co/Dv8sZ2uC50">https://t.co/Dv8sZ2uC50</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=740986160533639168" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=740986160533639168" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Factors In Selecting A Mobile Prototyping Tool <a href="https://t.co/Uj2odbaiXl">https://t.co/Uj2odbaiXl</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=739706389329793024" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=739706389329793024" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa fa-twitter-square"></i>Follow @CurveAgency</a>
+
+  </div>
+</div>
+  </aside>
+  
+
+        <aside class="l-region l-region--sidebar-second">
+    <div id="block-simple-twitter-simple-twitter-block--2" class="block block--simple-twitter block--simple-twitter-simple-twitter-block--2">
+        <h2 class="block__title">Recent Tweets</h2>
+      <div class="block__content">
+    <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"The User's Journey broken down in detail (case study: FitCounter)<a href="https://t.co/Dv8sZ2uC50">https://t.co/Dv8sZ2uC50</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=740986160533639168" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=740986160533639168" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Factors In Selecting A Mobile Prototyping Tool <a href="https://t.co/Uj2odbaiXl">https://t.co/Uj2odbaiXl</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=739706389329793024" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=739706389329793024" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa fa-twitter-square"></i>Follow @CurveAgency</a>
+
+  </div>
+</div>
+  </aside>
+  
+  
+  
+  
+  
+    <div class="l-region l-region--footer">
+    <div id="block-block-13" class="block block--block block--block-13">
+        <h2 class="block__title">Connect with Curve</h2>
+      <div class="block__content">
+    <ul class="footer-links-wrapper footer-links-social"><li class="google"><a rel="publisher" href="https://plus.google.com/+Curveagency/"><i class=" fa  fa-google-plus-square"></i></a></li>
+<li class="facebook"><a href="https://www.facebook.com/curveagency"><i class="fa  fa-facebook-square"></i></a></li>
+<li class="twitter"><a href="https://twitter.com/CurveAgency"><i class="fa  fa-twitter-square"></i></a></li>
+</ul><ul class="footer-links-wrapper footer-links-drupal"><li class="daom"><a rel="publisher" href="https://assoc.drupal.org/">Drupal Association Organisation Member</a></li>
+<li class="drupal_camp"><a href="http://drupalyorkshire.org.uk/">Drupal Yorkshire</a></li>
+<li class="acquia"><a href="http://www.acquia.com/partners/showcase/curve-agency">Acquia Partner</a></li>
+</ul>  </div>
+</div>
+<div id="block-block-14" class="block block--block footer-copyright block--block-14">
+        <div class="block__content">
+    <p>All content &copy; 2008 - 2016, Curve Agency Leeds and London. All rights reserved.</p>  </div>
+</div>
+  </div>
+
+</div> <!-- /#page -->
+
+</div> <!-- /#page-wrapper -->  </body>
+</html>
+
+<!--
+playback timings (ms):
+  RedisCDXSource: 4.984
+  CDXLines.iter: 21.875 (3)
+  exclusion.robots: 0.188
+  captures_list: 103.055
+  exclusion.robots.policy: 0.174
+  esindex: 0.013
+  PetaboxLoader3.datanode: 113.03 (4)
+  PetaboxLoader3.resolve: 152.321
+  LoadShardBlock: 72.593 (3)
+  load_resource: 211.434
+-->

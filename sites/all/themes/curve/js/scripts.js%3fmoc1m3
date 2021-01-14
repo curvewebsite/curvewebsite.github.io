@@ -1,0 +1,120 @@
+/* ======================== */
+/* --- scripts.js --------- */
+/* ------------------------ */
+
+(function ($) {
+   
+	$(document).ready(function() {
+
+		// $(".navigation-container").sticky({topSpacing:0});
+		
+		// var menuPadding = parseInt($( '#header-inner' ).css( 'padding-top' ).replace( "px","" ));
+		// var menuSpeed = 333;
+
+		$( '#menu-toggle a' ).click( function(e) {	
+			if ( $( '#header' ).hasClass( 'menu-expanded' ) ) {
+				// $( '#header-inner' ).stop(true, true).animate( { paddingTop: menuPadding }, menuSpeed, function() {} );
+				// $( '#navigation' ).stop(true, true).slideUp( menuSpeed );
+				$( '#header' ).removeClass( 'menu-expanded' );
+				$( this ).removeClass( 'active' );
+			} else {
+				// $( '#header-inner' ).stop(true, true).animate( { paddingTop: menuPadding + $( '#navigation' ).height() }, menuSpeed, function() {} );
+				// $( '#navigation' ).stop(true, true).slideDown( menuSpeed );
+				$( '#header' ).addClass( 'menu-expanded' );
+				$( this ).addClass( 'active' );
+			}
+			
+			e.preventDefault();
+		});
+		
+		detector = $('body');
+		compareWidth = detector.width();
+	
+		$(window).resize(function() {
+		
+			if(detector.width() != compareWidth) {
+				compareWidth = detector.width();
+				elementCheck();
+			}
+		
+		});
+	
+		function elementCheck() {
+			if (detector.width() > 720){
+				if ( $( '#header' ).hasClass( 'menu-expanded' ) ) {
+          $( '#header' ).removeClass( 'menu-expanded' );
+        }
+        if ($( 'body' ).hasClass('node-type-case-study')) {
+          if ($( '#case-study-tabs' ).length > 0 ) {
+            removeCaseStudyTabs()
+          }
+        }
+			} else if (detector.width() < 720){
+        if ($( 'body' ).hasClass('node-type-case-study')) {
+          if ($( '#case-study-tabs' ).length == 0 ) {
+            addCaseStudyTabs(); 
+          }
+        }
+      }
+		}
+		
+		elementCheck();
+		
+		if ($( '#budget-slider').length > 0 ) {
+      $("#budget-slider").slider({
+        value:0,
+        min: 0,
+        max: 75000,
+        step: 5000,
+        slide: function(event, ui) {
+          $("#edit-submitted-general-information-your-new-site-budget-ex-vat").val(ui.value);
+          if (ui.value == 0) { $('#budget-amount').html("Don't know / No Set Budget"); } else { $('#budget-amount').html('£' + addCommas(ui.value)); }
+        }
+      });
+      
+      $('#budget-amount').html("Don't know / No Set Budget");
+    }
+		
+		function addCommas(nStr) {
+			nStr += '';
+			x = nStr.split('.');
+			x1 = x[0];
+			x2 = x.length > 1 ? '.' + x[1] : '';
+			var rgx = /(\d+)(\d{3})/;
+			while (rgx.test(x1)) {
+				x1 = x1.replace(rgx, '$1' + ',' + '$2');
+			}
+			return x1 + x2;
+		}
+    function addCaseStudyTabs() {
+      $( '.block-case-study-header' ).after( '<div id="case-study-tabs"><ul class="tabs clearfix"></ul></div>' );
+      
+      $( '.block-case-study-section' ).each( function(index) {
+        if (index != 0) {
+          $( this ).hide(0); 
+          activeClass = ''
+        } else {
+          activeClass = ' active';
+        }
+        $( '#case-study-tabs ul' ).append( '<li class="tab-' + index + activeClass +'"><span>' + $( ".view-header h2", this ).html() + '</span></li>'  );
+      })
+      
+      $( '#case-study-tabs ul li' ).click( function(e) {
+        $( '.block-case-study-section' ).hide(0);
+        $( '#case-study-tabs ul li' ).removeClass('active');
+        $( this ).addClass('active');
+        $( '.block-case-study-section-' + $(this).index() ).show(0);
+        e.preventDefault();
+      });
+    }
+    
+    function removeCaseStudyTabs() {
+       $( '#case-study-tabs' ).remove();
+       $( '.block-case-study-section' ).each( function() {
+        $( this ).show(0); 
+       });
+    }
+
+});
+
+} )(jQuery);

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<!---------------------------------------------------------------------------------
+Curve Agency are a UK Drupal Website Design and Development Company based in Leeds.
+-----------------------------------------------------------------------------------
+
+Author: Curve Agency
+Author URL: curveagency.com
+Version: 3.0
+Copyright 2011-2014 Curve Agency Limited.
+
+-->
+
+<html lang="en" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+
+
+	<!-- Meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="canonical" href="/blog/merge-and-push-changes-git"/>
+<link rel="shortlink" href="/node/615"/>
+<meta name="twitter:url" content="/blog/merge-and-push-changes-git"/>
+<link rel="shortcut icon" href="/sites/all/themes/curve/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta name="generator" content="Drupal 7 (http://drupal.org)"/>
+<meta name="twitter:title" content="Merge and push changes with Git"/>
+<meta content="Merge and push changes with Git" about="/blog/merge-and-push-changes-git" property="dc:title"/>
+<meta name="description" content="Part 3: Merge and push your local Drupal site changes to live with SourceTree."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="Part 3: Merge and push your local Drupal site changes to live with SourceTree."/>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	
+	<!-- Title -->
+	<title>Merge and push changes with Git | Drupal &amp; UX Prototyping | Curve Agency UK</title>
+	
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed"/>
+	
+	<!-- Styles -->
+	<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css__r408iefJFDp7tkJY64xde0BtyLdHU1-GytpTja6H4w.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_PYDCSebXcnvSgSzEX-Xs4CSmhpu2kBFhJBdNk-xNi4s.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_WANx9e1xtodqBjs0Q86cgxi6IUPBlugjRY9MyXSVe60.css" media="all"/>
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie.css?nsytth" media="all" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie7.css?nsytth" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie6.css?nsytth" media="all" />
+<![endif]-->
+	
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_H7q2xORKmR9AN8Qx5spKEIBp7R_wG2apAswJoCUZY7I.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_JI6TT4VIYJYFe9OJdKt69g6wN-4WknzmZV0qPLv5yDw.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27427361-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/js/js_dr8zclEdzsdvqNg1V4ey7RczFW2mAoJKdmMD6_E-KCk.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_g5FdU7hg09uj5HU1aUoI9KTC2y5l4kxOrDbPPniNrpA.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"curve","theme_token":"CUy6AHbULx7JHZFtIw2YnWdqTxobSEbORKEAJ7ZOknU","js":{"https:\/\/web.archive.org\/web\/20151015024018\/https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.9.1\/jquery.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/curve\/taxonomy_tree_block\/template\/taxonomy_tree_block.jquery.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/radioactivity\/js\/radioactivity.js":1,"sites\/all\/themes\/curve\/js\/jquery.scrolly.js":1,"sites\/all\/themes\/curve\/js\/scripts.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/curve\/simple_twitter\/template\/simple_twitter.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/radioactivity\/css\/radioactivity.css":1,"sites\/all\/themes\/curve\/css\/gridinuit.css":1,"sites\/all\/themes\/curve\/css\/grid\/grid.inuit.css":1,"sites\/all\/themes\/curve\/fonts\/font-awesome.min.css":1,"sites\/all\/themes\/curve\/css\/blog.css":1,"sites\/all\/themes\/curve\/css\/brands.css":1,"sites\/all\/themes\/curve\/css\/box.css":1,"sites\/all\/themes\/curve\/css\/button.css":1,"sites\/all\/themes\/curve\/css\/case_study.css":1,"sites\/all\/themes\/curve\/css\/flexslider.css":1,"sites\/all\/themes\/curve\/css\/front.css":1,"sites\/all\/themes\/curve\/css\/global.css":1,"sites\/all\/themes\/curve\/css\/highlighted.css":1,"sites\/all\/themes\/curve\/css\/navigation.css":1,"sites\/all\/themes\/curve\/css\/parallax.css":1,"sites\/all\/themes\/curve\/css\/root.css":1,"sites\/all\/themes\/curve\/css\/simple_twitter.css":1,"sites\/all\/themes\/curve\/css\/white_container.css":1,"sites\/all\/themes\/curve\/css\/layout\/desktop.css":1,"sites\/all\/themes\/curve\/css\/layout\/tablet.css":1,"sites\/all\/themes\/curve\/css\/layout\/mobile.css":1,"sites\/all\/themes\/curve\/css\/layout\/social.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/form.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/about.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/home.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie7.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie6.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"radioactivity":{"emitters":{"emitDefault":[{"accuracy":"100","bundle":"article","energy":10,"entity_id":"615","entity_type":"node","field_name":"field_radioactivity","language":"und","storage":"File","type":"none","checksum":"5ee4375c9959ff2ad9028982adb6157e"}]},"config":{"emitPath":"\/sites\/all\/modules\/radioactivity\/emit.php","fpEnabled":1,"fpTimeout":"60"}}});
+//--><!]]>
+</script>
+	
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+	<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-615 node-type-article blog section-inner">
+	
+		<div id="skip-link">
+			<a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+		</div>
+        
+        <!-- to overlay content when mobile nav is expanded -->
+        <div class="shadow-curtain active"><span></span></div> 
+		
+				
+		
+<div id="page-wrapper">
+
+  <div id="page">
+  
+    
+    <header role="banner" id="header">
+	
+		<div id="menu-toggle"><a href="#"><span class="strip first"></span><span class="strip mid"></span><span class="strip last"></span></a></div>
+	
+		<div id="header-inner" class="wrapper">
+		
+		  <div class="grids">
+		  
+		  			  <div id="logo-container" class="grid-6">
+			    <a href="/" title="Home" rel="home" id="logo">
+			      <img src="/sites/all/themes/curve/logo.png" alt="Home"/>
+			    </a>
+			  </div>
+		  		  
+						  <navigation role="navigation" id="navigation" class="grid-18">
+			    <div class="navigation-container">
+					<div class="navigation-wrapper">
+					  <div class="navigation-inner">
+						
+	
+<article id="block-system-main-menu" class="block block-system ">
+
+        
+  <ul class="menu"><li class="first leaf"><a href="/">Home</a></li>
+<li class="leaf"><a href="/drupal-case-studies" class="case-studies">Case Studies</a></li>
+<li class="leaf"><a href="/blog" class="blog">Blog</a></li>
+<li class="leaf"><a href="/about-curve">About</a></li>
+<li class="last leaf"><a href="/project-enquiry">Contact</a></li>
+</ul>
+</article>
+					  </div>
+					</div>
+				</div>
+			  </navigation>
+					  
+		  </div>
+		  
+		  		  
+		  		  
+		  		  
+		</div>
+		
+    </header> <!-- /#header -->
+
+    
+		  <nav id="breadcrumb">
+	  	<div id="breadcrumb-inner" class="wrapper">
+	    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><span class="breadcrumb-0"><a href="/">Home</a></span><span class="breadcrumb-separator breadcrumb-separator-0">›</span><span class="breadcrumb-1"><a href="/blog">Blog</a></span><span class="breadcrumb-separator breadcrumb-separator-1">›</span><span class="breadcrumb-2"><a href="/blog/drupal-development">Drupal</a></span><span class="breadcrumb-separator breadcrumb-separator-2">›</span><span class="breadcrumb-3">Merge and push changes with Git</span></div>		</div>
+	  </nav> <!-- /#breadcrumb -->
+	
+    			
+  
+	
+	
+		
+		
+	<div id="main-content" class="wrapper">
+	
+		<div class="grids">
+		
+			
+		
+		
+		<div id="content-wrapper" class="grid-16 suffix-1">
+		
+						
+							<h1 class="title" id="page-title">Merge and push changes with Git</h1>
+						
+					
+			
+  <section id="content" class="region region-content">
+	
+<section id="block-views-blog-block-3" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-block_3 view-dom-id-6d5b3054ae2dd0fa9e4ef6e708376d80">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-created">        <span class="field-content">Tuesday, 28<sup>th</sup> April, 2015</span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content summary"><p>Part 3: Merge and push your local Drupal site changes to live with SourceTree.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+
+<article id="block-system-main" class="block block-system ">
+
+        
+  <article id="node-615" class="node node-article clearfix" about="/blog/merge-and-push-changes-git" typeof="sioc:Item foaf:Document">
+
+  
+  
+  <div class="content">
+    
+<div class="field field-name-body field-type-text-with-summary field-label-hidden clearfix">
+            <p>This is the final part of a three-part tutorial where you will learn how to use a Git GUI with Drupal to make some theme tweaks on a live site. <a href="/blog/clone-drupal-git-repo-and-set-it-locally">Part one of this tutorial starts here</a>.</p>
+<p>Overall we have covered the following so far:</p>
+<ul dir="ltr"><li>Setting up a local stack (in this case Acquia Dev Desktop 2).</li>
+<li>Creating an SSH key in Terminal on the Mac</li>
+<li>Cloning an existing Drupal site repository using Sourcetree</li>
+<li>Downloading and connecting to your live site's Drupal database dump file</li>
+<li>Applying theme changes to the cloned site with CSS</li>
+</ul><h2>Making your changes live with GIT</h2>
+<p>Here we cover the final steps of commiting, merging and pushing your changes to live with Sourcetree.</p>
+<ul><li>Refresh sourcetree using the GUI or keyboard shortcut [cmd+r].</li>
+<li>Tick to select all the unstaged files, i.e. files you have been tweaking.</li>
+<li>Click 'Commit'.</li>
+</ul><p><img alt="Commit Drupal site local changes in SourceTree" height="215" src="/sites/default/files/blog/commit-in-sourcetree_0.jpg" width="279"/></p>
+<ul><li>Add a brief commit message to describe what’s been done. We use Trello and add a link here to the relevant Trello card for the change(s) that have been made.</li>
+<li>Confirm the commit by selecting commit in the alert box.</li>
+<li>Click push (make sure still on the develop branch)</li>
+<li>After not too long, depending on the number of changes, they should be reflected in the development environment.</li>
+</ul><p>Check your dev environment URL in the browser. You should see if the changes have been made, and all being good move on to the next step.</p>
+<ul><li>Double-click on Master Branch to switch to this branch.</li>
+<li>Right-click develop branch and select ‘merge develop into master’ (see image below).</li>
+</ul><p><img alt="Merge the changes that are on the development environment into the live environment" height="431" src="/sites/default/files/blog/merge-develop-into-master_0.jpg" width="374"/></p>
+<p>Next, confirm the merge you are about to do in the prompt that comes up.</p>
+<p><img alt="Confirm that you are merging the changes you want in SourceTree" height="404" src="/sites/default/files/blog/confirm-merge.jpg" width="644"/></p>
+<p>The ‘Push’ icon should now display a number alert. This indicates the number of changes that are ready to push.</p>
+<p><img alt="click to push your changes in SourceTree" height="193" src="/sites/default/files/blog/click-push-2-changes.jpg" width="334"/></p>
+<ul><li>Click the 'Push icon.</li>
+</ul><p><img alt="push the changes you have made locally into the repo master branch" height="267" src="/sites/default/files/blog/push-to-repository-master-branch.jpg" width="391"/>4</p>
+<p>Now, give it a few seconds and check the live URL for the site. You may need to do a cache clear or refresh at least. Now you should see your changes reflected on the live site.</p>
+<p>Thank you for following along on this three part tutorial. I hope you found it a useful starting block for getting familiar with a better way of working.</p>
+<p>As always, if you have any questions or suggestions, just get in touch - we're happy to help out!</p>
+<p> </p>
+    </div>
+  </div>
+
+  
+  
+</article>
+
+</article>
+
+<section id="block-views-blog-blog-post" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-blog_post blog-footer view-dom-id-098ac349721f7fb7f14dc7940bf89715">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-call-to-action-1">        <h3 class="field-content"></h3>  </div>  
+  <div class="views-field views-field-field-headshot">        <div class="field-content"><a href="/blog/contributors/curve-agency"><img typeof="foaf:Image" src="/sites/default/files/styles/thumbnail/public/Curve_square_logo_black_2014.png?itok=399C17lH" width="100" height="100" alt=""/></a></div>  </div>  
+  <span class="views-field views-field-field-user-first-name">        <span class="field-content">Curve</span>  </span>  
+  <span class="views-field views-field-field-user-last-name">        <span class="field-content"></span>  </span>  
+  <div class="views-field views-field-field-job-title">        <div class="field-content">Drupal and UX Design Agency</div>  </div>  
+  <div class="views-field views-field-field-bio">        <div class="field-content"><p>UK Drupal Agency and UX Design Team with our very own usability testing lab in Leeds. We work with national charities, NGOs and private sector clients.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <!--<p class="meet-link"><a href="/blog/contributors">Meet the people behind the Curve blog</a></p>-->    </div>
+  
+  
+</div>
+</section>
+
+<section id="block-views-blog-related-block-1" class="block block-views ">
+
+            <header><h2><span>Related Articles</span></h2></header>
+      
+  <div class="view view-blog-related view-id-blog_related view-display-id-block_1 blog-related-articles view-dom-id-270ebe38aad86e40f7732cb3c1bc8fe4">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-responsive-grid views-responsive-grid-horizontal views-columns-2">
+      <div class="grids row equalheights views-row-1">
+      <div class="grid-8 blog-article box grid-equal views-column-1">
+        
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="views-field views-field-field-images">
+  <div class="field-content"><a href="/blog/creating-hooks"><img typeof="foaf:Image" src="/sites/default/files/styles/blog_post_standard/public/blog/druplicon-captain-hook.png?itok=o3hyllVK" width="768" height="433" alt="Captain Hook &amp; the Druplicon logo on a purple background."/></a></div>
+</div>
+<div class="views-field views-field-title">
+  <h2 class="field-content"><a href="/blog/creating-hooks">Drupal Hooks Tutorials - Part Two: Creating Hooks</a></h2>
+</div>
+<div class="views-field views-field-created">
+  <div class="field-content">Tuesday, 4<sup>th</sup> August, 2015</div>
+</div></span>  </div>  
+  <div class="views-field views-field-body">        <p class="field-content">Part two of our hands-on tutorial on using Drupal 'hooks' (applicable to Drupal 6, 7 and 8).
+</p>  </div>  
+  <div>        <div class="overlay-block"><a href="/blog/creating-hooks">Read article</a></div>  </div>  
+  <div>        <div class="box--icon"><a href="/blog/creating-hooks"><i class="fa fa-eye"></i></a></div>  </div>    </div>
+      <div class="grid-8 blog-article box grid-equal views-column-2">
+        
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="views-field views-field-field-images">
+  <div class="field-content"><a href="/blog/using-hooks"><img typeof="foaf:Image" src="/sites/default/files/styles/blog_post_standard/public/blog/druplicon-hook.png?itok=OqKIcXgY" width="768" height="433" alt="A hook chasing a Druplicon - the official Drupal logo."/></a></div>
+</div>
+<div class="views-field views-field-title">
+  <h2 class="field-content"><a href="/blog/using-hooks">Drupal Hooks Tutorials - Part One: Using Hooks</a></h2>
+</div>
+<div class="views-field views-field-created">
+  <div class="field-content">Thursday, 16<sup>th</sup> July, 2015</div>
+</div></span>  </div>  
+  <div class="views-field views-field-body">        <p class="field-content">In part one of our 'Hooks' tutorial, we're dishing the (very clean!) dirt on some best-practice to adopt when using Drupal hooks.
+</p>  </div>  
+  <div>        <div class="overlay-block"><a href="/blog/using-hooks">Read article</a></div>  </div>  
+  <div>        <div class="box--icon"><a href="/blog/using-hooks"><i class="fa fa-eye"></i></a></div>  </div>    </div>
+    </div>
+    </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+  </section>
+			
+		</div>
+		
+				<div id="sidebar-first-wrapper" class="grid-7 ">
+			
+  <aside id="sidebar-second" class="region region-sidebar-second">
+    
+<article id="block-taxonomy-tree-block-taxonomy-tree-block-vid-2" class="block block-taxonomy_tree_block ">
+
+            <header><h2><span>Categories</span></h2></header>
+      
+  <div class="taxonomy-tree-menu"><ul class="menu-2 menu-standard"><li><a href="/blog/business-stuff">Community &amp; Events</a><span>14</span></li><li><a href="/blog/drupal-development">Drupal</a><span>35</span></li><li><a href="/blog/front-end">Front-end &amp; Design</a><span>21</span></li><li><a href="/blog/digital-strategy">Strategy &amp; Management</a><span>12</span></li><li><a href="/blog/user-experience-design">User Experience</a><span>16</span></li></ul></div>
+</article>
+
+<article id="block-simple-twitter-simple-twitter-block" class="block block-simple_twitter ">
+
+            <header><h2><span>Recent Tweets</span></h2></header>
+      
+  <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Preparing Users for a Future of Wearables (Part 2) <a href="http://t.co/KlJl3E3CUW">http://t.co/KlJl3E3CUW</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=651785052066574337" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=651785052066574337" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=651785052066574337" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=651785052066574337" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Stop Cringing and Embrace the Unknown <a href="http://t.co/szTGgZcClM">http://t.co/szTGgZcClM</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=651747079103086592" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=651747079103086592" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=651747079103086592" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=651747079103086592" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa  fa-twitter-square"></i>Follow @CurveAgency<a>
+
+
+</article>
+  </aside>
+		</div>
+		    
+				
+		</div>
+		
+	</div> <!-- /#main-content -->
+	
+	        
+	
+		
+	
+  <section id="contact" class="region region-contact">
+  	<div class="wrapper">
+		
+<article id="block-block-1" class="clearfix grids block block-block ">
+
+            <header><h2><span>Discuss your project</span></h2></header>
+      
+  <div class="grid-12">
+  <div class="contact-info">
+    <div class="telephone"><p>0113 243 2259</p></div>
+    <div class="email-link"><a href="mailto:hello@curveagency.com">hello@curveagency.com</a></div>
+    <div class="curve-address">Curve Agency<br/>46 The Calls<br/>Leeds<br/>LS2 7EY</div>
+  </div>
+</div>
+
+<div class="grid-12">
+  <div class="contact-map">
+    <a class="map-link" href="https://www.google.co.uk/maps/place/Curve+Agency/@53.794628,-1.5374,17z/data=!3m1!4b1!4m2!3m1!1s0x48795c178345fad9:0x7a14688dc7ba0147">
+    <div class="map">map</div>
+</a>
+  </div>
+</div>
+</article>
+	</div>
+  </section>
+	
+        
+	
+	
+  <footer role="contentinfo" id="footer" class="region region-footer">
+	<div id="footer-inner" class="wrapper">
+    	
+<article id="block-block-13" class="block block-block ">
+
+            <header><h2><span>Connect with our community</span></h2></header>
+      
+  <ul class="footer-links-wrapper footer-links-social"><li class="google"><a rel="publisher" href="https://plus.google.com/+Curveagency/"><i class=" fa  fa-google-plus-square"></i></a></li>
+<li class="facebook"><a href="https://www.facebook.com/curveagency"><i class="fa  fa-facebook-square"></i></a></li>
+<li class="twitter"><a href="https://twitter.com/CurveAgency"><i class="fa  fa-twitter-square"></i></a></li>
+</ul><ul class="footer-links-wrapper footer-links-drupal"><li class="daom"><a rel="publisher" href="https://assoc.drupal.org/">Drupal Association Organisation Member</a></li>
+<li class="drupal_camp"><a href="http://drupalyorkshire.org.uk/">Drupal Yorkshire</a></li>
+<li class="acquia"><a href="http://www.acquia.com/partners/showcase/curve-agency">Acquia Partner</a></li>
+</ul>
+</article>
+
+<article id="block-block-14" class="footer-copyright block block-block ">
+
+        
+  <p>Curve Agency is a UK company limited by shares and incorporated in England and Wales.</p>
+<p>&copy; 2008 - 2015, Curve Agency. All rights reserved.</p>
+</article>
+	</div>
+  </footer>
+
+  </div> <!-- /#page -->
+
+</div> <!-- /#page-wrapper -->		
+				
+	</body><!-- /body -->
+
+</html><!-- /html -->
+<!--
+playback timings (ms):
+  RedisCDXSource: 0.619
+  exclusion.robots: 0.193
+  PetaboxLoader3.datanode: 72.31 (4)
+  captures_list: 65.027
+  CDXLines.iter: 21.28 (3)
+  exclusion.robots.policy: 0.179
+  PetaboxLoader3.resolve: 34.86
+  LoadShardBlock: 39.405 (3)
+  load_resource: 79.105
+  esindex: 0.047
+-->

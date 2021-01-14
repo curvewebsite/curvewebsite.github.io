@@ -1,0 +1,314 @@
+/* --- home.css ------------------------ */
+
+/* -------------------------------------------------------------------------- //
+//
+//  This is a stylesheet created for curveagency.com and should not be in use
+//  for any more than 6-8 weeks. Therefore, it's going to be a mess...
+//
+// -------------------------------------------------------------------------- */
+
+.wrapper--modifier {
+	width: 100%;
+	margin: 40px auto 0;
+	border-top: 16px dashed rgba(0, 0, 0, 0.05);
+}
+
+	@media screen and (max-width: 1024px) {
+		.wrapper--modifier {
+			/*width: 705px;*/
+			background: none;
+		}
+	}
+
+
+	@media screen and (min-width:1024px;) {
+		.wrapper {
+			padding: 0 !important;
+		}
+	}
+
+.prime-info {
+	padding: 0;
+	margin: 30px 0 0;
+	text-align: center;
+}
+
+@media screen and (min-width: 1392px) {
+	.prime-info {
+		width: 75%;
+		margin: 30px auto 0;
+	}
+}
+
+.prime-info h2 {
+	text-align: center;
+	font-weight: 200;
+	margin: 0px auto 0 auto;
+	color: #df6e66;
+	font-size: 3.8em;
+}
+
+	@media screen and (max-width: 1024px) {
+		.prime-info h2 {
+			font-size: 2em;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		.prime-info h2 span {
+			background: white;
+			padding: 0 50px;
+		}
+	}
+
+.prime-info--team {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+
+	@media screen and (min-width: 1024px) and (max-width: 1392px) {
+		.prime-info p {
+			max-width: 95%;
+		}
+	}
+
+.prime-info--team > div {
+	width: 13.5%%;
+	display: inline-block;
+	padding: 0;
+	margin: 0 10px;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+	@media screen and (max-width: 1024px) {
+		.prime-info--team > div {
+			width: 15%;
+			margin: 0 1px;
+		}
+	}
+
+.prime-info--team img + span {
+	display: block;
+	margin: 15px 0 0;
+	width: 150%;
+	position: relative;
+	left: -25%;
+}
+
+	
+	@media screen and (max-width: 1024px) {
+		.prime-info--team span.name {
+			font-size: 0.8em;
+		}
+	}
+
+.prime-info--team span.job {
+	font-weight: 300;
+	display: block;
+	width: 75%;
+	margin: 0 auto;
+}
+
+	@media screen and (max-width: 1024px) {
+		.prime-info--team span.job {
+			font-size: 0.75em;
+		}
+	}
+
+	.prime-info .button--home__modifier {
+		border: 8px solid black;
+		background-color: #fff;
+		color: #000;
+		letter-spacing: 0.1em;
+ 		 max-width: 300px;
+  		font-size: 1.3em;
+		
+		padding: 32px;
+  border-radius: 16px;
+    margin: 30px auto 40px;
+	}
+
+	/* Emphasise button hover state */
+	.button--home:hover {
+		border-color: #fff;
+		background: #0086f7 !important;
+		color: white !important;
+	}
+
+/* Unique Approach */
+
+.unique-approach {
+	padding-bottom: 40px;
+}
+
+.unique-approach img {
+	padding: 20px 0;
+}
+
+.unique-approach h2 {
+	margin-bottom: 40px;
+}
+
+.unique-approach .bold {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+/* HACKS */
+
+@media screen and (min-width: 1392px) {
+	.layout--white-container #content-wrapper {
+		width: 1310px !important;
+	}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1392px) {
+	.layout--white-container #content-wrapper {
+		width: 870px !important;
+	}
+}
+
+
+@media screen and (max-width: 1395px) {
+	.footer-links-wrapper {
+		position: relative;
+		left: 50px;
+	}
+}
+
+
+@media only screen and (max-width: 1024px) {
+	.contact-info {
+		padding-top: 10px !important;
+	}
+
+	.kitchen-sink--form {
+		position: relative;
+		top: -35px;
+	}
+}
+
+/* Parallax Hacks */
+
+	@media only screen and (min-width: 1024px) {
+		.parallax--wrapper {
+			background: rgba(0, 134, 247, 0.8);
+			top: 15% !important;
+			height: auto;
+			padding: 0;
+			padding-top: 30px;
+  border-top: 16px solid white;
+		}
+
+		.parallax--body {
+			background-color: black;
+		}
+
+			.parallax--body p {
+				color: white !important;
+				margin: 0px auto;
+				padding: 20px 0px;
+				text-transform: uppercase;
+				font-weight: 400 !important;
+				font-size: 2.4em !important;
+				letter-spacing: 0.1em;
+			}
+
+		.parallax {
+			top: -14px;
+		}
+	}
+
+	@media only screen and (max-width: 1024px) {
+		.parallax--body {
+			text-transform: uppercase;
+			
+			  background-color: rgba(255, 255, 255, 0.5);
+  color: #000;
+  width: 380px;
+  border-left: 80px solid black;
+  padding: 20px;
+  margin: 20px auto;
+			
+	/*background-color: #fff;
+	color:#000;
+	width: 85%;
+	margin: 0 auto;*/
+		}
+
+		.parallax--body p {
+			padding: 10px;
+			
+		}
+	}
+
+.parallax--tagline p {
+	color: white !important;
+	letter-spacing: 1px;
+}
+
+.parallax--bottom {
+	position: static !important;
+}
+
+.parallax--bottom header h2 span:after, .parallax--bottom header h2 span:before {
+	display: none;
+}
+
+@media only screen and (device-width: 720px), only screen and (max-width: 1024px) {
+	.front #header {
+		position: fixed !important;
+	}
+}
+
+@media screen and (max-width: 720px) {
+		.prime-info--team img + span {
+			display: none;
+		}
+
+		.prime-info--team {
+			padding: 40px 0 20px;
+		}
+	
+.prime-info--team span.name {
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+	.wrapper--modifier {
+			width: auto;
+			border:none;
+		}
+		
+}
+
+
+
+@media only screen and (device-width: 575px),
+       only screen and (max-width: 575px) {
+
+.parallax--body {
+	width: 70%;
+  border: 4px dashed rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin: 30px auto;
+  background:none;
+  
+}
+
+.wrapper--modifier {
+	border-top: 60px solid #df6e66;
+}
+
+.prime-info {
+	margin-top: 19px;
+}
+  
+    .footer-links-wrapper {
+		left:0;
+	}
+  
+}

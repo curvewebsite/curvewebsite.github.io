@@ -1,0 +1,22 @@
+
+#block-views-header-image-block-1.grid-24 {  }
+
+@media (min-width: 1392px) {
+
+	#block-views-header-image-block-1.grid-24, #block-views-case-studies-block-4.grid-24 { width: 1363px; }
+
+	.layout--white-container #content-wrapper { width: 871px; }
+
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1391px) {
+	.layout--white-container #content-wrapper.grid-16 { width: 583px; }
+}
+
+@media screen and (max-width: 1023px) {
+	.layout--white-container #content-wrapper.grid-16 { width: 100%; }
+}
+
+#block-views-header-image-block-1 .views-field-field-page-image .field-content {
+	text-align: center;
+}

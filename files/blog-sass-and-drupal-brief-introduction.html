@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="en" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="en" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+
+  <!--[if IE]><![endif]-->
+<meta charset="utf-8"/>
+<meta name="HandheldFriendly" content="true"/>
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab"/>
+<meta name="MobileOptimized" content="width"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed-144x144.png" sizes="144x144"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed.png"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed-114x114.png" sizes="114x114"/>
+<link rel="apple-touch-icon-precomposed" href="/sites/all/themes/omega/omega/apple-touch-icon-precomposed-72x72.png" sizes="72x72"/>
+<meta http-equiv="cleartype" content="on"/>
+<link rel="shortcut icon" href="/sites/all/themes/curve_omega/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta name="twitter:title" content="Sass and Drupal: A Brief Introduction"/>
+<meta name="twitter:description" content="Produce cleaner, more manageable CSS with SASS and add it to your existing Drupal workflow."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:url" content="/blog/sass-and-drupal-brief-introduction"/>
+<meta name="generator" content="Drupal 7 (http://drupal.org)"/>
+<link rel="shortlink" href="/node/78"/>
+<link rel="canonical" href="/blog/sass-and-drupal-brief-introduction"/>
+<meta name="description" content="Produce cleaner, more manageable CSS with SASS and add it to your existing Drupal workflow."/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sass and Drupal: A Brief Introduction</title>
+  <link type="text/css" rel="stylesheet" href="/sites/default/files/advagg_css/css__06SOYmdYplZeQPEqVDRUiUA1u8cUYrthgsqve-Kwe28__oO9K8RKTxPWL8ybtipsPXindwF2HTGUz_pxPgDINtjM__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/advagg_css/css__06SOYmdYplZeQPEqVDRUiUA1u8cUYrthgsqve-Kwe28__oO9K8RKTxPWL8ybtipsPXindwF2HTGUz_pxPgDINtjM__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.css" media="all"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/advagg_js/js__5bFwodvCm1LC9HoI_faGGtZPshq1v0p0_UKyeb8fN-8__K4cFgR-cEPBnADjm9ptFSZeiFSZ6Cu5X1glBsXVheWI__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27427361-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/advagg_js/js__WE7Mbx0R6v5Clk19JwlHrJPVt2sMy-KX267JvMQGw_M__vpkrREnSTl_oHisnrCYy6g5Hofek21doQ2HAVuH7YjU__ykxjkUY7luUqh8y4HoL3yuYYMEbt2np4eRnkRVTjrns.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"radioactivity":{"emitters":{"emitDefault":[{"accuracy":100,"bundle":"article","energy":10,"entity_id":"78","entity_type":"node","field_name":"field_radioactivity","language":"und","storage":"File","type":"none","checksum":"6ac6a1d05f06177ca71bdadd45495062"}]},"config":{"emitPath":"\/sites\/all\/modules\/radioactivity\/emit.php","fpEnabled":1,"fpTimeout":"60"}},"ajaxPageState":{"js":{"https:\/\/web.archive.org\/web\/20160614184004\/https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.9.1\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/omega\/omega\/js\/no-js.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"sites\/all\/modules\/radioactivity\/js\/radioactivity.js":1,"sites\/all\/themes\/curve_omega\/js\/jquery.matchHeight.js":1,"sites\/all\/themes\/curve_omega\/js\/jquery.ba-throttle-debounce.min.js":1,"sites\/all\/themes\/curve_omega\/js\/touche.min.js":1,"sites\/all\/themes\/curve_omega\/js\/curve-omega.behaviors.js":1}}});
+//--><!]]>
+</script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "",
+      "logo": "/sites/all/themes/curve_omega/logo.png"
+    }
+    </script>
+
+</head>
+<body class="html not-front not-logged-in page-node page-node- page-node-78 node-type-article blog section-inner section-blog two-sidebars">
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+<div class="dark-screen"><label for="drawer-toggle" id="drawer-toggle-label"><b></b></label><div class="curvedrop"></div></div>
+<header role="banner" class="page-header">
+      <h1 class="site-name">
+      <a href="/" title="Home" rel="home"><span>Curve Agency</span></a>
+    </h1>
+  
+  
+  
+
+      <navigation role="navigation">
+
+
+              <a href="/" title="Home" rel="home" class="logo">
+          <img src="/sites/all/themes/curve_omega/logo.png" alt="Home"/>
+        </a>
+      
+        <div class="l-region l-region--navigation">
+    <nav id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu">
+      
+  <ul class="menu"><li class="primary-nav__list-item"><a href="/drupal-8" class="primary-nav__link">Drupal 8</a></li>
+<li class="primary-nav__list-item"><a href="/drupal-case-studies" class="primary-nav__link">Case Studies</a></li>
+<li class="primary-nav__list-item"><a href="/blog" class="primary-nav__link">Blog</a></li>
+<li class="primary-nav__list-item"><a href="/about-curve" class="primary-nav__link">About</a></li>
+<li class="primary-nav__list-item"><a href="/project-enquiry" class="primary-nav__link">Contact</a></li>
+</ul></nav>
+<div id="block-block-1" class="block block--block clearfix grids block--block-1">
+        <h2 class="block__title">Discuss your project</h2>
+      <div class="block__content">
+    <div class="grid-12">
+  <div class="contact-info">
+    <div class="email-link"><a href="mailto:hello@curveagency.com">hello@curveagency.com</a></div>
+    <div class="curve-address">Curve Agency<br/><br/>Leeds &amp;<br/>London</div>
+  </div>
+</div>  </div>
+</div>
+  </div>
+    </navigation>
+  
+</header> <!-- /#header -->
+
+<div id="page-wrapper">
+
+      <nav id="breadcrumb">
+      <div id="breadcrumb-inner" class="wrapper">
+        <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><span class="breadcrumb-0"><a href="/">Home</a></span><span class="breadcrumb-separator breadcrumb-separator-0">›</span><span class="breadcrumb-1"><a href="/blog">Blog</a></span><span class="breadcrumb-separator breadcrumb-separator-1">›</span><span class="breadcrumb-2"><a href="/blog/front-end">Front-end &amp; Design</a></span><span class="breadcrumb-separator breadcrumb-separator-2">›</span><span class="breadcrumb-3">Sass and Drupal: A Brief Introduction</span></div>      </div>
+    </nav> <!-- /#breadcrumb -->
+  
+  <div id="page">
+
+    
+          <nav role="navigation">
+              </nav>
+    
+    
+    
+    
+    
+    
+    <div id="main-content" class="wrapper">
+      
+      
+      
+      <article role="article" class="node node--article node--full node--article--full">
+  
+  
+  <div class="node__content">
+    <div class="field field--name-title-field field--type-text field--label-hidden"><div class="field__items" id="md3"><div class="field__item even" itemprop="headline"><h1>Sass and Drupal: A Brief Introduction</h1>
+</div></div></div><div class="created">25<sup>th</sup> October, 2013</div><div class="field field--name-field-subtitle field--type-text field--label-hidden"><div class="field__items" id="md2"><div class="field__item even" itemprop="description"><h2>Produce cleaner, more manageable CSS with SASS and add it to your existing Drupal workflow.</h2>
+</div></div></div><div class="field field--name-body field--type-text-with-summary field--label-hidden"><div class="field__items" id="md1"><div class="field__item even" itemprop="text"><p>For those familiar with Sass, you&rsquo;ll know just how much easier, and more importantly, how much more fun it can make working on CSS. It removes so many of the typical frustrations that come along with working on CSS, and the biggest perk is that if you already know CSS, even at a basic level, picking up Sass is incredibly easy.</p>
+<h2>How can SASS help you?</h2><p>The key features it provides are <strong>variables</strong>, <strong>nesting</strong>, <strong>mixins </strong>and <strong>inheritance</strong>. All of those mechanisms together allow you to write clean, easy to read and most important of all, reusable code. Sass files use the file extensions .<strong>scss </strong>or .<strong>sass</strong>.</p><p>A quick n&rsquo; dirty example of what a snippet might look like in Sass:</p>
+<pre>
+$my_width: 400px;
+$my_color: #FF3399;
+
+#my-div {
+  .inner {
+    width: $my_width * 2;
+
+    p {
+      color: lighten($my_color, 10%);
+    }
+  }
+}
+</pre>
+<p>So just what&rsquo;s going on here? Looks very similar to CSS, right? With the introduction of the reusable variables <strong>$my_color</strong> and&nbsp;<strong>$my_width</strong> along with some nesting, this allows us to produce much more elegant code. Once compiled, it would look like this:</p>
+<pre>
+#my-div .inner {
+  width: 800px;
+}
+
+#my-div .inner p {
+  color: #ff66b3;
+}
+</pre>
+<p>You&rsquo;ll notice that in addition to using variables to store the width and color values, you can implement logic and functions to perform other coolness. In the above example, the width is multiplied and the lighten function is being used to change the color!</p><p>Here is another example, using a <strong>mixin </strong>to create a simple, reusable snippet of code:</p>
+<pre>
+@mixin no-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.some-list {
+    @include no-list;
+}
+
+ul.some-other-list {
+    @include no-list;
+}
+</pre>
+<p>As you can see, the mixin &ldquo;<strong>no-list</strong>&rdquo; contains a snippet that we may want to use in multiple places throughout the document. This would compile to:</p>
+<pre>
+ul.some-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+ul.some-other-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+</pre>
+<p>Great stuff, right? Well, this is just a flavour of what you can do with Sass. Integrating Sass into your workflow allows you to achieve more while reducing the repetitive nature of traditional CSS.</p><h2>So, where does Drupal come in?</h2><p>Out of the box, Drupal doesn&rsquo;t come with any kind of Sass implementation, so it&rsquo;s up to you to decide which approach to take and work that into your theme. The official implementation is coded in Ruby, and you need to configure it to &ldquo;watch&rdquo; your Sass files so they can be compiled. Other implementations exist in PHP, and with a combination of a few contrib modules you can get Sass up and running and implemented in Drupal with ease. These are what we&rsquo;ll be looking at today.</p><p>To set up Drupal with PHP-based Sass processing, you&rsquo;ll need the following modules: <strong>Prepro </strong>(<a href="http://www.drupal.org/project/prepro">http://www.drupal.org/project/prepro</a>), <strong>Sassy </strong>(<a href="http://drupal.org/project/sassy">http://drupal.org/project/sassy</a>) and <strong>Libraries </strong>(<a href="http://www.drupal.org/project/libraries">http://www.drupal.org/project/libraries</a>). You&rsquo;ll also need to grab the latest build of <strong>PHPSass</strong> (<a href="https://github.com/richthegeek/phpsass">https://github.com/richthegeek/phpsass</a>).</p><p>To get all this working, just install the modules as per usual and drop the PHPSass library into sites/all/libraries and Prepro/Sassy will pick up the library and allow you to use it.</p><p style="text-align: center;"><b id="docs-internal-guid-0e85b6bc-ae04-3bf5-7258-048748128277" style="font-weight:normal;"><img alt="A screenshot of the preprocessors configuration page in Drupal" height="212px;" src="https://lh3.googleusercontent.com/NISy3CSDmABJdMYnrdDRg-B-L71nUWdtlWJJS9ATiyxMuWwk4yVgkndWZ91biAnz_Ox-CYDCJv9gj_m-AV35UjEqkxNzJ9-g5tTBcy8x3okVUXSZoG8iZ_Xhsw" title="A screenshot of the preprocessors configuration page in Drupal" width="577px;"/></b></p><h5 style="text-align: center;"><b style="font-weight:normal;">The prepro configure page (admin/config/media/prepro)</b></h5><p>Once everything is installed and enabled, you&rsquo;ll be able to configure Prepro to use Sassy and PHPSass to compile all your .<strong>scss </strong>and .<strong>sass </strong>files.</p><p>Next up, depending on the theme you are using, you&rsquo;ll have to go into the info file and add a few lines so it&rsquo;ll pick up and use whatever .scss files you want to be compiled. In Omega it&rsquo;ll look something like this:</p>
+<pre>
+css[layout.scss][name] = layout.scss
+css[layout.scss][description] = My SASS stylesheet!
+css[layout.scss][options][weight] = 1
+</pre>
+<p>Generally speaking, as long as the .scss file(s) are being picked up by the theme, Prepro will step in and compile them when required. You&rsquo;ll need layout.scss to exist within the right folders in your theme, but once this has all been set up you&rsquo;ll be able to start using Sass in your Drupal theme!</p><h2>SASS-Enabled Drupal Themes</h2><p>There are a handful of Sass-ready themes available for your consumption if you&rsquo;d prefer to use one of those. Zen (<a href="http://drupal.org/project/zen">http://drupal.org/project/zen</a>) and Boilerplate (<a href="http://drupal.org/project/boilerplate">http://drupal.org/project/boilerplate</a>) both ship with Sass support, and Omega will add support in the near future.</p><p>There are also themes like Sasson (<a href="http://drupal.org/project/sasson">http://drupal.org/project/sasson</a>) that includes a Sass compiler.</p><h2>Conclusion</h2><p>Hopefully this short article has helped you understand the very basics of what Sass can do for you and how easy it is to work into your next (or existing!) project.</p><p>In the future I&rsquo;ll be doing a more detailed series on how we use Sass to supercharge our Drupal theming, and keep an eye out for a talk at Drupal Yorkshire! (<a href="http://drupalyorkshire.org.uk/">http://drupalyorkshire.org.uk/</a>)</p><p>Happy Sassing!</p><p>Resources:</p><p><a href="http://sass-lang.com/">http://sass-lang.com/</a><br/><a href="http://thesassway.com/">http://thesassway.com/</a><br/><a href="http://drupal.org/project/prepro">http://drupal.org/project/prepro</a><br/><a href="http://drupal.org/project/sassy">http://drupal.org/project/sassy</a><br/><a href="http://drupal.org/project/libraries">http://drupal.org/project/libraries</a><br/><a href="https://github.com/richthegeek/phpsass">https://github.com/richthegeek/phpsass</a></p></div></div></div>  </div>
+
+    </article>
+<div id="block-views-blog-mk2-blog-post" class="block block--views block--views-blog-mk2-blog-post">
+        <div class="block__content">
+    <div class="view view-blog-mk2 view-id-blog_mk2 view-display-id-blog_post blog-footer view-dom-id-9acfebe3c0f697ffb4877de0bf94ccba">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-call-to-action-1">        <h3 class="field-content">If you’re not already using Sass - you should be! Take a look at some of the basics of Sass, how it can help you produce cleaner, more manageable CSS.</h3>  </div>  
+  <div class="views-field views-field-field-headshot">        <div class="field-content"><a href="/blog/contributors/pete"><img typeof="foaf:Image" src="/sites/default/files/styles/thumbnail/public/pete-mcclory.jpg?itok=l804vM0Z" alt=""/></a></div>  </div>  
+  <span class="views-field views-field-field-user-first-name">        <span class="field-content">Pete</span>  </span>  
+  <span class="views-field views-field-field-user-last-name">        <span class="field-content">McClory</span>  </span>  
+  <div class="views-field views-field-field-job-title">        <div class="field-content">Managing Director</div>  </div>  
+  <div class="views-field views-field-field-bio">        <div class="field-content"><p>Pete is the MD at Curve, helping with creative direction, business development and strategy. Also find him on <a href="https://plus.google.com/u/0/102058504460398744645?rel=author" rel="author">Google+</a>, <a href="http://twitter.com/pmcclory">Twitter</a>, and <a href="https://www.linkedin.com/in/petermcclory">LinkedIn</a>.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <!--<p class="meet-link"><a href="/blog/contributors">Meet the people behind the Curve blog</a></p>-->    </div>
+  
+  
+</div>  </div>
+</div>
+<meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/sass-and-drupal-brief-introduction" itemref="md1 md2 md3 md4"/><meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/perfect-progression" itemref="md10"/><meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/enhanced-views-and-rules-drupal-7" itemref="md11"/><meta itemscope="" itemtype="https://schema.org/Blog" itemid="http://www.curveagency.com/blog/business-stuff/new-site-launched-nemog-york-university" itemref="md12"/><meta itemscope="" itemref="md5 md6 md7 md8 md9"/>
+    </div>
+
+  </div> <!-- /#main-content -->
+
+        <aside class="l-region l-region--sidebar-first">
+    <div id="block-views-blog-popular-block-1" class="block block--views block--views-blog-popular-block-1">
+        <h2 class="block__title">Popular Blog Articles</h2>
+      <div class="block__content">
+    <div class="view view-blog-popular view-id-blog_popular view-display-id-block_1 blog-popular-articles view-dom-id-ca8b1d02c700eb1cb001614b863f06bc">
+        
+  
+  
+      <div class="view-content">
+      <ul class="popular-blog-articles">  <li class="popular-blog-articles--item">  
+          <a href="/blog/perfect-progression"><div class="counter"><b>1</b><img typeof="foaf:Image" src="/sites/default/files/styles/blog_thumb_mini/public/blog/CTI-OfficeShot---early-2016.jpg?itok=5vaVZvRU" width="48" height="48" alt="CTI Digital Drupal Development Team Manchester and London"/></div><h5>A Perfect Partnership of UX and Drupal</h5></a>  </li>
+  <li class="popular-blog-articles--item">  
+          <a href="/blog/enhanced-views-and-rules-drupal-7"><div class="counter"><b>2</b><img typeof="foaf:Image" src="/sites/default/files/styles/blog_thumb_mini/public/blog/view-different-tropical.jpg?itok=O6Yvq_Ks" width="48" height="48" alt="An enhanced view of a tropical paradise. Not Drupal related in any way."/></div><h5>Enhanced Views and Rules in Drupal 7</h5></a>  </li>
+  <li class="popular-blog-articles--item">  
+          <a href="/blog/business-stuff/new-site-launched-nemog-york-university"><div class="counter"><b>3</b><img typeof="foaf:Image" src="/sites/default/files/styles/blog_thumb_mini/public/blog/NEMOG_logo_layered.jpg?itok=iRY5RnVr" width="48" height="48" alt="York University NEMOG logo by Curve Agency Leeds"/></div><h5>Drupal 8 site launched for University of York</h5></a>  </li>
+</ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-views-blog-categories-menu-block" class="block block--views block--views-blog-categories-menu-block">
+        <h2 class="block__title">Categories</h2>
+      <div class="block__content">
+    <div class="view view-blog-categories-menu view-id-blog_categories_menu view-display-id-block view-dom-id-7583677dcb81b277cf18cfca721e0819">
+        
+  
+  
+      <div class="view-content">
+      <div class="categories-menu"><ul>  <li>  
+          <a href="/blog/business-stuff">Community &amp; Events<b>18</b></a>  </li>
+  <li>  
+          <a href="/blog/drupal-development">Drupal<b>40</b></a>  </li>
+  <li>  
+          <a href="/blog/front-end">Front-end &amp; Design<b>21</b></a>  </li>
+  <li>  
+          <a href="/blog/digital-strategy">Strategy &amp; Management<b>17</b></a>  </li>
+  <li>  
+          <a href="/blog/user-experience-design">User Experience<b>16</b></a>  </li>
+</ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-simple-twitter-simple-twitter-block" class="block block--simple-twitter block--simple-twitter-simple-twitter-block">
+        <h2 class="block__title">Recent Tweets</h2>
+      <div class="block__content">
+    <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"The User's Journey broken down in detail (case study: FitCounter)<a href="https://t.co/Dv8sZ2uC50">https://t.co/Dv8sZ2uC50</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=740986160533639168" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=740986160533639168" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Factors In Selecting A Mobile Prototyping Tool <a href="https://t.co/Uj2odbaiXl">https://t.co/Uj2odbaiXl</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=739706389329793024" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=739706389329793024" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa fa-twitter-square"></i>Follow @CurveAgency</a>
+
+  </div>
+</div>
+  </aside>
+  
+
+        <aside class="l-region l-region--sidebar-second">
+    <div id="block-simple-twitter-simple-twitter-block--2" class="block block--simple-twitter block--simple-twitter-simple-twitter-block--2">
+        <h2 class="block__title">Recent Tweets</h2>
+      <div class="block__content">
+    <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"The User's Journey broken down in detail (case study: FitCounter)<a href="https://t.co/Dv8sZ2uC50">https://t.co/Dv8sZ2uC50</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=740986160533639168" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=740986160533639168" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=740986160533639168" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Factors In Selecting A Mobile Prototyping Tool <a href="https://t.co/Uj2odbaiXl">https://t.co/Uj2odbaiXl</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=739706389329793024" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=739706389329793024" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=739706389329793024" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa fa-twitter-square"></i>Follow @CurveAgency</a>
+
+  </div>
+</div>
+  </aside>
+  
+  
+  
+  
+  
+    <div class="l-region l-region--footer">
+    <div id="block-block-13" class="block block--block block--block-13">
+        <h2 class="block__title">Connect with Curve</h2>
+      <div class="block__content">
+    <ul class="footer-links-wrapper footer-links-social"><li class="google"><a rel="publisher" href="https://plus.google.com/+Curveagency/"><i class=" fa  fa-google-plus-square"></i></a></li>
+<li class="facebook"><a href="https://www.facebook.com/curveagency"><i class="fa  fa-facebook-square"></i></a></li>
+<li class="twitter"><a href="https://twitter.com/CurveAgency"><i class="fa  fa-twitter-square"></i></a></li>
+</ul><ul class="footer-links-wrapper footer-links-drupal"><li class="daom"><a rel="publisher" href="https://assoc.drupal.org/">Drupal Association Organisation Member</a></li>
+<li class="drupal_camp"><a href="http://drupalyorkshire.org.uk/">Drupal Yorkshire</a></li>
+<li class="acquia"><a href="http://www.acquia.com/partners/showcase/curve-agency">Acquia Partner</a></li>
+</ul>  </div>
+</div>
+<div id="block-block-14" class="block block--block footer-copyright block--block-14">
+        <div class="block__content">
+    <p>All content &copy; 2008 - 2016, Curve Agency Leeds and London. All rights reserved.</p>  </div>
+</div>
+  </div>
+
+</div> <!-- /#page -->
+
+</div> <!-- /#page-wrapper -->  </body>
+</html>
+
+<!--
+playback timings (ms):
+  RedisCDXSource: 5.294
+  exclusion.robots: 0.2
+  PetaboxLoader3.datanode: 101.283 (4)
+  captures_list: 101.738
+  CDXLines.iter: 23.17 (3)
+  exclusion.robots.policy: 0.185
+  PetaboxLoader3.resolve: 60.141
+  LoadShardBlock: 69.238 (3)
+  load_resource: 116.833
+  esindex: 0.016
+-->

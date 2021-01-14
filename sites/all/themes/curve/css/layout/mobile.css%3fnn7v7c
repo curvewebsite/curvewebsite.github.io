@@ -1,0 +1,708 @@
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$MOBILE LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (device-width: 720px),
+       only screen and (max-width: 1024px) {
+  html {
+    background: none;
+  }
+
+  body {
+    padding-bottom: 0;
+    overflow-x: hidden;
+  }
+
+  #header { height: 45px !important; }
+
+
+#navigation ul.menu li a{
+  padding-top: 14px !important;
+}
+
+#navigation,
+.front #navigation ul.menu {
+  overflow: visible !important;
+}
+
+#navigation ul.menu li:after {
+  display: none;
+}
+
+.front #logo-container img { margin-top: 0 !important; }
+
+  /* --- fix the menu and logo to the top of the page --- */
+  /**MENU FIXES**/
+  #menu-toggle {
+    position: fixed;
+    z-index: 999;
+    width: 62px;
+    display: block;
+    border-radius: 0 0 12px 0;
+    left: 0;
+    top: 4px;
+    -webkit-transition: left 0.15s ease;
+    -moz-transition: left 0.15s ease;
+    -ms-transition: left 0.15s ease;
+    -o-transition: left 0.15s ease;
+    transition: left 0.15s ease;
+  }
+
+  /* --- LOGO --- */
+  #logo {
+    margin: 0 auto;
+    width: 128px;
+    padding-top: 6px;
+  }
+
+  #logo-container {
+    width: 100%;
+  }
+
+  #logo-container img {
+    padding-left: 0;
+  }
+  
+  /* -- Bump up the slogan text higher than on desktop */
+  .parallax--wrapper {
+  	margin-top:-90px;
+  }
+
+  .front .parallax--title {
+    font-size: 3.1em;
+    font-weight: 300;
+    padding: 0.2em 0 0.9em 0;
+  }
+
+  /* --- Menu Button --- */
+  #menu-toggle a {
+    display: block;
+    width: 62px;
+    padding: 10px 0;
+  }
+
+  #menu-toggle a span.strip {
+    display: block;
+    width: 32px;
+    padding-bottom: 5px;
+    background: white;
+    margin: 0 auto 5px;
+  }
+
+  #menu-toggle a span.strip.last {
+    margin-bottom: 0;
+  }
+
+  /* --- Navigation elements on mobile --- */
+  #navigation {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: -260px;
+    z-index: 1000;
+    background: black;
+    width: 260px;
+    /* This width should match the value of the body.menu-expanded #page value */
+    -webkit-transition: left 0.15s ease;
+    -moz-transition: left 0.15s ease;
+    -ms-transition: left 0.15s ease;
+    -o-transition: left 0.15s ease;
+    transition: left 0.15s ease;
+  }
+
+  body.menu-expanded #navigation {
+    left: 0;
+    /* This gets animated below */
+  }
+
+  body.menu-expanded.front #page {
+    left: 260px;
+    overflow: visible;;
+    /* This gets animated below */
+  }
+
+  body.menu-expanded #menu-toggle {
+    left: 260px;
+    /* This gets animated below */
+  }
+
+  body.menu-expanded #menu-toggle a span.strip {
+    display: block;
+    width: 32px;
+    padding-bottom: 5px;
+    background: white;
+    margin-bottom: 5px;
+  }
+
+  body.menu-expanded #logo {
+    visibility: hidden;
+  }
+
+  #page {
+    /* Animate page sliding out */
+    left: 0;
+    -webkit-transition: left 0.15s ease;
+    -moz-transition: left 0.15s ease;
+    -ms-transition: left 0.15s ease;
+    -o-transition: left 0.15s ease;
+    transition: left 0.15s ease;
+  }
+
+  #navigation .navigation-container {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding-right: 0;
+    background: black;
+  }
+
+  #navigation .navigation-wrapper,
+  #navigation .navigation-inner {
+    width: 100%;
+    height: auto;
+    background: none;
+  }
+
+  #navigation ul.menu {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  #navigation ul.menu li {
+    float: none;
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  #navigation ul.menu li a {
+    font-size: 1em;
+    padding: 11px 0;
+    letter-spacing: 1px;
+  }
+
+  #navigation ul.menu li a.active {
+    background-color: #008aff;
+  }
+
+  /* Override JavaScript */
+  #navigation .is-sticky .navigation-container {
+    position: inherit !important;
+  }
+
+  #navigation .sticky-wrapper {
+    height: auto !important;
+  }
+
+  /* --- Page faded overlay --- */
+  .menu-expanded .shadow-curtain {
+    width: 100%;
+    height: 100%;
+  }
+
+  .shadow-curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .shadow-curtain span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+  }
+
+  .menu-expanded .shadow-curtain span {
+    opacity: 0.75;
+  }
+
+  .shadow-curtain span {
+    -webkit-transition: opacity 0.25s ease;
+    -moz-transition: opacity 0.25s ease;
+    -o-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
+  }
+
+  /* --- MAIN --- */
+  #page {
+    position: relative;
+  }
+
+  #content p, #content li {
+    font-family: "Roboto", sans-serif;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.4em;
+  }
+  
+   #content .parallax--body p {
+	  font-size: 1.2em;
+  font-weight: 500;
+  width: 330px;
+  }
+
+  #content p.column {
+    margin: 0;
+    width: auto;
+    float: none;
+  }
+
+  #content p.first {
+    border-top: 1px solid black;
+    padding-top: 20px;
+  }
+
+  .homepage-link {
+    background-color: #008aff;
+    color: white;
+    padding: 2em;
+    display: block;
+    margin: 40px auto 0;
+    width: 230px;
+    border-radius: 60px;
+  }
+
+  .homepage-link:hover {
+    color: white;
+    background-color: #df6e66;
+  }
+
+  .homepage-link:active {
+    background-color: black;
+  }
+
+  /* --- SLIDESHOW --- */
+
+#block-views-events-block-1 h2 span { font-size: 1.5em; line-height: 40px; }
+
+#block-views-events-block-1 h3.field-content { font-size: 1.5em; }
+  
+
+  /* --- CONTACT INFORMATION --- */
+
+  #block-block-1 .map { display: none; }
+  #block-block-1 .contact-info .telephone p, 
+  #block-block-1 .contact-info .email-link, 
+  #block-block-1 .contact-info .curve-address {
+    text-align: center;
+    font-size: 1.4em;
+  }
+
+  /* --- BRANDS --- */
+  #brands {
+    margin-top: 0;
+    background: black 0 0 repeat-x;
+    padding: 25px 0;
+  }
+
+  #brands .wrapper {
+    background: none;
+  }
+
+  #brands .view-display-id-block_brands_worked_with {
+    height: auto;
+  }
+
+  #brands h3.brand-title {
+    margin: 0 auto 10px auto;
+  }
+
+  #brands .grid-4 {
+    padding: 0;
+  }
+
+  #brands .view-display-id-block_brands_worked_with .item-list ul li span {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* --- FORMS --- */
+  input[type=text],
+  input[type=submit],
+  input[type=email],
+  textarea {
+    width: 90%;
+  }
+
+  #webform-component-personal-information--cv,
+  #webform-component-other-information,
+  #webform-component-personal-information--upload-files {
+    display: none;
+  }
+
+  /* --- BLOG STUFF --- */
+  .section-inner .blog-entry {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .section-inner .views-row-last.blog-entry {
+    border: 0;
+    padding: 0;
+  }
+
+  .section-inner #page-title {
+    margin-bottom: 22px;
+  }
+
+  #blog-link, #user-bar .wrapper {
+    position: inherit;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  #blog-link a {
+    margin-top: -1px;
+    border-radius: 0;
+  }
+
+  #sidebar-second .block {
+    margin-bottom: 40px;
+  }
+
+  .section-inner #contact {
+    bottom: 0;
+  }
+
+  .blog .views-field-field-headshot,
+  .blog .views-field-body,
+  .blog .views-field-view-node,
+  .blog .views-field-field-category {
+    display: none;
+  }
+
+  .section-inner .blog-entry {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+  }
+
+  .view-contributors .views-field-field-headshot {
+    float: none;
+    text-align: center;
+    position: static;
+  }
+
+  .blog .section-inner .views-field-created {
+    padding-top: 30px;
+    margin-bottom: 12px;
+  }
+
+  .node-type-article.section-inner .views-field-created {
+    padding-top: 10px;
+  }
+
+  .blog .section-inner .views-field-field-job-title {
+    margin-top: -60px;
+  }
+
+  .blog.section-inner .views-field-body {
+    display: block;
+    clear: both;
+    margin-top: 0px;
+    padding-top: 15px;
+    border-top: none;
+  }
+
+  .section-inner .summary {
+    margin-bottom: 18px;
+  }
+
+  .section-inner #content .summary,
+  .section-inner #content .summary p {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .blog-footer .views-field-field-headshot {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .node-type-article.section-inner .views-field-field-job-title,
+  .views-field-created,
+  .blog-footer .views-field-field-user-first-name,
+  .blog-footer .views-field-field-user-last-name {
+    float: none;
+    margin: 0;
+  }
+
+  .blog-footer {
+    text-align: center;
+  }
+
+  .node-type-article.section-inner .views-field-field-job-title {
+    text-align: center;
+  }
+
+  .section-inner #content p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .careers .views-field-field-job-image {
+    float: none;
+    text-align: center;
+  }
+
+  /* --- Case Study Tabs --- */
+  #case-study-tabs ul,
+  #case-study-tabs ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #case-study-tabs ul {
+    margin: 0 0 20px 0;
+    padding: 0 2%;
+    border-bottom: 1px solid #008aff;
+  }
+
+  #case-study-tabs ul li {
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+    width: 32%;
+    height: 36px;
+    padding-right: 2%;
+    text-align: center;
+  }
+
+  #case-study-tabs ul li span {
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    background: #008aff;
+    color: white;
+  }
+
+  #case-study-tabs ul li.tab-2 {
+    padding-right: 0;
+  }
+
+  #case-study-tabs ul li.active span {
+    color: black;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #008aff;
+    border-bottom: 1px solid white;
+    background: none;
+  }
+
+  /* --- Case study top level --- */
+  .view-case-studies.view-display-id-page .views-row {
+    padding-left: 0;
+    min-height: inherit;
+  }
+
+  .view-case-studies .views-field-field-teaser-image {
+    position: static;
+    top: auto;
+    left: auto;
+  }
+
+  .view-case-studies .views-field-field-teaser-image img {
+    width: 90%;
+  }
+
+  /* social media */
+  .block-social-links {
+    text-align: center;
+  }
+
+  /** --- TITLES --- **/
+
+  #block-block-13 h2, #block-block-1 h2, #block-views-home-case-study-slideshow-block header h2 {
+    margin: 0 auto 0;
+    font-size: 2em;
+  }
+
+  .region-footer, .region-contact, .region-case-studies {
+    background: none;
+    padding-bottom: 0;
+  }
+
+  /**BUTTONS**/
+  .button--home {
+    max-width: 200px;
+    font-size: 19px;
+  }
+
+  .front #header {
+    position: absolute;
+  }
+
+  .view-home-case-study-slideshow h4 { font-size: 22px; }
+
+  .front #navigation { margin-top: 0; }
+  
+  .front #navigation ul.menu li a {
+	   	font-size: 1em;
+		padding: 0 15px 18px 15px;
+     font-size: 18px !important;
+  }
+	
+
+  .front #navigation ul.menu { padding: 0; }
+
+  /*** TITLES ***/
+  h1.title {
+    font-size: 28px;
+    line-height: 32px;    
+  }
+
+  .node-type-case-study #content h3 { font-size: 23px; }  
+
+  .arrow--down { display: none; }
+
+  .section-inner #content-wrapper { padding-bottom: 0; }
+
+.node-type-page #highlighted .wrapper{
+  width: 100% !important;
+  padding: 0px;
+}
+
+#block-block-1 .grid-12{
+  margin: 20px 0px;
+}
+
+#block-block-1 h2 span, #block-block-13 h2 span, #block-views-home-case-study-slideshow-block header h2 span {
+  padding: 0;
+}
+
+.view-home-case-study-slideshow {
+  overflow: hidden;
+}
+
+.webform-component--other-information { display: none; }  
+
+#navigation ul.menu li a:after { display: none !important; }
+
+.front .field-name-body { max-height: 400px; }
+.parallax { background-position: 50% 0 !important; max-height: 400px; }
+
+.parallax {
+  background: #008aff;
+}
+
+.parallax--wrapper { top: 220px; }
+
+.parallax--title { padding-bottom: 10px !important; line-height: 39px; }
+
+.parallax--bottom { position: relative; box-shadow: none; }
+
+.parallax--bottom header h2 span:before, .parallax--bottom header h2 span:after { display: none; }
+
+.parallax--bottom .views-row { display: block; width: 100%; background-color: white; }
+
+.front .views-field-field-logo { padding: 14px 0; }
+
+.heightHide { display: block; }
+
+.front #header { background: rgba(0, 0, 0, 0.8) !important; height: 56px !important; }
+
+.front #logo-container img { margin-top: 5px !important; }
+
+.front .header--large #navigation ul.menu { padding-top: 0; }
+
+.case-studies .views-field-nothing .views-field-title { position: relative; bottom: 0; }
+
+.case-studies .views-field-nothing .views-field-field-client { position: relative; }
+
+.case-studies .views-field-nothing .views-field-field-client .field-content { padding-bottom: 0; }
+
+.case-studies .views-field-field-teaser, .case-studies .views-field-view-node { padding-top: 0; }
+
+.blog-article .views-field-nothing .views-field-title, .blog-article .views-field-nothing .views-field-created { position: relative; bottom: 0; }
+
+.blog-article .views-field-nothing .views-field-created .field-content { padding-bottom: 0; }
+
+.region-footer {
+	margin-top: 0;
+}
+
+}
+
+/* -- END OF MOBILE max-width 720px --- */
+
+@media only screen and (device-width: 720px),
+       only screen and (max-width: 720px) {
+		   
+#content .parallax--tagline p {
+	font-size: 1em;
+	padding-bottom: 26px;
+}
+
+.parallax--wrapper {
+	top: 190px;
+}
+.parallax {
+	background: #008aff;
+}
+
+}
+
+@media only screen and (device-width: 575px),
+       only screen and (max-width: 575px) {
+	
+	.front #logo-container img {
+  margin-top: 10px !important;
+}	   
+	
+	#header #logo-container a,
+	  #header #logo-container a img{
+	    width: 100px;
+	    float: right;
+	  }
+	  
+	.front .parallax--title {
+ 	   font-size: 2em;
+   	 font-weight: 300;
+  	  padding: 0 0 0.9em 0;
+  	}
+
+#content .parallax--tagline p {
+	font-size: 0.9em;
+	padding-bottom: 1px;
+}
+
+.parallax--wrapper {
+  margin-top: 0;
+  top: 64px;
+  background-color: #008aff;
+  padding-top: 20px;
+}
+.parallax {
+	background: black;
+	max-height: 56px;
+}
+
+#content .parallax--body p {
+    font-size: 0.9em;
+  font-weight: 500;
+  width: 260px;
+  padding: 0;
+}
+
+.front .views-field-field-logo {
+  padding: 10px 0 0;
+}
+
+.front .field-name-body {
+  max-height: 365px;
+}
+  
+}

@@ -1,0 +1,331 @@
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$CASE STUDIES
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+.node-case-study .field-collection-view {
+  padding: 0;
+  margin: 0;
+  border-bottom: none;
+}
+
+.view-case-studies.view-display-id-page .views-row {
+  position: relative;
+  border: none;
+  padding: 18px 0;
+  margin-bottom: 12px;
+  padding-left: 472px;
+  min-height: 340px;
+  border-bottom: 1px dotted #ccc;
+}
+
+.view-case-studies .views-field-title h2 {
+  padding-top: 0;
+}
+.view-case-studies .views-field-field-site-link a {
+  color: white;
+  display: block;
+  padding: 15px;
+  font-size: 28px;
+  background: #008aff;
+  text-align: center;
+}
+
+.view-case-studies .views-field-field-site-link a:hover {
+  background: #df6e66;
+}
+
+.view-case-studies .case-study-row {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.view-case-studies .case-study-row {
+  position: relative;
+}
+
+.view-case-studies .case-study-row .views-field-title {
+  position: absolute;
+  bottom: 0;
+}
+
+.view-case-studies .case-study-row .views-field-title h2 {
+  font-size: 20px;
+  margin: 0 15px;
+  line-height: 26px;
+  padding: 15px;
+  background-color: white;  
+}
+
+.view-case-studies .views-field-field-teaser-image img {
+  height: auto;
+}
+
+.case-study .read-article {
+  position: relative;
+  height: 68px;
+}
+
+.case-study .read-article a {
+  position: absolute;
+  top: 0;
+  border: none;
+  background: none;
+  background-color: #008aff;
+  color: white;
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 20px;
+  white-space: normal;
+}
+
+.case-study .read-article a:hover {
+  background-color: #df6e66;
+}
+
+.node-type-case-study #content h2 {
+  font-size: 46px;
+  color: #008aff;
+}
+
+.node-type-case-study #content h3 {
+  font-size: 32px;
+  color: black;
+}
+
+.node-type-case-study .field-name-field-image-full-width- {
+  text-align: center;
+}
+
+/* --- Wide images --- */
+.node-type-case-study .case-study-wide-image {
+  line-height: 0;
+  margin: 0 0 32px 0;
+  padding: 18px 0 0 0;
+  border-bottom: 8px solid #df6e66;
+}
+
+.node-type-case-study .case-study-wide-image img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid white;
+}
+
+/* --- Site stats --- */
+.node-type-case-study .site-stats,
+.node-type-case-study .site-stats li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.node-type-case-study #content .site-stats {
+  background: #008aff;
+  padding: 22px 26px;
+  margin-bottom: 42px;
+}
+
+.node-type-case-study #content .site-stats ul {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  float: left;
+}
+
+.node-type-case-study #content .site-stats li {
+  font-size: 22px;
+  color: white;
+  padding: 6px 8px 6px 42px;
+  background: url("../img/icons/graph_1.png") 0px 6px no-repeat;
+}
+
+.node-type-case-study #content .site-stats li.admin_1 {
+  background-image: url("../img/icons/admin_1.png");
+}
+
+.node-type-case-study #content .site-stats li.bounce_1 {
+  background-image: url("../img/icons/bounce_1.png");
+}
+
+.node-type-case-study #content .site-stats li.faster_1 {
+  background-image: url("../img/icons/faster_1.png");
+}
+
+.node-type-case-study #content .site-stats li.graph_1 {
+  background-image: url("../img/icons/graph_1.png");
+}
+
+.node-type-case-study #content .site-stats li.graph_2 {
+  background-image: url("../img/icons/graph_2.png");
+}
+
+.node-type-case-study #content .site-stats li.info_1 {
+  background-image: url("../img/icons/info_1.png");
+}
+
+.node-type-case-study #content .site-stats li.optimised_1 {
+  background-image: url("../img/icons/optimised_1.png");
+}
+
+.node-type-case-study #content .site-stats li.share_1 {
+  background-image: url("../img/icons/share_1.png");
+}
+
+.node-type-case-study #content .site-stats li.speed_1 {
+  background-image: url("../img/icons/speed_1.png");
+}
+
+/* --- Case study columns --- */
+.node-type-case-study #content-wrapper #content .block .col-left {
+  float: left;
+  width: 49%;
+}
+
+.node-type-case-study #content-wrapper #content .block .col-right {
+  float: right;
+  width: 49%;
+}
+
+.node-type-case-study #content-wrapper #content .block .col-left img,
+.node-type-case-study #content-wrapper #content .block .col-right img {
+  margin-bottom: 18px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+  CASE STUDIES
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+#content .case-studies .views-field-field-teaser p {
+  font-size: 16px;
+}
+
+.case-studies .views-field-field-header-images a,
+.case-studies .views-field-field-header-image img {
+  display: block;
+}
+
+.case-studies .views-field-nothing {
+  position: relative;
+}
+
+.case-studies .views-field-nothing .views-field-title,
+.case-studies .views-field-nothing .views-field-created {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.case-studies .views-field-nothing .views-field-title .field-content,
+.case-studies .views-field-nothing .views-field-created .field-content {
+  margin: 0 15px;
+  background: #fff;
+}
+
+.case-studies .views-field-nothing .views-field-title {
+  bottom: 28px;
+}
+
+.case-studies .views-field-nothing .views-field-title .field-content {
+  padding: 10px 15px 5px;
+}
+
+.case-studies .views-field-nothing .views-field-field-client {
+  bottom: 0;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 2px;
+  font-size: 11px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.case-studies .views-field-nothing .views-field-field-client .field-content {
+  height: 18px;
+  line-height: 18px;
+  margin: 0 15px;
+  padding: 0 15px 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.case-studies .views-field-field-teaser,
+.case-studies .views-field-view-node {
+  margin: 0 15px;
+  padding: 15px;
+  background-color: white;
+  position: relative;
+}
+
+.case-studies .views-field-body p {
+  margin: 0;
+}
+
+.case-studies .views-field-view-node {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.case-studies .read-article a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #008aff;
+  color: #fff;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+  OTHER CASE STUDIES
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+ul.other-case-studies-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+ul.other-case-studies-list li {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+ul.other-case-studies-list li.views-row-last {
+  margin-bottom: 0;
+}
+
+ul.other-case-studies-list li a {
+  position: relative;
+  display: block;
+  line-height: 24px;
+  font-size: 18px;
+  padding: 12px 0 12px 64px;
+}
+
+ul.other-case-studies-list li a .image,
+ul.other-case-studies-list li a .counter {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 0;
+  top: 50%;
+  margin-top: -24px;
+}
+
+ul.other-case-studies-list li a .counter {
+  line-height: 48px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 28px;
+  opacity: 0.9;
+}
+
+ul.other-case-studies-list li a .image img {
+  display: block;
+}
+
+
+/* --- CASE STUDY ---*/
+.node-case-study .field-name-field-image-small- {
+  float: right;
+  margin-left: 20px;
+}
+

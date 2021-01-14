@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<!---------------------------------------------------------------------------------
+Curve Agency are a UK Drupal Website Design and Development Company based in Leeds.
+-----------------------------------------------------------------------------------
+
+Author: Curve Agency
+Author URL: curveagency.com
+Version: 3.0
+Copyright 2011-2014 Curve Agency Limited.
+
+-->
+
+<html lang="en" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+
+
+	<!-- Meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="canonical" href="/blog/moving-configuration-d8"/>
+<link rel="shortlink" href="/node/611"/>
+<meta name="twitter:url" content="/blog/moving-configuration-d8"/>
+<link rel="shortcut icon" href="/sites/all/themes/curve/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta name="generator" content="Drupal 7 (http://drupal.org)"/>
+<meta name="twitter:title" content="Moving configuration in D8"/>
+<meta content="Moving configuration in D8" about="/blog/moving-configuration-d8" property="dc:title"/>
+<meta name="description" content="Using Configuration Manager to transfer settings between environments in Drupal 8."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="Using Configuration Manager to transfer settings between environments in Drupal 8."/>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	
+	<!-- Title -->
+	<title>Moving configuration in D8 | Drupal &amp; UX Prototyping | Curve Agency UK</title>
+	
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed"/>
+	
+	<!-- Styles -->
+	<style type="text/css" media="all">@import url("/modules/system/system.base.css?nr9m8x");
+@import url("/modules/system/system.menus.css?nr9m8x");
+@import url("/modules/system/system.messages.css?nr9m8x");
+@import url("/modules/system/system.theme.css?nr9m8x");</style>
+<style type="text/css" media="all">@import url("/sites/all/modules/date/date_api/date.css?nr9m8x");
+@import url("/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?nr9m8x");
+@import url("/modules/field/theme/field.css?nr9m8x");
+@import url("/modules/node/node.css?nr9m8x");
+@import url("/modules/search/search.css?nr9m8x");
+@import url("/modules/user/user.css?nr9m8x");
+@import url("/sites/all/modules/views/css/views.css?nr9m8x");</style>
+<style type="text/css" media="all">@import url("/sites/all/modules/ctools/css/ctools.css?nr9m8x");
+@import url("/sites/all/modules/radioactivity/css/radioactivity.css?nr9m8x");</style>
+<style type="text/css" media="all">@import url("/sites/all/themes/curve/css/grid/grid.inuit.css?nr9m8x");
+@import url("/sites/all/themes/curve/fonts/font-awesome.min.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/blog.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/brands.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/box.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/button.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/case_study.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/flexslider.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/front.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/global.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/highlighted.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/navigation.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/parallax.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/root.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/simple_twitter.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/white_container.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/layout/desktop.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/layout/tablet.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/layout/mobile.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/layout/social.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/temp-update/form.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/temp-update/about.css?nr9m8x");
+@import url("/sites/all/themes/curve/css/temp-update/home.css?nr9m8x");</style>
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie.css?nr9m8x" media="all" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie7.css?nr9m8x" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie6.css?nr9m8x" media="all" />
+<![endif]-->
+	
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="/misc/drupal.js?nr9m8x"></script>
+<script type="text/javascript" src="/sites/all/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+<script type="text/javascript" src="/sites/all/modules/curve/taxonomy_tree_block/template/taxonomy_tree_block.jquery.js?nr9m8x"></script>
+<script type="text/javascript" src="/sites/all/modules/google_analytics/googleanalytics.js?nr9m8x"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27427361-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/all/modules/radioactivity/js/radioactivity.js?nr9m8x"></script>
+<script type="text/javascript" src="/sites/all/themes/curve/js/jquery.scrolly.js?nr9m8x"></script>
+<script type="text/javascript" src="/sites/all/themes/curve/js/scripts.js?nr9m8x"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"curve","theme_token":"4L7DT3htEutMxU0zEeDYPvNwzsQ_vroN28i_yonL8qA","js":{"https:\/\/web.archive.org\/web\/20150717014120\/https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.9.1\/jquery.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/curve\/taxonomy_tree_block\/template\/taxonomy_tree_block.jquery.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/radioactivity\/js\/radioactivity.js":1,"sites\/all\/themes\/curve\/js\/jquery.scrolly.js":1,"sites\/all\/themes\/curve\/js\/scripts.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/curve\/simple_twitter\/template\/simple_twitter.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/radioactivity\/css\/radioactivity.css":1,"sites\/all\/themes\/curve\/css\/gridinuit.css":1,"sites\/all\/themes\/curve\/css\/grid\/grid.inuit.css":1,"sites\/all\/themes\/curve\/fonts\/font-awesome.min.css":1,"sites\/all\/themes\/curve\/css\/blog.css":1,"sites\/all\/themes\/curve\/css\/brands.css":1,"sites\/all\/themes\/curve\/css\/box.css":1,"sites\/all\/themes\/curve\/css\/button.css":1,"sites\/all\/themes\/curve\/css\/case_study.css":1,"sites\/all\/themes\/curve\/css\/flexslider.css":1,"sites\/all\/themes\/curve\/css\/front.css":1,"sites\/all\/themes\/curve\/css\/global.css":1,"sites\/all\/themes\/curve\/css\/highlighted.css":1,"sites\/all\/themes\/curve\/css\/navigation.css":1,"sites\/all\/themes\/curve\/css\/parallax.css":1,"sites\/all\/themes\/curve\/css\/root.css":1,"sites\/all\/themes\/curve\/css\/simple_twitter.css":1,"sites\/all\/themes\/curve\/css\/white_container.css":1,"sites\/all\/themes\/curve\/css\/layout\/desktop.css":1,"sites\/all\/themes\/curve\/css\/layout\/tablet.css":1,"sites\/all\/themes\/curve\/css\/layout\/mobile.css":1,"sites\/all\/themes\/curve\/css\/layout\/social.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/form.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/about.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/home.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie7.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie6.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"radioactivity":{"emitters":{"emitDefault":[{"accuracy":"100","bundle":"article","energy":10,"entity_id":"611","entity_type":"node","field_name":"field_radioactivity","language":"und","storage":"File","type":"none","checksum":"6048c1fd4ea9d19abc54f92bb8076db6"}]},"config":{"emitPath":"\/sites\/all\/modules\/radioactivity\/emit.php","fpEnabled":1,"fpTimeout":"60"}}});
+//--><!]]>
+</script>
+	
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+	<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-611 node-type-article blog section-inner">
+	
+		<div id="skip-link">
+			<a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+		</div>
+        
+        <!-- to overlay content when mobile nav is expanded -->
+        <div class="shadow-curtain active"><span></span></div> 
+		
+				
+		
+<div id="page-wrapper">
+
+  <div id="page">
+  
+    
+    <header role="banner" id="header">
+	
+		<div id="menu-toggle"><a href="#"><span class="strip first"></span><span class="strip mid"></span><span class="strip last"></span></a></div>
+	
+		<div id="header-inner" class="wrapper">
+		
+		  <div class="grids">
+		  
+		  			  <div id="logo-container" class="grid-6">
+			    <a href="/" title="Home" rel="home" id="logo">
+			      <img src="/sites/all/themes/curve/logo.png" alt="Home"/>
+			    </a>
+			  </div>
+		  		  
+						  <navigation role="navigation" id="navigation" class="grid-18">
+			    <div class="navigation-container">
+					<div class="navigation-wrapper">
+					  <div class="navigation-inner">
+						
+	
+<article id="block-system-main-menu" class="block block-system ">
+
+        
+  <ul class="menu"><li class="first leaf"><a href="/">Home</a></li>
+<li class="leaf"><a href="/drupal-case-studies" class="case-studies">Case Studies</a></li>
+<li class="leaf"><a href="/blog" class="blog">Blog</a></li>
+<li class="leaf"><a href="/about-curve">About</a></li>
+<li class="last leaf"><a href="/project-enquiry">Contact</a></li>
+</ul>
+</article>
+					  </div>
+					</div>
+				</div>
+			  </navigation>
+					  
+		  </div>
+		  
+		  		  
+		  		  
+		  		  
+		</div>
+		
+    </header> <!-- /#header -->
+
+    
+		  <nav id="breadcrumb">
+	  	<div id="breadcrumb-inner" class="wrapper">
+	    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><span class="breadcrumb-0"><a href="/">Home</a></span><span class="breadcrumb-separator breadcrumb-separator-0">›</span><span class="breadcrumb-1"><a href="/blog">Blog</a></span><span class="breadcrumb-separator breadcrumb-separator-1">›</span><span class="breadcrumb-2"><a href="/blog/drupal-development">Drupal</a></span><span class="breadcrumb-separator breadcrumb-separator-2">›</span><span class="breadcrumb-3">Moving configuration in D8</span></div>		</div>
+	  </nav> <!-- /#breadcrumb -->
+	
+    			
+  
+	
+	
+		
+		
+	<div id="main-content" class="wrapper">
+	
+		<div class="grids">
+		
+			
+		
+		
+		<div id="content-wrapper" class="grid-16 suffix-1">
+		
+						
+							<h1 class="title" id="page-title">Moving configuration in D8</h1>
+						
+					
+			
+  <section id="content" class="region region-content">
+	
+<section id="block-views-blog-block-3" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-block_3 view-dom-id-301bb9540461a15cfcf2db1ee9e83eb7">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-created">        <span class="field-content">Monday, 16<sup>th</sup> March, 2015</span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content summary"><p>Using Configuration Manager to transfer settings between environments in Drupal 8.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+
+<article id="block-system-main" class="block block-system ">
+
+        
+  <article id="node-611" class="node node-article clearfix" about="/blog/moving-configuration-d8" typeof="sioc:Item foaf:Document">
+
+  
+  
+  <div class="content">
+    
+<div class="field field-name-body field-type-text-with-summary field-label-hidden clearfix">
+            <p><img alt="Configuration Manager syncronize screen" src="/sites/default/files/blog/configman_0.png" style="width: 900px; height: 400px;"/></p>
+<p>Drupal 8 has a new core module called Configuration Manager. It allows you to get site configuration, which is usually stored in the database, add give you the capability to migrate between environments and commit them to version control systems.</p>
+<p>This is a little like Features but there are some distinct differences, the main ones being:</p>
+<dl><dt>Configuration Manager</dt>
+<dd>In core Exports the entire site<sup>[2]</sup> Saves configuration as YAML files Configuration can only be applied to the same site<sup>[3]</sup><sup>[4]</sup></dd>
+<dt>Features</dt>
+<dd>Contrib module(s)<sup>[1]</sup> Exports groups of elements Saves configuration as PHP Features can be moved between sites</dd>
+</dl><p><sup>[1]</sup> Features cannot export everything. Eg Strongarm is required for system variables.<br/><sup>[2]</sup> It is possible to export / import single yml files.<br/><sup>[3]</sup> To be the “same site” they must have the same UUID. This means that they have the same settings.php file and initial database content.<br/><sup>[4]</sup> Settings can be migrated to different installs but it is trickier.</p>
+<h2>Configuration Location</h2>
+<p>In your sites/default/files directory there will be a directory with a name like:<br/><code>config_ThisIsARealyLongStringOfUpperAndLowerCaseAlphaNumericCharactersWith-And_</code></p>
+<p>Inside this, there are active and staging folders.</p>
+<p><strong>DO NOT CHANGE ANY FILES IN ACTIVE. IT CAN BREAK YOUR SITE.</strong></p>
+<p>Staging is where new / altered configuration files can be placed.</p>
+<h2>Exporting</h2>
+<p>Before importing a configuration, you need to export it.</p>
+<p>The easiest method is to do a Full Export. To do this, go to /admin/config/development/configuration<br/><cite>Configuration -&gt; Development -&gt; Configuration management</cite></p>
+<blockquote><p>If you get a “Page not found”, Configuration Manager is not enabled. Enable it through Extend (/admin/modules).</p></blockquote>
+<p>And select the “Full Import/Export” tab, then “Export”. Finally click the “Export” button. This will start to download the configuration archive.</p>
+<p>If you want you can uncompress this file and have a look inside. I found 172 YAML files - and that was from a standard installation with no further setup.</p>
+<h2>Importing</h2>
+<p>Importing much the same as exporting. You go to /admin/config/development/configuration</p>
+<p><cite>Configuration -&gt; Development -&gt; Configuration management</cite></p>
+<p>And, again, select “Full Import/Export”. You should be on the import screen, if not click “Import”.</p>
+<p>Next click “Choose File” and find your config.tar.gz file. Then upload it.</p>
+<p>This un-compresses the file and puts all the yaml files into the sites/default/files/config_*/staging directory and they are ready to move the settings into the database.</p>
+<h2>Synchronize</h2>
+<p>Synchronizing reads the config files that have been imported and makes the database match these settings.</p>
+<p>The “Synchronize” page is the default screen of the Configuration manager. If you have already done some exporting or importing, then select the relevant tab.</p>
+<p>If you haven’t imported a config file yet or the import matches the database, you will see a message telling you that:<br/><cite>“There are no configuration changes to import.”</cite></p>
+<p>If there are differences, then you will be shown a list of new, changed, and removed files. You can have a look to see what has changed. The settings in the database are under “Old” and the config file settings are under “New”.</p>
+<p>When you’ve finished looking at the changes, clicking “Import All” will make the database match the settings in the files - there is a progress bar to let you know how far through it is.</p>
+<h2>Version Control</h2>
+<p>You can use Configuration management to store database settings in version control. You would export config and then import it into the same site - to check it’s done properly, check synchronize to make sure there are no differences.</p>
+<p>As most developers would exclude the files directory you would need to re-include the config_* files.</p>
+<p>In your .gitignore file (for example) you would have:<br/><code>sites/default/files/*<br/>!sites/default/files/config_*<br/>sites/default/files/config_*/active</code></p>
+<p>The second line re-adds the config yaml files to the repository, and the third excludes the active directory again - as noted before:<br/><strong>DO NOT CHANGE ANY FILES IN ACTIVE. IT CAN BREAK YOUR SITE.</strong></p>
+<h2>Conclusion</h2>
+<p>I would recommend using Configuration manager during development because:</p>
+<ol><li>it gives the ability to revert database settings to previous settings;</li>
+<li>it allows you to store database setting in version control;</li>
+<li>you can update a live site from development easily;</li>
+</ol><p> </p>
+<p>Also, it’s easier to use than features; export, import, synchronize. And only takes a couple of minutes to do.</p>
+    </div>
+  </div>
+
+  
+  
+</article>
+
+</article>
+
+<section id="block-views-blog-blog-post" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-blog_post blog-footer view-dom-id-45fb01d96501d5f9a35e3a96df0c999e">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-call-to-action-1">        <h3 class="field-content"></h3>  </div>  
+  <div class="views-field views-field-field-headshot">        <div class="field-content"><a href="/blog/contributors/john"><img typeof="foaf:Image" src="/sites/default/files/styles/thumbnail/public/john-cook.jpg?itok=IiTMOklI" width="100" height="100" alt=""/></a></div>  </div>  
+  <span class="views-field views-field-field-user-first-name">        <span class="field-content">John</span>  </span>  
+  <span class="views-field views-field-field-user-last-name">        <span class="field-content">Cook</span>  </span>  
+  <div class="views-field views-field-field-job-title">        <div class="field-content">Drupal Developer</div>  </div>  
+  <div class="views-field views-field-field-bio">        <div class="field-content"><p>John is an accomplished standards-driven developer specialising in Drupal backend.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <!--<p class="meet-link"><a href="/blog/contributors">Meet the people behind the Curve blog</a></p>-->    </div>
+  
+  
+</div>
+</section>
+
+<section id="block-views-blog-related-block-1" class="block block-views ">
+
+            <header><h2><span>Related Articles</span></h2></header>
+      
+  <div class="view view-blog-related view-id-blog_related view-display-id-block_1 blog-related-articles view-dom-id-c19811baa43966e2f10d3a29cba5137e">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-responsive-grid views-responsive-grid-horizontal views-columns-2">
+      <div class="grids row equalheights views-row-1">
+      <div class="grid-8 blog-article box grid-equal views-column-1">
+        
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="views-field views-field-field-images">
+  <div class="field-content"><a href="/blog/using-hooks"><img typeof="foaf:Image" src="/sites/default/files/styles/blog_post_standard/public/blog/druplicon-hook.png?itok=F9fXRHdv" width="768" height="433" alt="A hook chasing a Druplicon - the official Drupal logo."/></a></div>
+</div>
+<div class="views-field views-field-title">
+  <h2 class="field-content"><a href="/blog/using-hooks">Drupal Hooks Tutorials - Part One: Using Hooks</a></h2>
+</div>
+<div class="views-field views-field-created">
+  <div class="field-content">Thursday, 16<sup>th</sup> July, 2015</div>
+</div></span>  </div>  
+  <div class="views-field views-field-body">        <p class="field-content">In part one of our 'Hooks' tutorial, we're dishing the (very clean!) dirt on some best-practice to adopt when using Drupal hooks.
+</p>  </div>  
+  <div>        <div class="overlay-block"><a href="/blog/using-hooks">Read article</a></div>  </div>  
+  <div>        <div class="box--icon"><a href="/blog/using-hooks"><i class="fa fa-eye"></i></a></div>  </div>    </div>
+      <div class="grid-8 blog-article box grid-equal views-column-2">
+        
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="views-field views-field-field-images">
+  <div class="field-content"><a href="/blog/merge-and-push-changes-git"><img typeof="foaf:Image" src="/sites/default/files/styles/blog_post_standard/public/blog/git-flow-illustration.png?itok=M-eLAelr" width="768" height="433" alt="git flow illustration"/></a></div>
+</div>
+<div class="views-field views-field-title">
+  <h2 class="field-content"><a href="/blog/merge-and-push-changes-git">Merge and push changes with Git</a></h2>
+</div>
+<div class="views-field views-field-created">
+  <div class="field-content">Tuesday, 28<sup>th</sup> April, 2015</div>
+</div></span>  </div>  
+  <div class="views-field views-field-body">        <p class="field-content">Part 3: Merge and push your local Drupal site changes to live with SourceTree.
+</p>  </div>  
+  <div>        <div class="overlay-block"><a href="/blog/merge-and-push-changes-git">Read article</a></div>  </div>  
+  <div>        <div class="box--icon"><a href="/blog/merge-and-push-changes-git"><i class="fa fa-eye"></i></a></div>  </div>    </div>
+    </div>
+    </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+  </section>
+			
+		</div>
+		
+				<div id="sidebar-first-wrapper" class="grid-7 ">
+			
+  <aside id="sidebar-second" class="region region-sidebar-second">
+    
+<article id="block-taxonomy-tree-block-taxonomy-tree-block-vid-2" class="block block-taxonomy_tree_block ">
+
+            <header><h2><span>Categories</span></h2></header>
+      
+  <div class="taxonomy-tree-menu"><ul class="menu-2 menu-standard"><li><a href="/blog/business-stuff">Community &amp; Events</a><span>13</span></li><li><a href="/blog/drupal-development">Drupal</a><span>34</span></li><li><a href="/blog/front-end">Front-end &amp; Design</a><span>20</span></li><li><a href="/blog/digital-strategy">Strategy &amp; Management</a><span>11</span></li><li><a href="/blog/user-experience-design">User Experience</a><span>16</span></li></ul></div>
+</article>
+
+<article id="block-simple-twitter-simple-twitter-block" class="block block-simple_twitter ">
+
+            <header><h2><span>Recent Tweets</span></h2></header>
+      
+  <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"<a href="http://www.twitter.com/CurveAgency">@CurveAgency</a> Hey guys! These will pair up well, don't you think?! A fantastic list of (free!) web tutorials: <a href="http://t.co/E8zUdEnwCr">http://t.co/E8zUdEnwCr</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=621709191498067968" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=621709191498067968" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=621709191498067968" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=621709191498067968" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Talk to each other! Improve your conversions with better conversations, good stuff from <a href="http://www.twitter.com/UXBooth">@UXBooth</a>: <a href="http://t.co/FwNumxfxpt">http://t.co/FwNumxfxpt</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=621578772656070656" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=621578772656070656" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=621578772656070656" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=621578772656070656" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa  fa-twitter-square"></i>Follow @CurveAgency<a>
+
+
+</article>
+  </aside>
+		</div>
+		    
+				
+		</div>
+		
+	</div> <!-- /#main-content -->
+	
+	        
+	
+		
+	
+  <section id="contact" class="region region-contact">
+  	<div class="wrapper">
+		
+<article id="block-block-1" class="clearfix grids block block-block ">
+
+            <header><h2><span>Discuss your project</span></h2></header>
+      
+  <div class="grid-12">
+  <div class="contact-info">
+    <div class="telephone"><p>0113 243 2259</p></div>
+    <div class="email-link"><a href="mailto:hello@curveagency.com">hello@curveagency.com</a></div>
+    <div class="curve-address">Curve Agency<br/>46 The Calls<br/>Leeds<br/>LS2 7EY</div>
+  </div>
+</div>
+
+<div class="grid-12">
+  <div class="contact-map">
+    <a class="map-link" href="https://www.google.co.uk/maps/place/Curve+Agency/@53.794628,-1.5374,17z/data=!3m1!4b1!4m2!3m1!1s0x48795c178345fad9:0x7a14688dc7ba0147">
+    <div class="map">map</div>
+</a>
+  </div>
+</div>
+</article>
+	</div>
+  </section>
+	
+        
+	
+	
+  <footer role="contentinfo" id="footer" class="region region-footer">
+	<div id="footer-inner" class="wrapper">
+    	
+<article id="block-block-13" class="block block-block ">
+
+            <header><h2><span>Connect with our community</span></h2></header>
+      
+  <ul class="footer-links-wrapper footer-links-social"><li class="google"><a rel="publisher" href="https://plus.google.com/+Curveagency/"><i class=" fa  fa-google-plus-square"></i></a></li>
+<li class="facebook"><a href="https://www.facebook.com/curveagency"><i class="fa  fa-facebook-square"></i></a></li>
+<li class="twitter"><a href="https://twitter.com/CurveAgency"><i class="fa  fa-twitter-square"></i></a></li>
+</ul><ul class="footer-links-wrapper footer-links-drupal"><li class="daom"><a rel="publisher" href="https://assoc.drupal.org/">Drupal Association Organisation Member</a></li>
+<li class="drupal_camp"><a href="http://drupalyorkshire.org.uk/">Drupal Yorkshire</a></li>
+<li class="acquia"><a href="http://www.acquia.com/partners/showcase/curve-agency">Acquia Partner</a></li>
+</ul>
+</article>
+
+<article id="block-block-14" class="footer-copyright block block-block ">
+
+        
+  <p>Curve Agency is a UK company limited by shares and incorporated in England and Wales.</p>
+<p>&copy; 2008 - 2015, Curve Agency. All rights reserved.</p>
+</article>
+	</div>
+  </footer>
+
+  </div> <!-- /#page -->
+
+</div> <!-- /#page-wrapper -->		
+				
+	</body><!-- /body -->
+
+</html><!-- /html -->
+<!--
+playback timings (ms):
+  RedisCDXSource: 2.959
+  PetaboxLoader3.datanode: 62.179 (6)
+  captures_list: 79.167
+  load_resource: 145.593
+  PetaboxLoader3.resolve: 108.335
+  esindex: 0.01
+  LoadShardBlock: 58.294 (3)
+  exclusion.robots: 0.133
+  exclusion.robots.policy: 0.123
+  CDXLines.iter: 15.64 (3)
+-->

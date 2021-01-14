@@ -1,0 +1,1670 @@
+@charset "UTF-8";
+/*------------------------------------*\
+	$DEBUG
+\*------------------------------------*/
+
+/*.wrapper{ outline: 1px solid green;}
+[class^="grid-"]{outline: 1px solid purple;}
+.grids [class^="grid-"]{}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$DEFAULT LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------*\
+	$SHARED
+\*------------------------------------*/
+
+.island.promo,
+pre,
+code{
+	background-color:#ccc;
+}
+
+.font-filmotypelucky {
+	font-family: FilmotypeLucky;
+}
+
+/*------------------------------------*\
+	$MAIN
+\*------------------------------------*/
+
+html{
+	color: #000;
+	margin: 0;
+	padding: 0;
+	background: url('../img/background-html.png') bottom center repeat-x #fff;
+}
+
+body {
+	padding-bottom: 240px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*------------------------------------*\
+	$ISLANDS
+\*------------------------------------*/
+
+.island.promo{
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+	.island.promo a{
+		color:inherit;
+		font-weight:bold;
+		text-decoration:underline;
+	}
+	
+/*------------------------------------*\
+	$USER BAR
+\*------------------------------------*/
+
+#user-bar {
+	background: #000;
+}
+
+/*------------------------------------*\
+	$HEADER
+\*------------------------------------*/
+
+#header {
+	background: #000 url('../img/background-header-repeating.png') 0 100% repeat-x;
+	margin-bottom: 26px;
+}
+	.front #header {
+		margin-bottom: 20px;
+	}
+
+	#header #header-inner {
+		padding-top: 50px;
+		padding-bottom: 60px;
+	}
+
+/*------------------------------------*\
+	$LOGO
+\*------------------------------------*/
+
+#logo {
+	display: block;
+	width: 609px;
+	height: 115px;
+	margin: 0 auto;
+}
+
+	#logo img {
+		display: block;
+		width: 609px;
+		height: 115px;
+		margin: 20px 0;
+	}
+	
+#logo-supplemental {
+	display: block;
+	width: 140px;
+	height: 148px;
+	background: url('../img/logo-curve-drupal-experts.png') -222px 0 no-repeat;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	margin: 0;
+}
+	
+/*------------------------------------*\
+	$MAIN
+\*------------------------------------*/
+
+h1#page-title {
+	font-family: "FilmotypeLucky";
+	font-size: 55px;
+	font-weight: 400;
+	margin-bottom: 20px;
+	line-height: 1;
+}
+
+	.front h1#page-title {
+		text-align: center;
+	}
+	
+h2, h3, h4, h5, h6 {
+
+}
+
+p, #content p {
+	font-family: "Dosis", Verdana, Geneva, sans-serif;
+	color: #606060;
+	font-size: 19px;
+	line-height: 28px;
+}
+
+	#content p.column {
+		float: left;
+		width: 49%;
+		margin: 0;
+	}
+
+		#content p.column.first {
+			margin-right: 1%;	
+		}
+		
+		#content p.column.last {
+			margin-left: 1%;	
+		}
+
+/*------------------------------------*\
+	$CASE STUDIES
+\*------------------------------------*/
+
+#case-studies {
+	position: relative;
+	background: #fff url('../img/case-study-container-bg.png') top center repeat-x;
+	margin-top: 36px;
+	margin-bottom: 36px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#case-studies .contextual-links-region,
+#case-studies #block-views-home-case-study-slideshow-block {
+	position: inherit;
+}
+
+#case-studies .contextual-links-region .contextual-links-wrapper {
+	display: none;
+}
+
+#block-views-home-case-study-slideshow-block header {
+	background: url('../img/case-study-header-bg.png') 0 16px repeat-x;
+	width: 66%;
+	margin: 0 auto;
+}
+
+	#block-views-home-case-study-slideshow-block header h2{
+		text-align: center;
+		font-family: FilmotypeLucky;
+		font-size: 46px;
+		font-weight: normal;
+		margin: 0 auto;
+		color: #ff00d8;
+	}
+	
+	#block-views-home-case-study-slideshow-block header h2 span {
+		background: #fff;
+		padding: 0 20px 0 14px;
+	}
+
+	/* --- Flexslider --- */
+	
+	#block-views-home-case-study-slideshow-block .flex-nav-container {
+		position: inherit;
+		margin: 0;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider {
+		background: none;
+		border: 0;
+		padding: 0;
+		margin: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-o-border-radius: 0;
+		border-radius: 0;
+	}
+
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row {
+		position: relative;
+		width: 100%;
+		margin: 0;
+		padding: 0 0 50px 0;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-title h4 {
+		color: #000;
+		font-family: Veneer, Arial, Helvetica, sans-serif;
+		font-size: 42px;
+		font-weight: normal;
+		text-align: center;
+		margin: 0;
+		height: 55px;
+		padding: 18px 0;
+		text-transform: uppercase;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser{
+		height: 345px;
+		background-color: #008aff;	
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul,
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul {
+		width: 400px;
+		padding: 20px 20px 20px 40px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul li{
+		color: #fff;
+		font-family: "Dosis", Verdana, Geneva, sans-serif;
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul li strong{
+		font-family: Veneer;
+		text-transform: uppercase;
+		font-size: 22px;
+		font-weight: normal;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image{
+		position: absolute;
+		width: 400px;
+		border: 10px solid #fff;
+		top: 91px;
+		right: 40px;
+		margin: 20px 0;
+		-webkit-border-radius: 1px;
+		-moz-border-radius: 1px;
+		border-radius: 1px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image img{
+		width: 100%;
+		height: auto;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image a {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		background: #000;
+		background: rgba(0,0,0,.75);
+		opacity: 0;
+		-webkit-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+		-moz-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+		-ms-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+		-o-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+		transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image a:active {
+		top: 0;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image .overlay-inner {
+		padding-top: 136px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image .overlay .overlay-inner span {
+		width: 200px;
+		font-family: Veneer, Arial, Helvetica, sans-serif;
+		font-size: 26px;
+		color: #fff;
+		background: url('../img/case-study-icon-arrow.png') 100% 80% no-repeat;
+		padding-right: 28px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image a:hover {
+		opacity: 1;
+	}
+
+	/* --- Controls - Next/Prev --- */
+	
+	#block-views-home-case-study-slideshow-block ul.flex-direction-nav li a {
+		position: absolute;
+		width: 62px;
+		height: 345px;
+		top: 177px;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		background: #008aff url('../img/case-study-previous.png') 45% 50% no-repeat;
+		z-index: 20;
+		-webkit-transition: background-color 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+		-moz-transition: background-color 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+		-ms-transition: background-color 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+		-o-transition: background-color 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+		transition: background-color 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	}
+	
+	#block-views-home-case-study-slideshow-block ul.flex-direction-nav li a.next {
+		right: 0;
+		left: auto;
+		background: #008aff url('../img/case-study-next.png') 55% 50% no-repeat;
+	}
+	
+	#block-views-home-case-study-slideshow-block ul.flex-direction-nav li a:hover {
+		background-color: #181818;
+	}
+	
+	#block-views-home-case-study-slideshow-block .view-content .item-list{
+		position: relative;
+	}
+	
+	/* --- Controls - Pagination --- */
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav {
+		bottom: 42px;
+		left: 50%;
+		width: 560px;
+		margin-left: -280px;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li {
+		margin: 0 0 0 20px;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li:first-child {
+		margin: 0;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li a {
+		width: 16px;
+		height: 16px;
+		background: #fff;
+		border: 1px solid #c2c2c2;
+		-webkit-border-radius: 32px;
+		-moz-border-radius: 32px;
+		border-radius: 32px;
+       	-webkit-box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+       	box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+		text-indent: -9999px;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li a:hover {
+		background: #181818;
+		border: 1px solid #181818;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li a:active {
+		top: auto;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li a.active {
+		background: #038afe;
+		border: 1px solid #038afe;
+	}
+	
+	/* --- Gradient Overlay --- */
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay {
+		position: relative;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span {
+		display: block;
+		width: 20px;
+		height: 548px;
+		position: absolute;
+		top: -30px;
+		z-index: 10;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span.left {
+		left: 0px;	
+		background: url('../img/case-study-slit-left-med.png') 0 0 no-repeat;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span.right {
+		right: 0px;
+		background: url('../img/case-study-slit-right-med.png') 0 0 no-repeat;
+	}
+	
+	/* --- Links --- */
+	
+	#block-views-home-case-study-slideshow-block .contact-link {
+		position: relative;
+	}
+	
+	#block-views-home-case-study-slideshow-block .contact-link span {
+		display: block;
+		position: absolute;
+		left: 40px;
+		top: 454px;
+		z-index: 10;
+	}
+	
+	#block-views-home-case-study-slideshow-block .contact-link span a {
+		font-family: Veneer, Arial, Helvetica, sans-serif;
+		font-size: 20px;
+		padding: 4px 0;
+		color: #ff00d8;
+		background: url('../img/case-study-icon-envelope.png') 100% 50% no-repeat;
+		padding-right: 32px;
+	}
+	
+/*------------------------------------*\
+	$ETHOS
+\*------------------------------------*/
+
+#ethos {
+	background: url('../img/content-divide-span-med.png') 0 0 repeat-x;
+}
+	
+#ethos .wrapper{
+	background: url('../img/icon-bolt-med.png') 225px 22px no-repeat; 
+	padding-top: 40px;
+}
+
+.image-text {
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+	.intro-1 .image-text {
+		width: 300px;
+		height: 180px;
+		background: url('../img/define-design-develop.png') -530px 0 no-repeat;
+	}
+	
+	.intro-2 .image-text {
+		width: 300px;
+		height: 180px;
+		background: url('../img/mobile-desktop-websites.png') -530px 0 no-repeat;
+	}
+	
+	.usability .image-text {
+		display: block;
+		position: absolute;
+		width: 300px;
+		height: 320px;
+		background: url('../img/usability-at-the-heart.png') -568px 0 no-repeat;
+	}
+	
+	.can-do .image-text a {
+		display: block;
+		width: 620px;
+		height: 100px;
+		background: url('../img/we-can-do-it.png') -1190px 0 no-repeat;
+		margin-top: 40px;
+	}
+	
+	.can-do .image-text a:hover {
+
+		background: url('../img/we-can-do-it.png') -1190px -100px no-repeat;
+	}
+
+/*------------------------------------*\
+	$BRANDS
+\*------------------------------------*/
+
+#brands{
+	margin-top: 38px;
+}
+
+	#brands .wrapper {
+		background: url('../img/background-brands.png') -1922px 0 no-repeat;
+	}
+
+#brands .view-display-id-block_brands_worked_with{
+	height: 230px;
+}
+
+	#brands .view-display-id-block_brands_worked_with h3.title{
+		height: 33px;
+		background: url("../img/brands-worked-with.png") -1590px 0 no-repeat;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		margin-top: 30px;
+	}
+	
+	#brands .view-display-id-block_brands_worked_with .item-list ul,
+	#brands .view-display-id-block_brands_worked_with .item-list ul li{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+/*------------------------------------*\
+	$CONTACT
+\*------------------------------------*/
+
+#contact{
+	margin-top: 38px;
+}
+
+	#contact #block-block-1{
+		position: relative;
+	}
+
+		#contact #block-block-1 h2{
+			position: absolute;
+			top: 0px;
+			left: 97px;
+			background: url("../img/love-to-work-with-you.png") -564px 0 no-repeat;
+			width: 298px;
+			height: 31px;
+			text-indent: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			z-index: 9;
+		}
+		
+		#contact #block-block-1 .contact-info .telephone {
+			margin-top: 16px;
+			width: 460px;
+			height: 106px;
+			background: url("../img/telephone.png") -833px 0 no-repeat;
+		}
+	
+		#contact #block-block-1 .contact-info .email{
+			margin-top: 13px;
+		}
+		
+			#contact #block-block-1 .contact-info .email a{
+				display: block;
+				width: 460px;
+				height: 51px;
+				background: url("../img/email.png") -835px 0 no-repeat;
+			}
+			
+			#contact #block-block-1 .contact-info .email a:hover{
+				background-position: -835px -51px;
+			}
+	
+		#contact #block-block-1 .contact-info .address{
+			width: 460px;
+			height: 186px;
+			background: url("../img/address.png") -873px 0 no-repeat;
+		}
+		
+#content .contact-info-mobile {
+	display: none;
+}
+
+/*------------------------------------*\
+	$FOOTER
+\*------------------------------------*/
+
+#footer {
+	margin-top: 38px;
+}
+
+/*------------------------------------*\
+	$COPYRIGHT
+\*------------------------------------*/
+
+/*------------------------------------*\
+	$TYPE
+\*------------------------------------*/
+
+a {
+	color: #008aff;
+}
+
+a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+#main a {
+
+}
+
+mark{
+	border-bottom:2px solid;
+}
+
+pre{
+	padding:10px;
+}
+
+pre code,
+pre mark{
+	background:none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+
+}
+
+.text-right {
+	text-align: right;
+}
+
+.error-message {
+	color: red;
+	font-weight: 700;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$WIDE LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+@media (min-width: 1392px){
+	
+	/* --- HEADER --- */
+
+	#header #header-inner {
+		padding-top: 70px;
+		padding-bottom: 60px;
+	}
+	
+	/* --- LOGO --- */
+	
+	#logo {
+		width: 883px;
+		height: 165px;
+	}
+	
+		#logo img {
+			width: 883px;
+			height: 165px;
+			margin: 23px 0;
+		}
+		
+	/* --- MAIN --- */
+	
+	#logo-supplemental {
+		width: 200px;
+		height: 215px;
+		background: url('../img/logo-curve-drupal-experts.png') 0 0 no-repeat;
+	}
+	
+	h1#page-title {
+		font-size: 79px;
+	}
+	
+	#content p{
+		font-size: 28px;
+		line-height: 36px;
+	}
+	
+	/* --- CASE STUDIES --- */
+	
+	#case-studies {
+		padding-top: 50px;
+		padding-bottom: 60px;
+	}
+	
+	#block-views-home-case-study-slideshow-block header {
+		background: url('../img/case-study-header-bg.png') 0 18px repeat-x;
+	}
+	
+		#block-views-home-case-study-slideshow-block header h2{
+			font-size: 52px;
+			font-weight: normal;
+		}
+		
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser{
+		height: 476px;	
+	}
+		
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul {
+		width: 580px;
+		padding: 34px 20px 34px 80px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul li{
+		font-size: 25px;
+	}
+
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul li strong{
+		font-size: 32px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-title h4 {
+		font-size: 56px;
+		height: 74px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image{
+		width: 584px;
+		top: 110px;
+		right: 80px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image .overlay-inner {
+		padding-top: 198px;
+	}
+	
+	#block-views-home-case-study-slideshow-block ul.flex-direction-nav li a {
+		width: 82px;
+		height: 476px;
+		top: 212px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-site-link .field-content {
+		padding: 15px 60px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-site-link a {
+		font-size: 24px;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav {
+		bottom: 64px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span {
+		height: 688px;
+		top: -15px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span.left {
+		background: url('../img/case-study-slit-left.png') 0 0 no-repeat;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span.right {
+		background: url('../img/case-study-slit-right.png') 0 0 no-repeat;
+	}
+	
+	#block-views-home-case-study-slideshow-block .contact-link span {
+		left: 80px;
+		top: 600px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .contact-link span a {
+		font-size: 24px;
+	}
+		
+	/* --- ETHOS --- */
+	
+	#ethos {
+		background: url('../img/content-divide-span.png') 0 0 repeat-x;
+	}
+	
+	#ethos .wrapper{
+		background: url('../img/icon-bolt.png') 325px 32px no-repeat; 
+		padding-top: 64px;
+	}
+	
+	.intro-1 .image-text {
+		width: 435px;
+		height: 262px;
+		background: url('../img/define-design-develop.png') 0 0 no-repeat;
+	}
+	
+	.intro-2 .image-text {
+		width: 435px;
+		height: 262px;
+		background: url('../img/mobile-desktop-websites.png') 0 0 no-repeat;
+	}
+	
+	.usability .image-text {
+		width: 435px;
+		height: 465px;
+		background: url('../img/usability-at-the-heart.png') 0 0 no-repeat;
+	}
+	
+	.can-do .image-text a {
+		width: 899px;
+		height: 144px;
+		background: url('../img/we-can-do-it.png') 0 0 no-repeat;
+		margin-top: 58px;
+	}
+	
+	.can-do .image-text a:hover {
+		background: url('../img/we-can-do-it.png') 0 -144px no-repeat;
+	}
+	
+	/* --- BRANDS --- */
+	
+	#brands{
+		margin-top: 62px;
+	}
+	
+		#brands .wrapper {
+			background: url('../img/background-brands.png') 0 0 no-repeat;
+		}
+	
+		#brands .view-display-id-block_brands_worked_with{
+			height: 333px;
+		}
+		
+		#brands .view-display-id-block_brands_worked_with h3.title{
+			height: 33px;
+			background: url("../img/brands-worked-with.png") 90px 0 no-repeat;
+			margin-top: 48px;
+			margin-bottom: 16px;
+		}
+	
+	/* --- CONTACT --- */
+	
+	#contact{
+		margin-top: 62px;
+	}
+	
+		#contact #block-block-1 h2{
+			left: 127px;
+			background: url("../img/love-to-work-with-you.png") 0px 0px no-repeat;
+			width: 433px;
+			height: 47px;
+		}
+		
+		#contact #block-block-1 .contact-info .telephone {
+			margin-top: 24px;
+			width: 638px;
+
+			height: 154px;
+			background: url("../img/telephone.png") 0px 0px no-repeat;
+		}
+		
+		#contact #block-block-1 .contact-info .email{
+			margin-top: 23px;
+		}
+		
+		#contact #block-block-1 .contact-info .email a{
+			width: 637px;
+			height: 67px;
+			background: url("../img/email.png") 0px 0px no-repeat;
+		}
+		
+		#contact #block-block-1 .contact-info .email a:hover{
+			background-position: 0 -67px;
+		}
+		
+		#contact #block-block-1 .contact-info .address{
+			width: 667px;
+			height: 268px;
+			background: url("../img/address.png") 0px 0px no-repeat;
+		}
+	
+	/* --- FOOTER --- */
+	
+	#footer {
+		margin-top: 62px;
+	}
+
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$NARROW LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 1024px){
+	
+	/* --- HEADER --- */
+
+	#header #header-inner {
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+	
+		#header #header-inner .grid-18,
+		#header #header-inner .grid-6 {
+			float: left;
+		}
+		
+		#header #header-inner .grid-18 {
+			width: 530px;
+		}
+		
+		#header #header-inner .grid-6 {
+			width: 175px;
+		}
+	
+	/* --- LOGO --- */
+	
+	#logo {
+		width: 457px;
+		height: 86px;
+	}
+	
+		#logo img {
+			width: 457px;
+			height: 86px;
+		}
+		
+	/* --- MAIN --- */
+	
+	#logo-supplemental {
+		width: 111px;
+		height: 120px;
+		background: url('../img/tablet/logo-curve-drupal-experts.png') 0 0 no-repeat;
+	}
+	
+	h1#page-title{
+		font-size: 40px;
+	}
+	
+	#content p {
+		font-size: 20px;
+		line-height: 28px;
+	}
+	
+		.front #content p {
+			text-align: center;
+		}
+	
+	#content p.column {
+		margin: 0 0 14px 0;
+		width: auto;
+	}
+	
+	/* --- CASE STUDIES --- */
+	
+	#case-studies {
+		margin-bottom: 20px;
+		padding-bottom: 60px;
+	}
+	
+	#block-views-home-case-study-slideshow-block header {
+		background: url('../img/case-study-header-bg.png') 0 10px repeat-x;
+		width: 80%;
+	}
+	
+	#block-views-home-case-study-slideshow-block header h2{
+		font-size: 38px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-title h4 {
+		font-size: 32px;
+		padding-bottom: 0;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser {
+		height: 305px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul {
+		width: 260px;
+		padding: 20px 20px 20px 30px;	
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul li {
+		font-size: 16px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul li:nth-child(3) {
+		display: none;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul li strong {
+		font-size: 26px;
+		line-height: 32px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser ul li span {
+		display: none;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image {
+		width: 356px;
+		top: 73px;
+		right: 30px;
+		border: 6px solid white;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image a {
+		display: none;
+	}
+	
+	#block-views-home-case-study-slideshow-block ul.flex-direction-nav {
+		display: none;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav {
+		bottom: 64px;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li {
+		margin: 0 0 0 20px;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li:first-child {
+		margin: 0;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span {
+		height: 500px;
+		top: -30px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span.left {
+		background: url('../img/case-study-slit-left-min.png') 0 0 no-repeat;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span.right {
+		background: url('../img/case-study-slit-right-min.png') 0 0 no-repeat;
+	}
+	
+	#block-views-home-case-study-slideshow-block .contact-link span {
+		top: 424px;
+		left: 50%;
+		margin-left: -155px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .contact-link span a {
+		font-size: 27px;
+		background: url('../img/tablet/case-study-icon-envelope.png') 100% 50% no-repeat;
+		padding-right: 42px;
+	}
+		
+		
+	/* --- ETHOS --- */
+	
+	#ethos {
+		background: none;
+	}
+	
+	#ethos .wrapper{
+		background: none;
+		padding-top: 20px;
+	}
+	
+	#logo-supplemental {
+
+	}
+	
+	.intro-1 .image-text {
+		width:705px;
+		height: 64px;
+		background: url('../img/tablet/define-design-develop.png') 0 0 no-repeat;
+		margin-bottom: 20px;
+	}
+	
+	.intro-2 {
+		padding-bottom: 20px;
+	}
+	
+	.intro-2 .image-text {
+		width: 705px;
+		height: 286px;
+		background: url('../img/tablet/mobile-desktop-websites.png') 0 0 no-repeat;
+	}
+	
+	.intro-1,
+	.intro-2 {
+		display: none;
+	}
+	
+	.usability .image-text {
+		position: relative;
+		float: left;
+		width: 352px;
+		height: 340px;
+		background: url('../img/tablet/usability-at-the-heart.png') 50% 0 no-repeat;
+		margin-top: 0;
+	}
+	
+	.can-do .image-text a:link {
+		float: right;
+		width: 352px;
+		height: 340px;
+		background: url('../img/tablet/we-can-do-it.png') 50% 0 no-repeat;
+		margin-top: 0;
+	}
+	
+	/* --- BRANDS --- */
+	
+	#brands{
+		margin-top: 40px;
+	}
+	
+		#brands .wrapper {
+			background: url('../img/tablet/background-brands.png') 0 0 no-repeat;
+		}
+		
+		#brands .view-display-id-block_brands_worked_with{
+			height: 315px;
+		}
+		
+		#brands .view-display-id-block_brands_worked_with h3.title{
+			width: 642px;
+			height: 30px;
+			background: url("../img/tablet/brands-worked-with.png") 0 0 no-repeat;
+			margin: 40px auto 20px auto;
+		}
+	
+		#brands .view-display-id-block_brands_worked_with .item-list ul li span,
+		#brands .view-display-id-block_brands_worked_with .item-list ul li span img {
+			width: 165px;
+			height: 78px;
+		}
+		
+		#brands .view-display-id-block_brands_worked_with .item-list ul li span {
+			float: left;
+			margin-left: 6px;
+			margin-right: 5px;
+		}
+		
+	/* --- CONTACT --- */
+	
+	#contact {
+		margin-top: 20px;
+	}
+	
+		#contact #block-block-1 h2{
+			top: -24px;
+			left: 127px;
+			background: url("../img/tablet/love-to-work-with-you.png") 0 0 no-repeat;
+			width: 433px;
+			height: 47px;
+		}
+		
+		#contact #block-block-1 .contact-info .telephone {
+			margin: 0 auto;
+			margin-top: 24px;
+			width: 638px;
+			height: 154px;
+			background: url("../img/tablet/telephone.png") 0 0 no-repeat;
+		}
+		
+		#contact #block-block-1 .contact-info .email{
+			margin-top: 20px;
+		}
+		
+		#contact #block-block-1 .contact-info .email a{
+			margin: 0 auto;
+			width: 637px;
+			height: 67px;
+			background: url("../img/tablet/email.png") 0 0 no-repeat;
+		}
+		
+		#contact #block-block-1 .contact-info .email a:hover{
+			background-position: 0 -67px;
+		}
+		
+		#contact #block-block-1 .contact-info .address{
+			margin: 0 auto;
+			margin-top: 20px;
+			width: 666px;
+			height: 170px;
+			background: url("../img/tablet/address.png") 0 0 no-repeat;
+		}
+		
+		/* Type */
+		
+		a:hover { color: #008AFF; }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$MOBILE LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 720px){
+	
+	html { background: none; }
+	body { padding-bottom: 0; }
+
+	/* --- HEADER --- */
+
+	#header #header-inner {
+		padding-top: 20px;
+		padding-bottom: 30px;
+	}
+	
+		.page-blog #header{
+			margin-bottom: 4px;
+		}
+	
+		#header #header-inner .grid-18,
+		#header #header-inner .grid-6 {
+			float: left;
+		}
+		
+		#header #header-inner .grid-18 {
+			width: 238px;
+		}
+		
+		#header #header-inner .grid-6 {
+			width: 52px;
+		}
+	
+	/* --- LOGO --- */
+	
+	#logo {
+		width: 200px;
+		height: 37px;
+	}
+	
+		#logo img {
+			width: 200px;
+			height: 37px;
+			margin: 14px 0;
+		}
+		
+	/* --- MAIN --- */
+	
+	#page {
+		position: relative;
+	}
+	
+	#logo-supplemental {
+		width: 52px;
+		height: 62px;
+		background: url('../img/mobile/logo-curve-drupal-experts.png') 0 0 no-repeat;
+		margin: 0 auto;
+	}
+	
+	h1#page-title {
+		font-size: 30px;
+		margin-bottom: 15px;
+	}
+	
+	#content p {
+		font-size: 16px;
+		line-height: 22px;
+	}
+	
+	#content p.column {
+		margin: 0;
+		width: auto;
+	}
+	
+	#content p.first {
+		display: none;
+	}
+	
+	/* --- CASE STUDIES --- */
+	
+	#case-studies {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding-bottom: 20px;
+	}
+	
+	#block-views-home-case-study-slideshow-block header {
+		width: 100%;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-title h4 {
+		font-size: 26px;
+		line-height: 30px;
+		height: 60px;
+		padding-bottom: 18px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser {
+		display: none;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider .slides .flexslider-views-slideshow-main-frame-row .views-field-field-teaser-image {
+		width: 300px;
+		position: relative;
+		top: auto;
+		right: auto;
+		border: none;
+		margin: 0;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span {
+		height: 360px;
+		top: 0;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span.left {
+		background: url('../img/mobile/case-study-slit-left.png') 0 0 no-repeat;
+	}
+	
+	#block-views-home-case-study-slideshow-block .flexslider-overlay span.right {
+		background: url('../img/mobile/case-study-slit-right.png') 0 0 no-repeat;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav {
+		width: 300px;
+		margin-left: -150px;
+		bottom: 30px;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li {
+		margin: 0 0 0 10px;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li:first-child {
+		margin: 0;
+	}
+	
+	#block-views-home-case-study-slideshow-block ol.flex-control-nav li a {
+		width: 12px;
+		height: 12px;
+	}
+	
+	#block-views-home-case-study-slideshow-block .view-footer {
+		display: none;
+	}
+	
+	/* --- ETHOS --- */
+	
+	.intro-1 .image-text {
+		width:300px;
+		height: 27px;
+		background: url('../img/mobile/define-design-develop.png') 50% 0 no-repeat;
+		margin-bottom: 10px;
+	}
+	
+	.intro-2 {
+		background: none;
+		padding: 0;
+	}
+	
+	.intro-2 .image-text {
+		width: 300px;
+		height: 115px;
+		background: url('../img/mobile/mobile-desktop-websites.png') 50% 0 no-repeat;
+		margin-bottom: 20px;
+	}
+	
+	.intro-1, .intro-2 {
+		display: block;
+	}
+	
+	.usability, .can-do {
+		background: url('../img/mobile/divide-2.png') 50% 0 no-repeat;
+		padding-top: 30px;
+	}
+	
+	.usability .image-text {
+		position: relative;
+		float: none;
+		width: 300px;
+		height: 234px;
+		background: url('../img/mobile/usability-at-the-heart.png') 50% 0 no-repeat;
+		margin-bottom: 20px;
+		margin-top: 0;
+	}
+	
+	.can-do .image-text a:link {
+		float: none;
+		width: 300px;
+		height: 97px;
+		background: url('../img/mobile/we-can-do-it.png') 50% 0 no-repeat;
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+	
+	/* --- BRANDS --- */
+	
+	#brands{
+		margin-top: 195px;
+		background: #000 url('../img/background-content-repeating.png') 0 0 repeat-x;
+		padding: 25px 0;
+	}
+	
+		#brands .wrapper {
+			background: none;
+		}
+		
+		#brands .view-display-id-block_brands_worked_with{
+			height: auto;
+		}
+		
+		#brands .view-display-id-block_brands_worked_with h3.title{
+			width: 300px;
+			height: 16px;
+			background: url("../img/mobile/brands-worked-with.png") 50% 0 no-repeat;
+			margin: 0 auto 10px auto;
+		}
+	
+		#brands .view-display-id-block_brands_worked_with .item-list ul li span,
+		#brands .view-display-id-block_brands_worked_with .item-list ul li span img {
+			width: 90px;
+			height: 43px;
+		}
+		
+		#brands .view-display-id-block_brands_worked_with .item-list ul li span {
+			float: left;
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+		
+	/* --- CONTACT --- */
+	
+	#contact {
+		position: absolute;
+		margin-top: 0;
+		bottom: 275px;
+		left: 50%;
+		margin-left: -160px;
+	}
+	
+		#contact .wrapper{
+			background: none;
+		}
+	
+		#contact #block-block-1 h2{
+			top: -15px;
+			left: 0px;
+			background: url("../img/mobile/love-to-work-with-you.png") 50% 0 no-repeat;
+			width: 300px;
+			height: 20px;
+		}
+		
+		#contact #block-block-1 .contact-info .telephone,
+		#contact #block-block-1 .contact-info .telephone a {
+			display: block;
+			margin: 0 auto;
+			margin-top: 15px;
+			width: 300px;
+			height: 65px;
+			background: url("../img/mobile/telephone.png") 50% 0 no-repeat;
+		}
+		
+		#contact #block-block-1 .contact-info .telephone a {
+			margin-top: 0;
+		}
+		
+		#contact #block-block-1 .contact-info .email{
+			margin-top: 15px;
+		}
+		
+		#contact #block-block-1 .contact-info .email a{
+			margin: 0 auto;
+			width: 300px;
+			height: 30px;
+			background: url("../img/mobile/email.png") 50% 0 no-repeat;
+		}
+		
+		#contact #block-block-1 .contact-info .email a:hover{
+			background-position: 50% -30px;
+		}
+		
+		#contact #block-block-1 .contact-info .address{
+			margin: 0 auto;
+			margin-top: 15px;
+			width: 300px;
+			height: 21px;
+			background: url("../img/mobile/address.png") 50% 0 no-repeat;
+		}
+		
+		#content .contact-info-mobile .telephone,
+		#content .contact-info-mobile .telephone a {
+			display: block;
+			margin: 0 auto;
+			width: 300px;
+			height: 37px;
+			background: url("../img/mobile/call-now.png") 50% 0 no-repeat;
+			margin-bottom: 15px;
+		}
+		
+		#content .contact-info-mobile .email a {
+			display: block;
+			margin: 0 auto;
+			width: 300px;
+			height: 37px;
+			background: url("../img/mobile/email-us.png") 50% 0 no-repeat;
+			margin-bottom: 30px;
+		}
+		
+	#content .contact-info-mobile {
+		display: block;
+	}
+		
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$@2X GRAPHICS
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+	
+	/* --- HEADER --- */
+	
+	#header { background: #000 url('../img/background-header-repeating.png') 0 100% repeat-x; -webkit-background-size: 900px 170px; }
+	
+	/* --- CASE STUDIES --- */
+	
+	#case-studies { background: white url('../img/tablet/case-study-container-bg@2x.png') top center repeat-x; -webkit-background-size: 121px 50px; }
+	#block-views-home-case-study-slideshow-block header { background: url('../img/tablet/case-study-header-bg@2x.png') 0 10px repeat-x; -webkit-background-size: 2px 11px; }
+	
+	/* --- ETHOS --- */
+	
+	#logo-supplemental { background: url('../img/mobile/logo-curve-drupal-experts@2x.png') 0 0 no-repeat; -webkit-background-size: 52px 62px; }
+	.intro-1 .image-text { background: url('../img/mobile/define-design-develop@2x.png') 50% 0 no-repeat;-webkit-background-size: 300px 27px; } 
+	.intro-2 .image-text { background: url('../img/mobile/mobile-desktop-websites@2x.png') 50% 0 no-repeat;-webkit-background-size: 286px 115px; } 
+	.usability, .can-do { background: url('../img/mobile/divide-2@2x.png') 50% 0 no-repeat;-webkit-background-size: 300px 5px; } 
+	.usability .image-text { background: url('../img/mobile/usability-at-the-heart@2x.png') 50% 0 no-repeat;-webkit-background-size: 284px 234px; } 
+	.can-do .image-text a:link { background: url('../img/mobile/we-can-do-it@2x.png') 50% 0 no-repeat;-webkit-background-size: 300px 97px; } 
+	
+	/* --- BRANDS --- */
+	
+	#brands { background-image: url('../img/background-content-repeating.png'); -webkit-background-size: 940px 6px; } 
+	#brands .view-display-id-block_brands_worked_with h3.title { background: url("../img/mobile/brands-worked-with@2x.png") 50% 0 no-repeat;-webkit-background-size: 298px 16px; } 
+	
+	/* --- CONTACT --- */
+	
+	#contact #block-block-1 h2 { background: url("../img/mobile/love-to-work-with-you@2x.png") 50% 0 no-repeat;-webkit-background-size: 184px 20px; } 
+	#contact #block-block-1 .contact-info .telephone, #contact #block-block-1 .contact-info .telephone a { background: url("../img/mobile/telephone@2x.png") 50% 0 no-repeat;-webkit-background-size: 271px 65px; } 
+	#contact #block-block-1 .contact-info .email a { background: url("../img/mobile/email@2x.png") 50% 0 no-repeat;-webkit-background-size: 272px 59px; } 
+	#contact #block-block-1 .contact-info .address {  background: url("../img/mobile/address@2x.png") 50% 0 no-repeat;-webkit-background-size: 240px 21px; } 	
+	#content .contact-info-mobile .telephone, #content .contact-info-mobile .telephone a { background: url("../img/mobile/call-now@2x.png") 50% 0 no-repeat; -webkit-background-size: 246px 37px; }
+	#content .contact-info-mobile .email a { background: url("../img/mobile/email-us@2x.png") 50% 0 no-repeat; -webkit-background-size: 246px 37px; }
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) {
+	
+	html { background: url('../img/background-html.png') bottom center repeat-x #fff; -webkit-background-size: 1250px 112px; }
+	body { padding-bottom: 140px; }
+	
+	/* --- HEADER --- */
+	
+	#header { background: #000 url('../img/background-header-repeating.png') 0 100% repeat-x; -webkit-background-size: 900px 170px; }
+	
+	/* --- CASE STUDIES --- */
+	
+	#case-studies { background: white url('../img/tablet/case-study-container-bg@2x.png') top center repeat-x; -webkit-background-size: 121px 50px; }
+	#block-views-home-case-study-slideshow-block header { background: url('../img/tablet/case-study-header-bg@2x.png') 0 10px repeat-x; -webkit-background-size: 2px 11px; }
+	#block-views-home-case-study-slideshow-block .contact-link span a { background: url('../img/tablet/case-study-icon-envelope@2x.png') 100% 50% no-repeat; -webkit-background-size: 32px 22px; }
+	
+	/* --- ETHOS --- */
+	
+	#logo-supplemental { background: url('../img/tablet/logo-curve-drupal-experts@2x.png') 0 0 no-repeat; -webkit-background-size: 111px 120px; }
+	.intro-1 .image-text { background: url('../img/tablet/define-design-develop@2x.png') 0 0 no-repeat; -webkit-background-size: 703px 64px; }
+	.intro-2 { background: url('../img/tablet/divide-1@2x.png') 50% 100% no-repeat; -webkit-background-size: 690px 10px; }
+	.intro-2 .image-text { background: url('../img/tablet/mobile-desktop-websites@2x.png') 0 0 no-repeat; -webkit-background-size: 702px 286px; }
+	.usability, .can-do { background: none; }
+	.usability .image-text { background: url('../img/tablet/usability-at-the-heart@2x.png') 50% 0 no-repeat; -webkit-background-size: 317px 339px; }
+	.can-do .image-text a:link { background: url('../img/tablet/we-can-do-it@2x.png') 50% 0 no-repeat;  -webkit-background-size: 321px 339px; }
+	
+	/* --- BRANDS --- */
+
+	#brands { background: #fff; }
+	#brands .wrapper { background: url('../img/tablet/background-brands@2x.png') 0 0 no-repeat; -webkit-background-size: 723px 358px; }
+	#brands .view-display-id-block_brands_worked_with h3.title { background: url("../img/tablet/brands-worked-with@2x.png") 100% 100% no-repeat; -webkit-background-size: 642px 30px; }
+	
+	/* --- CONTACT --- */
+	
+	#contact #block-block-1 h2{ background: url("../img/tablet/love-to-work-with-you@2x.png") 0 0 no-repeat; -webkit-background-size: 433px 47px; }
+	#contact #block-block-1 .contact-info .telephone { background: url("../img/tablet/telephone@2x.png") 0 0 no-repeat; -webkit-background-size: 638px 154px; }
+	#contact #block-block-1 .contact-info .email a{ background: url("../img/tablet/email@2x.png") 0 0 no-repeat; -webkit-background-size: 637px 135px; }
+	#contact #block-block-1 .contact-info .address{ background: url("../img/tablet/address@2x.png") 0 0 no-repeat; -webkit-background-size: 666px 170px; }
+		
+}
+
+/*------------------------------------*\
+	$MISC
+\*------------------------------------*/
+
+::selection		{ background-color:#008aff; color:#fff; }
+::-moz-selection{ background-color:#008aff; color:#fff; }
+
+hr{
+	padding:0;
+	border:none;
+	height:1px;
+	background-color:#ccc;
+}
+
+/*------------------------------------*\
+	$DRUPAL
+\*------------------------------------*/
+
+#tabs { 
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+ul.primary {
+	margin: 8px 0;
+	padding-bottom: 6px;
+}
+
+ul.primary li a {
+	padding: 0.4em 1.2em;
+	margin-right: 0.2em;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+ul.secondary {
+	margin: 8px 0;
+	padding: 0.4em 1em 0.9em 1em;
+}
+
+ul.secondary li {
+	padding: 0 1.2em 0 0;
+	margin-right: 1.2em;
+}
+
+ul.secondary li:last-child {
+	border: 0;
+}
+
+ul.secondary li a {
+	color: #0a69de;
+}
+
+ul.secondary li a:hover {
+	color: #333;
+}
+
+ul.secondary li a.active {
+	border: 0;
+	border-bottom: 1px solid #0a69de;
+}
+
+ul.secondary li a.active:hover {
+	color: #0a69de;
+}
+
+.vertical-tabs ul.vertical-tabs-list {
+
+}
+
+.vertical-tabs ul.vertical-tabs-list li a {
+	padding: 0.8em;
+}
+
+.vertical-tabs ul.vertical-tabs-list li a:hover {
+	background-color: #ddd;
+	outline: none;
+}
+
+.vertical-tabs ul.vertical-tabs-list li.selected a:hover {
+	background-color: #fff;
+}
+
+.vertical-tabs ul.vertical-tabs-list li a:hover,
+.vertical-tabs ul.vertical-tabs-list li a:hover strong,
+.vertical-tabs ul.vertical-tabs-list li a:active,
+.vertical-tabs ul.vertical-tabs-list li a:active strong {
+	text-decoration: none;
+}
+
+.vertical-tabs .fieldset-description {
+	margin-top: 12px;
+}

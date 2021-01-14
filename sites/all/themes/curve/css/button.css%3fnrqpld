@@ -1,0 +1,72 @@
+.button {
+	font-family: 'Roboto', sans-serif;
+	padding: 8px 12px;
+	background: #0086f7;
+	display: block;
+	color: white;
+	width: auto;
+	text-align: center;
+	font-weight: 500;
+  -webkit-transition: all 0.4s ease;
+     -moz-transition: all 0.4s ease;
+          transition: all 0.4s ease; 
+}
+
+.button a { color: white; }
+
+.button--home {
+	border: 4px solid white;
+	background-color: rgba(0,0,0,0.4);
+	text-transform: uppercase;
+	max-width: 300px;
+	margin: 0 auto;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	font-size: 28px;
+	font-weight: 500;
+}
+
+.button--home:hover {
+	background: #0086f7;
+	color: white;
+}
+
+.button--home__slider {
+	border-color: black;
+	background-color: white;
+	margin: 30px auto;
+}
+.button--home__slider a { 
+	color: black;
+}
+.button--home__slider:hover { 
+	border-color: #0086f7;
+}
+.button--home__slider:hover a { 
+	color: white;
+}
+
+
+@media only screen and (device-width: 1024px),
+       only screen and (max-width: 1024px) {
+		   
+		   .button--home {
+		padding: 30px 50px;	   
+	}
+		   
+	   }
+
+
+@media only screen and (device-width: 575px),
+       only screen and (max-width: 575px) {
+		   
+	.button--home {
+		padding: 30px 50px;	   
+	}
+	
+	a.button button--home button--home__modifier {
+		font-size: 1.5em;
+	}
+	   
+}
+	   

@@ -1,0 +1,18 @@
+.region-content ul.simple-twitter-block,.region-content ul.simple-twitter-block li.simple-twitter-tweet{list-style:none;margin:0;padding:0;}.region-content ul.simple-twitter-block li.simple-twitter-tweet{background-color:#e2f6fc;border:1px solid #3dc1f4;border-radius:12px;color:#333;margin-bottom:18px;padding:18px;position:relative;-moz-border-radius:12px;-webkit-border-radius:12px;}.region-content ul.simple-twitter-block li.simple-twitter-tweet span{display:block;}.region-content p.simple-twitter-error{background-color:#feeced;border:1px solid #f4423d;border-radius:12px;color:#b20b06;margin-bottom:18px;padding:18px;position:relative;-moz-border-radius:12px;-webkit-border-radius:12px;}
+.ctools-locked{color:red;border:1px solid red;padding:1em;}.ctools-owns-lock{background:#FFFFDD none repeat scroll 0 0;border:1px solid #F0C020;padding:1em;}a.ctools-ajaxing,input.ctools-ajaxing,button.ctools-ajaxing,select.ctools-ajaxing{padding-right:18px !important;background:url(/sites/all/modules/ctools/images/status-active.gif) right center no-repeat;}div.ctools-ajaxing{float:left;width:18px;background:url(/sites/all/modules/ctools/images/status-active.gif) center center no-repeat;}
+#views-slideshow-form-wrapper .form-item.dependent-options{padding-left:5px;}#views-slideshow-form-wrapper .vs-dependent{padding-left:30px;}
+
+
+/*
+playback timings (ms):
+  RedisCDXSource: 1.523
+  PetaboxLoader3.datanode: 81.843 (4)
+  captures_list: 82.163
+  load_resource: 79.68
+  PetaboxLoader3.resolve: 21.846
+  esindex: 0.013
+  LoadShardBlock: 54.847 (3)
+  exclusion.robots: 0.198
+  exclusion.robots.policy: 0.182
+  CDXLines.iter: 22.801 (3)
+*/

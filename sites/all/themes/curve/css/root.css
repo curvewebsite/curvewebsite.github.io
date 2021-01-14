@@ -1,0 +1,291 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+}
+
+form {
+  margin: 0
+}
+
+
+form button, 
+form input, 
+form select,
+form textarea {
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+form button, 
+form input, 
+form select {
+}
+
+form button,
+form input {
+  line-height: normal;
+}
+
+form button,
+form input[type=button],
+form input[type=reset],
+form input[type=submit] {
+  position: relative !important;
+  border: 1px solid black;
+  opacity: 1 !important;
+  text-indent: 0 !important;
+  visibility: visible !important;
+  padding: 8px 12px;
+  background-color: transparent;
+  display: block;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  margin: auto;
+  width: 214px !important;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s ease !important;
+  -moz-transition: all 0.4s ease !important;
+  transition: all 0.4s ease !important;
+  cursor: pointer;
+}
+
+form button:hover,
+form input[type=button]:hover,
+form input[type=reset]:hover,
+form input[type=submit]:hover {
+	background: #0086f7;
+	color: white;
+}
+
+form button[disabled],
+form input[disabled] {
+  cursor: default;
+}
+
+form input[type=checkbox],
+form input[type=radio] {
+  width: auto;
+  box-sizing: border-box;
+  padding: 0;
+  *height: 13px;
+  *width: 13px;
+}
+
+#edit-submitted-other-information-attach-a-brief-or-other-information-upload-button--2 { display: inline-block !important; }
+
+form input[type=search]::-webkit-search-cancel-button,
+form input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+form button::-moz-focus-inner,
+form input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+form textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+form input[type=text], 
+form input[type=password],
+form input[type=email],
+form input[type=url],
+form input[type=search],
+form input[type=tel],
+form textarea {
+  -webkit-appearance: none;
+  	 -moz-appearance: none;
+ 					appearance: none;
+}
+
+form input[type=text], 
+form input[type=password],
+form input[type=email],
+form input[type=url],
+form input[type=date],
+form input[type=month],
+form input[type=time],
+form input[type=datetime],
+form input[type=datetime-local],
+form input[type=week],
+form input[type=number],
+form input[type=search],
+form input[type=tel],
+form input[type=color],
+form select,
+form textarea {
+  width: 100%;
+  display: inline-block;
+  padding: 9px 12px 8px;
+  border: 1px solid #dfdfdf;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  font-size: 14px;
+
+  -webkit-box-sizing: border-box;
+  	 -moz-box-sizing: border-box;
+  				box-sizing: border-box;
+
+	-webkit-transition: 0.3s linear border-color;
+		 -moz-transition: 0.3s linear border-color;
+			 -o-transition: 0.3s linear border-color;
+					transition: 0.3s linear border-color;
+
+	-webkit-border-radius: 4px;
+		 -moz-border-radius: 4px;
+					border-radius: 4px;  				
+}
+
+form input[type=text]:focus,
+form input[type=password]:focus,
+form input[type=email]:focus,
+form input[type=url]:focus,
+form input[type=date]:focus,
+form input[type=month]:focus,
+form input[type=time]:focus,
+form input[type=datetime]:focus,
+form input[type=datetime-local]:focus,
+form input[type=week]:focus,
+form input[type=number]:focus,
+form input[type=search]:focus,
+form input[type=tel]:focus,
+form input[type=color]:focus,
+form select:focus,
+form textarea:focus {
+  outline: 0;
+  outline: thin dotted \9;
+}
+
+form input[type=file]:focus,
+form input[type=radio]:focus,
+form input[type=checkbox]:focus {
+  outline: thin dotted #333;
+  outline: 1px auto #129FEA;
+}
+
+form input[type=text][disabled],
+form input[type=password][disabled],
+form input[type=email][disabled],
+form input[type=url][disabled],
+form input[type=date][disabled],
+form input[type=month][disabled],
+form input[type=time][disabled],
+form input[type=datetime][disabled],
+form input[type=datetime-local][disabled],
+form input[type=week][disabled],
+form input[type=number][disabled],
+form input[type=search][disabled],
+form input[type=tel][disabled],
+form input[type=color][disabled],
+form select[disabled],
+form textarea[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+form input[readonly],
+form select[readonly],
+form textarea[readonly],
+form input[readonly]:focus,
+form select[readonly]:focus,
+form textarea[readonly]:focus {
+  background: #eee;
+  color: #777;
+  border-color: #ccc;
+}
+
+form input:focus:invalid,
+form textarea:focus:invalid,
+form select:focus:invalid {
+  color:#b94a48;
+  border: 1px solid #ee5f5b;
+}
+
+form input:focus:invalid:focus,
+form textarea:focus:invalid:focus,
+form select:focus:invalid:focus {
+  border-color: #e9322d;
+}
+
+form input[type=file]:focus:invalid:focus,
+form input[type=radio]:focus:invalid:focus,
+form input[type=checkbox]:focus:invalid:focus {
+  outline-color: #e9322d;
+}
+
+form select {
+  width: auto;
+  min-width: 90px;
+  padding-right: 28px;
+
+  border: 1px solid $color-gray;
+  background-color: #fff;
+  background-position: 97% 50%;
+  background-repeat: no-repeat;
+
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  text-indent: 0.01px;
+  text-overflow: "";  
+  background-image: url('../img/icons/arrow-down.png');
+  background-position: 97% 50%;
+  background-repeat: no-repeat;
+
+  .lt-ie9 & {
+    padding-right: 12px;
+    background-image: none !important;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+form select[multiple] {
+  height: auto;
+}
+
+form label {
+  margin: .5em 0 .2em;
+}
+
+
+form fieldset {
+	padding: 20px 20px 8px 20px;
+}
+
+form legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  float: left;
+}
+
+form .description {
+  display: block;
+  padding-top: 10px;
+  color: #666;
+  font-size: 90%;
+}
+
+form .grippie {
+  display: none;
+}

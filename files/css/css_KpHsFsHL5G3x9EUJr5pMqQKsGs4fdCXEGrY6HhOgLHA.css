@@ -1,0 +1,16 @@
+.flex-nav-container{float:right;position:relative;width:100%;margin-bottom:30px;}.flex-nav-container ul,.flex-nav-container ol{list-style:none;}.flexslider ul.slides,.flex-nav-container ol.flex-control-nav,.flex-nav-container ul.flex-direction-nav,.flexslider ul.slides li img{padding:0px;margin:0px;}
+
+
+/*
+playback timings (ms):
+  exclusion.robots.policy: 0.134
+  RedisCDXSource: 2.971
+  LoadShardBlock: 91.516 (3)
+  captures_list: 120.325
+  PetaboxLoader3.resolve: 48.564
+  esindex: 0.012
+  exclusion.robots: 0.144
+  load_resource: 97.716
+  CDXLines.iter: 22.2 (3)
+  PetaboxLoader3.datanode: 115.135 (4)
+*/

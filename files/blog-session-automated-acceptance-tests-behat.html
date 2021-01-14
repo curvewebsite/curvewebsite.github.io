@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<!--
+  ,ad8888ba,   88        88  88888888ba   8b           d8  88888888888  
+ d8"'    `"8b  88        88  88      "8b  `8b         d8'  88           
+d8'            88        88  88      ,8P   `8b       d8'   88           
+88             88        88  88aaaaaa8P'    `8b     d8'    88aaaaa      
+88             88        88  88""""88'       `8b   d8'     88"""""      
+Y8,            88        88  88    `8b        `8b d8'      88           
+ Y8a.    .a8P  Y8a.    .a8P  88     `8b        `888'       88           
+  `"Y8888Y"'    `"Y8888Y"'   88      `8b        `8'        88888888888  
+-->
+
+<html lang="en" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+
+
+	<!-- Meta -->
+	<meta charset="utf-8"/>
+<link rel="shortcut icon" href="/sites/all/themes/curve/favicon.ico"/>
+<meta content="Automated Acceptance Tests with Behat - Session Blog" about="/blog/session-automated-acceptance-tests-behat" property="dc:title"/>
+<link rel="canonical" href="http://curveagency.com/blog/session-automated-acceptance-tests-behat"/>
+<meta name="Generator" content="Drupal 7 (http://drupal.org)"/>
+<link rel="shortlink" href="http://curveagency.com/node/215"/>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	
+	<!-- Title -->
+	<title>Automated Acceptance Tests with Behat - Session Blog | Curve Agency | Leeds</title>
+	
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed"/>
+	
+	<!-- Styles (Framework: http://csswizardry.com/inuitcss/) -->
+	<link rel="stylesheet" href="/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all"/>
+<link rel="stylesheet" href="/files/css/css_UqOoffvk-FuWbV_8eQT7rRkyNlgHbJYnIPpRiPfBsCw.css" media="all"/>
+<link rel="stylesheet" href="/files/css/css_KpHsFsHL5G3x9EUJr5pMqQKsGs4fdCXEGrY6HhOgLHA.css" media="screen"/>
+<link rel="stylesheet" href="/files/css/css_GpoqO1H_YKBzOUVTKzK4d9W18v7xNMiFHpOi_Fjx5zo.css" media="all"/>
+<link rel="stylesheet" href="/files/includes/https-web.archive.orgcss-family-dosis-500-amp-subset-latin.css" media="all"/>
+<link rel="stylesheet" href="/files/includes/https-web.archive.orgcss-family-droid_sans.css" media="all"/>
+<link rel="stylesheet" href="/files/css/css_u8qTZdKW7Rm0mvCuvsDYjRHboV5_2oZ6vHslJTGAAlU.css" media="all"/>
+<link rel="stylesheet" href="/files/css/css_CWH4f4XbJ7UaZzZGp84zxN3kPg_lBnTLdXrYmGrC9b4.css" media="all"/>
+
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="http://curveagency.com/sites/all/themes/curve/css/ie/ie.css?mu1kzg" media="all" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link rel="stylesheet" href="http://curveagency.com/sites/all/themes/curve/css/ie/ie7.css?mu1kzg" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link rel="stylesheet" href="http://curveagency.com/sites/all/themes/curve/css/ie/ie6.css?mu1kzg" media="all" />
+<![endif]-->
+	
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script>
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/jquery.min.js'>\x3C/script>")
+</script>
+<script src="/files/js/js_Hx4sQD_xPZAOx-sqalfynsoWuzoh1v0CmjxiCV3XoDc.js"></script>
+<script src="/files/js/js_I8TfTeXvqz-PVLuMblgVYaIX72OJiibv_iv0LOQ4K1M.js"></script>
+<script>
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27427361-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+</script>
+<script src="/files/js/js_zNOCkOSrlXtDQ7uyBYRwvAeDEFQDxCHft2p4bFSrXsM.js"></script>
+<script>
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"curve","theme_token":"hlEb19ArPEWPC2a5AmK5BUNCpy_GoUJLO0EUJ4WeAmw","js":{"https:\/\/web.archive.org\/web\/20131003141616\/https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.5.2\/jquery.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/curve\/taxonomy_tree_block\/template\/taxonomy_tree_block.jquery.js":1,"sites\/all\/modules\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/themes\/curve\/js\/jquery.sticky.js":1,"sites\/all\/themes\/curve\/js\/scripts.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/flexslider\/assets\/css\/flexslider_img.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"https:\/\/web.archive.org\/web\/20131003141616\/http:\/\/fonts.googleapis.com\/css?family=Dosis:500\u0026subset=latin":1,"https:\/\/web.archive.org\/web\/20131003141616\/http:\/\/fonts.googleapis.com\/css?family=Droid_Sans":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/views_slideshow\/views_slideshow.css":1,"sites\/all\/themes\/curve\/css\/inuit.css":1,"sites\/all\/themes\/curve\/css\/grid.inuit.css":1,"sites\/all\/themes\/curve\/css\/fonts.css":1,"sites\/all\/themes\/curve\/css\/global.css":1,"sites\/all\/themes\/curve\/css\/navigation.css":1,"sites\/all\/themes\/curve\/css\/additional.css":1,"public:\/\/google_fonts.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie7.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie6.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"}});
+</script>
+	
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+	<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-215 node-type-article blog section-inner">
+	
+		<div id="skip-link">
+			<a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+		</div>
+		
+				
+		
+<div id="page-wrapper">
+
+  <div id="page">
+  
+    
+    <header role="banner" id="header">
+	
+		<div id="menu-toggle"><a href="#"><span class="strip first"></span><span class="strip mid"></span><span class="strip last"></span></a></div>
+	
+		<div id="header-inner" class="wrapper">
+		
+		  <div class="grids">
+		  
+		  		    <div class="grid-18">
+			  
+			  <div id="logo-container">
+			    <a href="/" title="Home" rel="home" id="logo">
+			      <img src="/sites/all/themes/curve/logo.png" alt="Home"/>
+			    </a>
+			  </div>
+			  
+			</div>
+			
+			<div class="grid-6">
+				<span id="logo-supplemental"></span>
+			</div>
+		  		  
+						  <navigation role="navigation" id="navigation" class="grid-24">
+			    <div class="navigation-container">
+					<div class="navigation-wrapper">
+					  <div class="navigation-inner">
+						
+	
+<article id="block-system-main-menu" class="block block-system ">
+
+        
+  <ul class="menu"><li class="first leaf"><a href="/">Home</a></li>
+<li class="leaf"><a href="/drupal-case-studies" title="">Case Studies</a></li>
+<li class="leaf"><a href="/blog" title="">Blog</a></li>
+<li class="leaf"><a href="/careers">Careers</a></li>
+<li class="last leaf"><a href="/project-enquiry">Contact</a></li>
+</ul>
+</article>
+					  </div>
+					</div>
+				</div>
+			  </navigation>
+					  
+		  </div>
+		  
+		  		  
+		  		  
+		  		  
+		</div>
+		
+    </header> <!-- /#header -->
+
+    
+		  <nav id="breadcrumb">
+	  	<div id="breadcrumb-inner" class="wrapper">
+	    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><span class="breadcrumb-0"><a href="/">Home</a></span><span class="breadcrumb-separator breadcrumb-separator-0"> / </span><span class="breadcrumb-1"><a href="/blog">Blog</a></span><span class="breadcrumb-separator breadcrumb-separator-1"> / </span><span class="breadcrumb-2">Automated Acceptance Tests with Behat - Session Blog</span></div>		</div>
+	  </nav> <!-- /#breadcrumb -->
+	
+      
+				
+		
+		
+		
+	<div id="main-content" class="wrapper">
+	
+		<div class="grids">
+		
+			
+		
+		
+		<div id="content-wrapper" class="grid-17 suffix-1">
+		
+						
+							<h1 class="title" id="page-title">Automated Acceptance Tests with Behat - Session Blog</h1>
+						
+					
+			
+  <section id="content" class="region region-content">
+	
+<section id="block-views-blog-block-1" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-block_1 view-dom-id-04e08bf7b906720a782b17e3836da234">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <span class="views-field views-field-field-user-last-name">        <span class="field-content"><a href="/blog/contributors/Peter">Peter McClory</a></span>  </span>  
+  <div class="views-field views-field-created">        <span class="field-content">Tuesday, 24<sup>th</sup> September, 2013</span>  </div>  
+  <div class="views-field views-field-field-header-image">        <div class="field-content"></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+
+<article id="block-sharethis-sharethis-block" class="block block-sharethis ">
+
+        
+  <div class="sharethis-wrapper"><span st_url="http://curveagency.com/blog/session-automated-acceptance-tests-behat" st_title="Automated Acceptance Tests with Behat - Session Blog" class="st_twitter_button" displaytext="twitter"></span>
+<span st_url="http://curveagency.com/blog/session-automated-acceptance-tests-behat" st_title="Automated Acceptance Tests with Behat - Session Blog" class="st_facebook_button" displaytext="facebook"></span>
+<script type="text/javascript">var switchTo5x = true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({"publisher":"dr-1d478073-9535-ea20-521e-6a95f6214095"});</script></div>
+</article>
+
+<section id="block-views-blog-block-3" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-block_3 view-dom-id-5f7083f0f08c852ccc339bfbeb76fce4">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-body">        <div class="field-content summary"><p>The following is a live-stream (in chronological order) hosted by Craig and Pete that took place during the ‘Automated Acceptance Test with Behat’ session at DrupalCon Prague on Tuesday 24th September 2013. Due to the internet being flaky at the event, we were unable to publish a lot of this data in real-time.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+
+<article id="block-system-main" class="block block-system ">
+
+        
+  <article id="node-215" class="node node-article clearfix" about="/blog/session-automated-acceptance-tests-behat" typeof="sioc:Item foaf:Document">
+
+  
+  
+  <div class="content">
+    
+<div class="field field-name-body field-type-text-with-summary field-label-hidden clearfix">
+            <p>Nathan: Behat - it's all about delivery.</p>
+<p><span>Nothing can compensate for project failure. If a football team loses, there's nothing that can be done. They've lost. How can we best pre-plan to minimise the chance for failure?</span></p>
+<p><span>Nice quote from Nathan - People don't want to buy a quarter-inch drill. They want a quarter-inch hole. - Theodore Levitt</span><br/>-- 13:03</p>
+<p><img src="https://docs.google.com/document/d/12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc/pubimage?id=12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc&amp;image_id=1kG5D4IWyvMe8zBY5kyWXo94dJCPAQveHCDOgNQ"/></p>
+<p><span>Developers love to solve problems, but they must be set the correct challenge, so that they are aware of what they are tackling.</span><br/>-- 13:05</p>
+<p><img src="https://docs.google.com/document/d/12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc/pubimage?id=12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc&amp;image_id=13fH2EaCphU0QUDiPI34AXDUBV9-BJSCJ0-ecIg"/></p>
+<p><span>Communication is key, within the entire team. Developers cannot be left to describe what they think they should do, as often they will define something that is not in line with project deliverables, and this will generally result in project failure of a certain level at least.</span><br/>-- 13:09</p>
+<p>Feature Declaration:</p>
+<p>As a [User]<br/>I want [Feature]<br/>So that [Benefit]<br/>-- 13:10</p>
+<p><span>Clients should be encouraged to "accept" specific behaviour from features, as described by them in a format that is standardised.</span></p>
+<p><span>If a feature behaves in [the way described here] then we have completed [this deliverable] and thus we are moving in the correct direction for a successful project.</span><br/>-- 13:12</p>
+<p><span>Nathan: When are we delivering? When do we stop defining scenarios?</span><br/>-- 13:14</p>
+<p>Testing: How do we know we are within the speed limit on a given road? How could you know this without speed limit signs and a speedometer fitted to the car?<br/>-- 13:15</p>
+<p><img src="https://docs.google.com/document/d/12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc/pubimage?id=12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc&amp;image_id=1VEiGLFJxuYVprVD9kcqH3LGMyqJg4bJnJLLv_Q"/></p>
+<p><span>Now we are on to Behat. Written in the Gherkin language, parsed by the Behat script library. After this, the behaviour of the feature is simulated and a report is automatically produced to say whether or not the feature behaved as expected.</span><br/>-- 13:17</p>
+<p><span>Step-by-step example of the Gherkin language presented on screen.</span><br/>-- 13:18</p>
+<p><span>Mink (open source acceptance test framework for web apps) - and other extensions, are used as a common gateway between Behat and the browser. This enables Behat to test defined features that are written in Gherkin language, in the web browser.</span><br/>-- 13:22</p>
+<p><span>Nathan is now running a series of automated acceptance tests - on 3G :) not ideal but the wifi is a little flaky right now. A couple of 'tuts' in the audience due to flaky internet.</span></p>
+<p><span>He's now run through a few, and is demonstrating how straightforward it is to incrementally build up a testing library using Behat. So far he has been testing with Safari, and now he's put an additional argument to specifically use Chrome to test the Gherkin script. This looks great! Definitely want to start working with Behat when we get back to the UK.</span><br/>-- 13:31</p>
+<p><img src="https://docs.google.com/document/d/12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc/pubimage?id=12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc&amp;image_id=13vl8mWEGF_Kjlz49_v9fG-NbNzEJ2O2cuUfZLg"/></p>
+<p><span>… s-l-o-w…. internet… Nathan: May be tricky to show some of the examples he had in store, specifically the JavaScript example.</span></p>
+<p>The script he's been building is now automatically opening for the Wikipedia page, now on screen displaying the "Fish" page.<br/>-- 13:34</p>
+<p><img src="https://docs.google.com/document/d/12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc/pubimage?id=12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc&amp;image_id=1MrtF9h56PAWDyfKO8aQkfelDkoZgtVqZd8zNvA"/></p>
+<p><span>Nathan is in awe of all the people that contribute so much time to develop and improve these kind of tools, for free. Also references the Dries keynote earlier, along the lines of the power of open source is in the passionate, talented community.</span><br/>-- 13:36</p>
+<p><span>Some scripting corrections to make the language used more descriptive relating to the feature, rather than being ambiguous. Previously the function was waiting for a designated period of time, rather than "when the suggestion box appears" - so he's updated this to make the test clearer.</span><br/>-- 13:39</p>
+<p><span>Behat enables you do test and complete projects in a more painless way. There will still be pain!</span><br/>-- 13:44</p>
+<p><img src="https://docs.google.com/document/d/12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc/pubimage?id=12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc&amp;image_id=1amHki1cYjGJLN0AkGP-02xLr9qM8Ppsruk12SA"/></p>
+<p><span>Automatic deployment could be facilitated by using Behat to check before launching new features.</span></p>
+<p><span>If it hurts, do it more frequently! Perform testing from the beginning, and do it continually throughout the project, in order to help stop a bottleneck occurring in the last stages of the project (and a bunch of stress for everyone!)</span><br/>-- 13:47</p>
+<p><img src="https://docs.google.com/document/d/12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc/pubimage?id=12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc&amp;image_id=1sfbHr-kiAGE8GKyvrxBZLd6aDHnTCn4VsDQRpg"/></p>
+<p><span>Make sure that the specification is THE specification, and not a draft document that can be completed later. If this is done it ensures that the client signs off on the requirements in an unambiguous way.</span></p>
+<p><span>There is a Jira extension, so that acceptance tests can be added to an issue-tracking and project management tool.</span></p>
+<p><span>Tests can be tagged to not run (or not) on live sites.</span><br/>-- 13:49</p>
+<p><img src="https://docs.google.com/document/d/12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc/pubimage?id=12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc&amp;image_id=12DqqQyqN8lTpscUdNtrbIBo46t5YEKdSO-N0CQ"/></p>
+<p><span>Behat assists the team in delivering what the client needs to a maximum level of quality.</span><br/>-- 13:54</p>
+<p><img src="https://docs.google.com/document/d/12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc/pubimage?id=12U3lQV0CVgp6Nxp6IWJQnERoaXtho2YXnpxY8UBMCbc&amp;image_id=1Y9XMidCfXkIubRDszuNGorK5ioDaCyftgWwRHw"/></p>
+    </div>
+  </div>
+
+  
+  
+</article>
+
+</article>
+
+<section id="block-views-blog-blog-post" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-blog_post blog-footer view-dom-id-e43c25464e914b400f142047590e2105">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-call-to-action-1">        <h3 class="field-content">Session: Automated Acceptance Tests with Behat</h3>  </div>  
+  <span class="views-field views-field-field-category">    <span class="views-label views-label-field-category">Category: </span>    <span class="field-content"><a href="/blog/business-stuff" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Business Stuff</a>, <a href="/blog/drupal-development" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Drupal Development</a>, <a href="/blog/drupal-con" typeof="skos:Concept" property="rdfs:label skos:prefLabel">DrupalCon Prague 2013</a>, <a href="/blog/events" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Events</a>, <a href="/blog/front-end" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Front-end</a>, <a href="/blog/usability" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Usability</a></span>  </span>  
+  <span class="views-field views-field-field-tags">    <span class="views-label views-label-field-tags">Tags: </span>    <span class="field-content"><a href="/tags/behat" typeof="skos:Concept" property="rdfs:label skos:prefLabel">behat</a>, <a href="/tags/drupal" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Drupal</a>, <a href="/tags/testing" typeof="skos:Concept" property="rdfs:label skos:prefLabel">testing</a>, <a href="/tags/ux" typeof="skos:Concept" property="rdfs:label skos:prefLabel">ux</a>, <a href="/tags/usability" typeof="skos:Concept" property="rdfs:label skos:prefLabel">usability</a>, <a href="/tags/nathan-lisgo" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Nathan Lisgo</a>, <a href="/tags/nlisgo" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Nlisgo</a>, <a href="/tags/automation" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Automation</a>, <a href="/tags/deliverables" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Deliverables</a>, <a href="/tags/requirements" typeof="skos:Concept" property="rdfs:label skos:prefLabel">Requirements</a>, <a href="/tags/user-stories" typeof="skos:Concept" property="rdfs:label skos:prefLabel">User Stories</a></span>  </span>  
+  <div class="views-field views-field-field-headshot">        <div class="field-content"><a href="/blog/contributors/pete"><img typeof="foaf:Image" src="/files/styles/blog_post_image/public/pete.fw__0.png" width="200" height="200" alt=""/></a></div>  </div>  
+  <span class="views-field views-field-field-user-first-name">        <span class="field-content">Peter</span>  </span>  
+  <span class="views-field views-field-field-user-last-name">        <span class="field-content">McClory</span>  </span>  
+  <div class="views-field views-field-field-job-title">        <div class="field-content">Managing Director</div>  </div>  
+  <div class="views-field views-field-field-bio">        <div class="field-content"><p>Peter has well over a decade of experience in digital design, website development, and content strategy.  He has been running our core agency over the past 5 years. Pete's role is primarily business development and project management, but he also provides in-depth creative direction across all our projects. You can find him on <a href="https://twitter.com/pmcclory">Twitter</a> and <a href="https://plus.google.com/u/0/102058504460398744645?rel=author" rel="author">Google+</a></p>
+</div>  </div>  
+  <div class="views-field views-field-field-twitter">        <strong class="field-content"><p>Let us know your thoughts via Twitter, follow us at <a href="http://twitter.com/pmcclory">@pmcclory</a> and <a href="http://twitter.com/curveagency">@curveagency</a></p></strong>  </div>  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <!--<p class="meet-link"><a href="/blog/contributors">Meet the people behind the Curve blog</a></p>-->    </div>
+  
+  
+</div>
+</section>
+  </section>
+			
+		</div>
+		
+				<div id="sidebar-first-wrapper" class="grid-6 ">
+			
+  <aside id="sidebar-second" class="region region-sidebar-second">
+    
+<article id="block-block-13" class="mailchimp block block-block ">
+
+            <header><h2><span>Monthly newsletter</span></h2></header>
+      
+  <!-- Begin MailChimp Signup Form -->
+<style type="text/css">
+#mc-embedded-subscribe {
+position: absolute; border: none; background: none;
+top: 89px;
+left: 4%;
+right:4%;
+-webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;
+background-color: rgb(0, 138, 255);
+-webkit-box-shadow: rgb(7, 121, 219) 0px 6px 0px 0px;
+box-shadow: rgb(7, 121, 219) 0px 6px 0px 0px;
+    border-bottom: 1px solid rgb(35, 151, 251);
+    color: rgb(255, 255, 255);
+cursor: pointer;
+display: inline-block;
+text-shadow: 0px -1px 0 #333;
+font-family: Verdana, Helvetica, sans-serif; 
+    font-size: 1.2em; 
+    padding: 3% 5%;
+width:92%;
+white-space: normal;
+}
+
+#mc-embedded-subscribe:hover {
+top: 93px;
+position: absolute;
+-webkit-box-shadow: rgb(7, 121, 219) 0px 2px 0px 0px;
+box-shadow: rgb(7, 121, 219) 0px 2px 0px 0px;
+}
+
+#mc-embedded-subscribe-form {
+    background-color: rgb(232, 232, 232);
+    padding: 10px 10px 120px;
+position: relative;
+}
+
+#mce-EMAIL {
+position: absolute;
+top:35px;
+left:3%;
+right:3%;
+width: 85%;
+padding: 3% 4%;
+}
+
+@media (min-width: 1025px) and (max-width: 1392px) {
+#mc-embedded-subscribe-form {
+padding-bottom:142px;
+}
+#mc-embedded-subscribe {
+width:92%;
+top:86px;
+}
+#mc-embedded-subscribe:hover {
+top:90px;
+}
+}
+
+@media (min-width: 721px) and (max-width: 1024px){
+#mc-embedded-subscribe-form {
+padding-bottom:178px;
+}
+#mc-embedded-subscribe {
+width:92%;
+top:118px;
+}
+#mc-embedded-subscribe:hover {
+top:122px;
+}
+#mce-EMAIL {
+top:37px;
+left:9px;
+width:89%;
+}
+}
+
+@media (min-width: 404px) and (max-width: 720px){
+#mc-embedded-subscribe-form {
+padding-bottom:160px;
+}
+#mc-embedded-subscribe {
+width:92%;
+top:110px;
+}
+#mc-embedded-subscribe:hover {
+top:114px;
+}
+}
+@media (max-width: 403px){
+#mc-embedded-subscribe-form {
+padding-bottom:166px;
+}
+#mc-embedded-subscribe {
+top:98px;
+}
+#mc-embedded-subscribe:hover {
+top:102px;
+}
+}
+
+</style>
+
+<div id="mc_embed_signup">
+<form action="http://curveagency.us6.list-manage.com/subscribe/post?u=58f00e79d3502f416c9d47a06&amp;id=c83b383d26" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">We never, ever spam.</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Please enter you email">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div><div class="clear"><input type="submit" value="Subscribe to our newsletter" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+</article>
+
+<article id="block-taxonomy-tree-block-taxonomy-tree-block-vid-2" class="block block-taxonomy_tree_block ">
+
+            <header><h2><span>Blog Topics</span></h2></header>
+      
+  <div class="taxonomy-tree-menu"><ul class="menu-2 menu-standard"><li><a href="/blog/business-stuff">Business Stuff</a><span>8</span></li><li><a href="/blog/content">Content</a><span>5</span></li><li><a href="/blog/design">Design</a><span>11</span></li><li><a href="/blog/drupal-development">Drupal Development</a><span>32</span></li><li><a href="/blog/drupal-con">DrupalCon Prague 2013</a><span>14</span></li><li><a href="/blog/events">Events</a><span>15</span></li><li><a href="/blog/front-end">Front-end</a><span>8</span></li><li><a href="/blog/usability">Usability</a><span>8</span></li></ul></div>
+</article>
+
+<article id="block-block-9" class="block-social-links block block-block ">
+
+            <header><h2><span>Connect with us</span></h2></header>
+      
+  <ul class="social-media"><li class="facebook"><a href="http://en-gb.facebook.com/curveagency">Facebook</a></li>
+<li class="twitter"><a href="https://twitter.com/CurveAgency">Twitter</a></li>
+<li class="rss"><a href="/blog/feed">RSS</a></li>
+</ul>
+</article>
+  </aside>
+		</div>
+				
+		</div>
+		
+	</div> <!-- /#main-content -->
+	
+	        
+	
+		
+		
+	
+  <section id="contact" class="region region-contact">
+  	<div class="wrapper">
+	  <div class="grids">
+		
+<article id="block-block-1" class="clearfix block block-block ">
+
+            <header><h2><span>We&#039;d love to work with you</span></h2></header>
+      
+  <div class="grid-12"><div class="contact-info"><div class="telephone image-text">0113 320 0192</div><div class="email image-text"><a href="mailto:info@curveagency.com">info@curveagency.com</a></div></div></div><div class="grid-12"><div class="contact-info"><div class="address image-text">Curve Agency Limited&nbsp;46 The Calls, Leeds, LS2 7EY&nbsp;United Kingdom</div></div></div>
+
+<ul class="footer-links-wrapper">
+<li>Connect with Curve</li>
+<li class="twitter"><a href="https://twitter.com/CurveAgency">Twitter</a></li>
+<li class="facebook"><a href="https://www.facebook.com/curveagency">Facebook</a></li>
+<li class="google"><a rel="publisher" href="https://plus.google.com/u/0/b/103780871521992552535?rel=publisher">Google+</a></li>
+</ul>
+</article>
+	  </div>
+	</div>
+  </section>
+	
+	
+	
+  </div> <!-- /#page -->
+
+</div> <!-- /#page-wrapper -->		
+				
+	</body><!-- /body -->
+
+</html><!-- /html -->
+
+<!-- ǝƃɐd ǝɥʇ ɟo doʇ ǝɥʇ sı sıɥʇ `ɐılɐɹʇsnɐ uı -->
+<!--
+playback timings (ms):
+  exclusion.robots.policy: 0.222
+  exclusion.robots: 0.237
+  RedisCDXSource: 1.187
+  captures_list: 67.63
+  PetaboxLoader3.datanode: 86.451 (4)
+  LoadShardBlock: 44.528 (3)
+  esindex: 0.011
+  load_resource: 86.928
+  PetaboxLoader3.resolve: 25.933
+  CDXLines.iter: 18.287 (3)
+-->

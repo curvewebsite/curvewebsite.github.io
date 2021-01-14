@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Dosis Medium'), local('Dosis-Medium'), url(https:/web/20121222182316im_/http://themes.googleusercontent.com/static/fonts/dosis/v1/obisuY-MenYRAFwd-r2NhfesZW2xOQ-xsNqO47m55DA.ttf) format('truetype');
+}
+
+
+/*
+playback timings (ms):
+  LoadShardBlock: 134.024 (3)
+  load_resource: 76.363
+  captures_list: 169.926
+  RedisCDXSource: 0.895
+  esindex: 0.022
+  exclusion.robots: 0.335
+  PetaboxLoader3.resolve: 44.245
+  CDXLines.iter: 28.26 (3)
+  exclusion.robots.policy: 0.315
+  PetaboxLoader3.datanode: 149.703 (4)
+*/

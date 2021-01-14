@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<!---------------------------------------------------------------------------------
+Curve Agency are a UK Drupal Website Design and Development Company based in Leeds.
+-----------------------------------------------------------------------------------
+
+Author: Curve Agency
+Author URL: curveagency.com
+Version: 3.0
+Copyright 2011-2014 Curve Agency Limited.
+
+-->
+
+<html lang="en" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+
+
+	<!-- Meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="canonical" href="/blog/using-sourcetree-and-acquia-dev-desktop-drupal"/>
+<link rel="shortlink" href="/node/614"/>
+<meta name="twitter:url" content="/blog/using-sourcetree-and-acquia-dev-desktop-drupal"/>
+<link rel="shortcut icon" href="/sites/all/themes/curve/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta name="generator" content="Drupal 7 (http://drupal.org)"/>
+<meta name="twitter:title" content="Using Sourcetree and Acquia Dev Desktop with Drupal"/>
+<meta content="Using Sourcetree and Acquia Dev Desktop with Drupal" about="/blog/using-sourcetree-and-acquia-dev-desktop-drupal" property="dc:title"/>
+<meta name="description" content="Part 2: Clone a Drupal site repo with Sourcetree and problem-solve common local development issues."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="Part 2: Clone a Drupal site repo with Sourcetree and problem-solve common local development issues."/>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	
+	<!-- Title -->
+	<title>Using Sourcetree and Acquia Dev Desktop with Drupal | Drupal &amp; UX Prototyping | Curve Agency UK</title>
+	
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed"/>
+	
+	<!-- Styles -->
+	<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css__r408iefJFDp7tkJY64xde0BtyLdHU1-GytpTja6H4w.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_PYDCSebXcnvSgSzEX-Xs4CSmhpu2kBFhJBdNk-xNi4s.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_WANx9e1xtodqBjs0Q86cgxi6IUPBlugjRY9MyXSVe60.css" media="all"/>
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie.css?nsytth" media="all" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie7.css?nsytth" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie6.css?nsytth" media="all" />
+<![endif]-->
+	
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_H7q2xORKmR9AN8Qx5spKEIBp7R_wG2apAswJoCUZY7I.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_JI6TT4VIYJYFe9OJdKt69g6wN-4WknzmZV0qPLv5yDw.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27427361-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/js/js_dr8zclEdzsdvqNg1V4ey7RczFW2mAoJKdmMD6_E-KCk.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_g5FdU7hg09uj5HU1aUoI9KTC2y5l4kxOrDbPPniNrpA.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"curve","theme_token":"6DQFTkBAESFSvPtgtcPI5R8hDbpPHXfszl3sa_JPhh4","js":{"https:\/\/web.archive.org\/web\/20151015024037\/https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.9.1\/jquery.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/curve\/taxonomy_tree_block\/template\/taxonomy_tree_block.jquery.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/radioactivity\/js\/radioactivity.js":1,"sites\/all\/themes\/curve\/js\/jquery.scrolly.js":1,"sites\/all\/themes\/curve\/js\/scripts.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/curve\/simple_twitter\/template\/simple_twitter.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/radioactivity\/css\/radioactivity.css":1,"sites\/all\/themes\/curve\/css\/gridinuit.css":1,"sites\/all\/themes\/curve\/css\/grid\/grid.inuit.css":1,"sites\/all\/themes\/curve\/fonts\/font-awesome.min.css":1,"sites\/all\/themes\/curve\/css\/blog.css":1,"sites\/all\/themes\/curve\/css\/brands.css":1,"sites\/all\/themes\/curve\/css\/box.css":1,"sites\/all\/themes\/curve\/css\/button.css":1,"sites\/all\/themes\/curve\/css\/case_study.css":1,"sites\/all\/themes\/curve\/css\/flexslider.css":1,"sites\/all\/themes\/curve\/css\/front.css":1,"sites\/all\/themes\/curve\/css\/global.css":1,"sites\/all\/themes\/curve\/css\/highlighted.css":1,"sites\/all\/themes\/curve\/css\/navigation.css":1,"sites\/all\/themes\/curve\/css\/parallax.css":1,"sites\/all\/themes\/curve\/css\/root.css":1,"sites\/all\/themes\/curve\/css\/simple_twitter.css":1,"sites\/all\/themes\/curve\/css\/white_container.css":1,"sites\/all\/themes\/curve\/css\/layout\/desktop.css":1,"sites\/all\/themes\/curve\/css\/layout\/tablet.css":1,"sites\/all\/themes\/curve\/css\/layout\/mobile.css":1,"sites\/all\/themes\/curve\/css\/layout\/social.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/form.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/about.css":1,"sites\/all\/themes\/curve\/css\/temp-update\/home.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie7.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie6.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"radioactivity":{"emitters":{"emitDefault":[{"accuracy":"100","bundle":"article","energy":10,"entity_id":"614","entity_type":"node","field_name":"field_radioactivity","language":"und","storage":"File","type":"none","checksum":"93382466799d9916043cd11ba6d3d3d2"}]},"config":{"emitPath":"\/sites\/all\/modules\/radioactivity\/emit.php","fpEnabled":1,"fpTimeout":"60"}}});
+//--><!]]>
+</script>
+	
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+	<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-614 node-type-article blog section-inner">
+	
+		<div id="skip-link">
+			<a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+		</div>
+        
+        <!-- to overlay content when mobile nav is expanded -->
+        <div class="shadow-curtain active"><span></span></div> 
+		
+				
+		
+<div id="page-wrapper">
+
+  <div id="page">
+  
+    
+    <header role="banner" id="header">
+	
+		<div id="menu-toggle"><a href="#"><span class="strip first"></span><span class="strip mid"></span><span class="strip last"></span></a></div>
+	
+		<div id="header-inner" class="wrapper">
+		
+		  <div class="grids">
+		  
+		  			  <div id="logo-container" class="grid-6">
+			    <a href="/" title="Home" rel="home" id="logo">
+			      <img src="/sites/all/themes/curve/logo.png" alt="Home"/>
+			    </a>
+			  </div>
+		  		  
+						  <navigation role="navigation" id="navigation" class="grid-18">
+			    <div class="navigation-container">
+					<div class="navigation-wrapper">
+					  <div class="navigation-inner">
+						
+	
+<article id="block-system-main-menu" class="block block-system ">
+
+        
+  <ul class="menu"><li class="first leaf"><a href="/">Home</a></li>
+<li class="leaf"><a href="/drupal-case-studies" class="case-studies">Case Studies</a></li>
+<li class="leaf"><a href="/blog" class="blog">Blog</a></li>
+<li class="leaf"><a href="/about-curve">About</a></li>
+<li class="last leaf"><a href="/project-enquiry">Contact</a></li>
+</ul>
+</article>
+					  </div>
+					</div>
+				</div>
+			  </navigation>
+					  
+		  </div>
+		  
+		  		  
+		  		  
+		  		  
+		</div>
+		
+    </header> <!-- /#header -->
+
+    
+		  <nav id="breadcrumb">
+	  	<div id="breadcrumb-inner" class="wrapper">
+	    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><span class="breadcrumb-0"><a href="/">Home</a></span><span class="breadcrumb-separator breadcrumb-separator-0">›</span><span class="breadcrumb-1"><a href="/blog">Blog</a></span><span class="breadcrumb-separator breadcrumb-separator-1">›</span><span class="breadcrumb-2"><a href="/blog/drupal-development">Drupal</a></span><span class="breadcrumb-separator breadcrumb-separator-2">›</span><span class="breadcrumb-3">Using Sourcetree and Acquia Dev Desktop with Drupal</span></div>		</div>
+	  </nav> <!-- /#breadcrumb -->
+	
+    			
+  
+	
+	
+		
+		
+	<div id="main-content" class="wrapper">
+	
+		<div class="grids">
+		
+			
+		
+		
+		<div id="content-wrapper" class="grid-16 suffix-1">
+		
+						
+							<h1 class="title" id="page-title">Using Sourcetree and Acquia Dev Desktop with Drupal</h1>
+						
+					
+			
+  <section id="content" class="region region-content">
+	
+<section id="block-views-blog-block-3" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-block_3 view-dom-id-596859b2dbb4f9593eb29ebb201d5885">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-created">        <span class="field-content">Thursday, 16<sup>th</sup> April, 2015</span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content summary"><p>Part 2: Clone a Drupal site repo with Sourcetree and problem-solve common local development issues.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+
+<article id="block-system-main" class="block block-system ">
+
+        
+  <article id="node-614" class="node node-article clearfix" about="/blog/using-sourcetree-and-acquia-dev-desktop-drupal" typeof="sioc:Item foaf:Document">
+
+  
+  
+  <div class="content">
+    
+<div class="field field-name-body field-type-text-with-summary field-label-hidden clearfix">
+            <p>This is part two of a three-part tutorial where you will learn how to use a Git GUI with Drupal to make some theme tweaks on a live site. <a href="/blog/clone-drupal-git-repo-and-set-it-locally">Part one of this tutorial starts here</a>.</p>
+<p>Overall we are looking to cover:</p>
+<ul dir="ltr"><li>Setting up a local stack (in this case Acquia Dev Desktop 2).</li>
+<li>Creating an SSH key in Terminal on the Mac</li>
+<li>Cloning an existing Drupal site repository using Sourcetree</li>
+<li>Downloading and connecting to your live site's Drupal database dump file</li>
+<li>Applying theme changes to the cloned site with CSS</li>
+<li>Merging and pushing your changes to live with Sourcetree</li>
+</ul><h2>Clone the repository you require</h2>
+<p dir="ltr"><span>First you need to use a tool that can connect via SSH to the repository you need, and then clone (download) everything you require to start making changes. This tool should also be able to push (effectively uploading) your changes back to the repository so that they can be merged with the ‘master branch’  which you cloned.</span></p>
+<p dir="ltr"><span>I’ll be using SourceTree for this. You can download and install SourceTree for free <a href="http://www.sourcetreeapp.com/">here http://www.sourcetreeapp.com/</a></span></p>
+<p><img alt="Sourcetree website download the app screenshot" height="654" src="/sites/default/files/blog/sourcetree-website-screenshot.jpg" width="991"/></p>
+<p dir="ltr"><span id="docs-internal-guid-285df65c-ff81-628b-2cff-0da716942351">Once installed, feel free to also add your GitHub account while installing, if your account contains repos you want to work on locally.</span></p>
+<ul dir="ltr"><li><span>In SourceTree, select [+ New Repository], then choose [Clone from URL]</span></li>
+<li><span>In the cloud hosting environment, navigate to the development tab/panel for the repository you are wanting to clone</span></li>
+<li><span>From here, access the URL and copy it using cmd+c</span></li>
+</ul><p dir="ltr"><span>It will look something like this:</span></p>
+<pre>
+<span id="docs-internal-guid-285df65c-ff81-628b-2cff-0da716942351">ssh://git@repo.ac/2ccbf42ks55801a498c984hdetytsb7fhnsk4dc.git</span></pre><p dir="ltr"><span id="docs-internal-guid-285df65c-ff81-628b-2cff-0da716942351">When you paste the URL into SourceTree, in the Source URL, click on the field for Destination Path. From here, you will probably be asked to enter the pass phrase you entered when generating the SSH key.</span></p>
+<p dir="ltr"><span>Change the Destination Path to match where you want it cloned. This path should ideally be inside the directory you chose for local sites to be stored when you installed your stack (in my case Acquia Dev Desktop 2), and the name of the folder for this clone to something a little more human-readable, for your sake.</span></p>
+<p dir="ltr"><span>Change the Name field to the exact same as the folder you have renamed, for consistency.</span></p>
+<p dir="ltr"><span>Also, in the [Advanced Options] drop-down, check that the ‘Checkout branch’ is the branch you want to be cloning. By default, it probably will be, but better safe than sorry. In our Git workflow this is usually the Master branch.</span></p>
+<p dir="ltr"><span>Enter the pass phrase you confirmed when generating the SSH key pairs earlier, and you should be good to go ahead with Cloning. Click [Clone].</span></p>
+<p><img alt="Sourcetree app showing cloned repository screen" height="373" src="/sites/default/files/blog/sourcetree-clone-repo-screen.jpg" width="539"/></p>
+<p dir="ltr"><span id="docs-internal-guid-285df65c-ff81-628b-2cff-0da716942351">In SourceTree press GitFlow in the top-right of the main UI, to check that the branches and prefixes are ok.</span></p>
+<p><img alt="Sourcetree gitflow clicked" height="457" src="/sites/default/files/blog/sourcetree-gitflow-clicked.jpg" width="761"/></p>
+<h2 dir="ltr">Connect your cloned repo to your local stack</h2>
+<h2 dir="ltr"> </h2>
+<p dir="ltr"><span id="docs-internal-guid-285df65c-ff81-628b-2cff-0da716942351">Finally, so that you can see the changes you make locally without pushing (uploading) them to a hosting environment, you will need to connect your cloned repository to the stack you installed earlier.</span></p>
+<p><span id="docs-internal-guid-285df65c-ff81-628b-2cff-0da716942351">Open up your stack (in my case Acquia Dev Desktop 2). The default welcome window provides an option to ‘Start with an existing Drupal site located on my computer’. Click this option and you will get the following options (see below).</span></p>
+<p dir="ltr"><img alt="Acquia dev desktop local Drupal site options" height="613" src="/sites/default/files/blog/acquia-dev-desktop-site-options.jpg" width="847"/></p>
+<p><span id="docs-internal-guid-285df65c-ff81-628b-2cff-0da716942351">I selected the following ‘Import local Drupal site’ options:</span></p>
+<p dir="ltr"><img alt="Acquia Drupal dev desktop with options selected" height="610" src="/sites/default/files/blog/acquia-dev-desktop-options-selected.jpg" width="847"/></p>
+<p><span id="docs-internal-guid-285df65c-ff81-628b-2cff-0da716942351">For the top option ‘Local codebase folder’, I chose the root folder for the repo I had cloned. Everything else pretty much populates itself, although I made the following tweaks.</span></p>
+<p><span>For this particular site, the hosting environment is using PHP 5.4+ but not yet fully tested with PHP 5.5. Therefore I changed the PHP version accordingly.</span></p>
+<p>The database dump file was renamed simply to be more human-readable, so I knew what it was in future. I then chose this database dump file in the corresponding field on Acquia Dev Desktop.</p>
+<p><span>I downloaded a copy of the live database from the live hosting panel of the repository. In our cloud hosting options, when the database dump is selected for downloading, a message notification appears when the Amazon S3 link is ready for a manual click and download.</span></p>
+<h2>Ignore local compressed CSS and JS files</h2>
+<p><span>If you don’t want CSS/JS compression turned on, which you won’t when making front-end changes, you may need to turn it off on the live site before exporting the database (remember to turn it back on in the live site afterwards). There is also a way round this.</span></p>
+<p>To avoid needing to turn off the CSS and JavaScript file compression settings in Drupal’s performance options on the live site before dumping the database for local use, simply add the following two lines of code into (preferably the bottom of) your settings.php file in the root of your cloned repository’s ../sites/ directory:</p>
+<pre>
+<span>$conf['preprocess_css'] = FALSE;
+$conf['preprocess_js'] = FALSE;</span>
+</pre><h2><span>Start locally testing your cloned Drupal site</span></h2>
+<p><span>Click on the Local site link provided by your stack. The link for me is <a href="http://sitename.dd:8083/">http://sitename.dd:8083</a></span></p>
+<p><span>That should open up your default web browser and display the homepage of your site. If it doesn’t, you may have one of a number of things to do.</span></p>
+<h3><span>Make sure Drupal exists in your local repo</span></h3>
+<p><span>The Amazon cloud hosting setup we use enables fast, streamlined security updates to Drupal core. This means that the actual Drupal installation is in a different place to the rest of the repository. Which means we also need to include an extracted Drupal installation in the directory where we have the cloned repository.</span></p>
+<ul><li><span>Look in the repository on your hosting environment and check what version of Drupal you need to get this working</span></li>
+<li><span>Download this exact same version of Drupal from Drupal.org and extract it in Finder (on the Mac)</span></li>
+<li><span>Do not copy the ‘sites’ folder</span></li>
+<li><span>Don't copy the .htaccess file, robots.txt file or the .gitignore file</span></li>
+<li><span>Copy everything else from within this extracted directory to inside of the cloned repo folder</span></li>
+<li><span>Try your stack’s Local site link again, and you should see a local working version of the site’s homepage.</span></li>
+</ul><p><span>Stuff's still going wrong? Ok next up...</span></p>
+<h3><span>Make sure you have an .htaccess file</span></h3>
+<p><span>It this point, you may well find that if you start clicking around to navigate to another page, it will display a page not found 404 error. This is because there is currently no .htaccess in the root of your local repo.</span></p>
+<p><span>The simple solution is to copy the default .htaccess file from the extracted Drupal installation folder (which was downloaded off Drupal.org) into the root of your local repo.</span></p>
+<p><span>We didn’t do this earlier as a precaution to prevent overwriting an .htaccess file that already does exist in your local repo root directory.</span></p>
+<h2><span>Connect Drupal to your local MySQL database</span></h2>
+<p><span>You may also need to manually connect your MySQL database to the site using a separate settings PHP file.</span></p>
+<p><span>For me, using Acquia Dev Desktop 2 with an already slightly customised Drupal settings.php file that we use, (in order to deployment clean on dev, staging and live), I had to create a local.settings.php file for my local repo.</span></p>
+<p><span>This file was created in my local repo in ../sites/default/ and I added the following code, where dbname is the name you gave your database dump when importing the db dump into the stack.</span></p>
+<pre>
+<span>&lt;?php
+$databases['default']['default'] = array(
+   'driver' =&gt; 'mysql',
+   'database' =&gt; ‘dbname’,
+   'username' =&gt; 'drupaluser',
+   'password' =&gt; '',
+   'host' =&gt; '127.0.0.1',
+   'port' =&gt; 33067
+);</span></pre><p><span>Password will be nothing by default, and the username will be drupaluser by default.</span></p>
+<p><span>Please make sure that you use your correct MySQL port in this code (33067 in my case). You can check this in Acquia Dev Desktop 2 by going to:</span></p>
+<p><span>Preferences &gt; Settings &gt; Ports (and look at the number for the MySQL port)</span></p>
+<p><img alt="Acquia Dev Desktop 2 port settings dialog" height="609" src="/sites/default/files/blog/acquia-dev-desktop-port-settings.jpg" width="843"/></p>
+<h2><span>Add files and images from the files directory</span></h2>
+<p><span>In my cloned repo, there is one last step to get everything working properly. Image files are missing, and I need them to check that the front-end changes I am about to make are working ok before pushing them back up, ultimately to the master branch (covered in <a href="/blog/merge-and-push-changes-git">part three - merging and pushing your local changes to live with SourceTree</a>).</span></p>
+<p><span>In the hosting environment’s control panel (for us this is at <a href="http://console.ac/">http://console.ac</a>), I’ll navigate to the Content Management tab within the Live panel for the repo I have cloned. From here I can click [Download] in the FileSystem column. This initiates the download of all files that can then be moved into the local directory. For a Drupal site, which this is, the path will be something like:</span></p>
+<pre>
+<span>Users/yourname/LocalDev/your-cloned-site-folder/sites/default/files/</span></pre><p><span>That should correct any issues you may have had with missing images on your local site. Sometimes you may need to restart your stack and of course refresh the browser to get this working again.</span></p>
+<p><span>High five! You really are now a level 1 Drupal ninja guru warrior. Now you can make those CSS changes, or whatever you need to change. If you are just following along to start learning a Git workflow with Drupal, make some slight changes to few CSS files, so that you have something to merge for part three.</span></p>
+<p><span>Next up: How to push and merge your changes to the live server. You should now have pretty much everything set up for the process of pushing your changes and merging them with the master branch to deploy them to the live hosting environment.</span></p>
+<p><span>Hopefully you got some good tips in this guide. Share it with the world! Also, feel free to <a href="http://twitter.com/pmcclory">tweet me</a> or <a href="http://twitter.com/curveagency">@curveagency</a> if you have any questions.</span></p>
+    </div>
+  </div>
+
+  
+  
+</article>
+
+</article>
+
+<section id="block-views-blog-blog-post" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-blog_post blog-footer view-dom-id-3a2a7428363d2887fd46920928149b6b">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-call-to-action-1">        <h3 class="field-content"></h3>  </div>  
+  <div class="views-field views-field-field-headshot">        <div class="field-content"><a href="/blog/contributors/curve-agency"><img typeof="foaf:Image" src="/sites/default/files/styles/thumbnail/public/Curve_square_logo_black_2014.png?itok=399C17lH" width="100" height="100" alt=""/></a></div>  </div>  
+  <span class="views-field views-field-field-user-first-name">        <span class="field-content">Curve</span>  </span>  
+  <span class="views-field views-field-field-user-last-name">        <span class="field-content"></span>  </span>  
+  <div class="views-field views-field-field-job-title">        <div class="field-content">Drupal and UX Design Agency</div>  </div>  
+  <div class="views-field views-field-field-bio">        <div class="field-content"><p>UK Drupal Agency and UX Design Team with our very own usability testing lab in Leeds. We work with national charities, NGOs and private sector clients.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <!--<p class="meet-link"><a href="/blog/contributors">Meet the people behind the Curve blog</a></p>-->    </div>
+  
+  
+</div>
+</section>
+
+<section id="block-views-blog-related-block-1" class="block block-views ">
+
+            <header><h2><span>Related Articles</span></h2></header>
+      
+  <div class="view view-blog-related view-id-blog_related view-display-id-block_1 blog-related-articles view-dom-id-52d3247c444a0643c8930232bd7898b6">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-responsive-grid views-responsive-grid-horizontal views-columns-2">
+      <div class="grids row equalheights views-row-1">
+      <div class="grid-8 blog-article box grid-equal views-column-1">
+        
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="views-field views-field-field-images">
+  <div class="field-content"><a href="/blog/creating-hooks"><img typeof="foaf:Image" src="/sites/default/files/styles/blog_post_standard/public/blog/druplicon-captain-hook.png?itok=o3hyllVK" width="768" height="433" alt="Captain Hook &amp; the Druplicon logo on a purple background."/></a></div>
+</div>
+<div class="views-field views-field-title">
+  <h2 class="field-content"><a href="/blog/creating-hooks">Drupal Hooks Tutorials - Part Two: Creating Hooks</a></h2>
+</div>
+<div class="views-field views-field-created">
+  <div class="field-content">Tuesday, 4<sup>th</sup> August, 2015</div>
+</div></span>  </div>  
+  <div class="views-field views-field-body">        <p class="field-content">Part two of our hands-on tutorial on using Drupal 'hooks' (applicable to Drupal 6, 7 and 8).
+</p>  </div>  
+  <div>        <div class="overlay-block"><a href="/blog/creating-hooks">Read article</a></div>  </div>  
+  <div>        <div class="box--icon"><a href="/blog/creating-hooks"><i class="fa fa-eye"></i></a></div>  </div>    </div>
+      <div class="grid-8 blog-article box grid-equal views-column-2">
+        
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="views-field views-field-field-images">
+  <div class="field-content"><a href="/blog/using-hooks"><img typeof="foaf:Image" src="/sites/default/files/styles/blog_post_standard/public/blog/druplicon-hook.png?itok=OqKIcXgY" width="768" height="433" alt="A hook chasing a Druplicon - the official Drupal logo."/></a></div>
+</div>
+<div class="views-field views-field-title">
+  <h2 class="field-content"><a href="/blog/using-hooks">Drupal Hooks Tutorials - Part One: Using Hooks</a></h2>
+</div>
+<div class="views-field views-field-created">
+  <div class="field-content">Thursday, 16<sup>th</sup> July, 2015</div>
+</div></span>  </div>  
+  <div class="views-field views-field-body">        <p class="field-content">In part one of our 'Hooks' tutorial, we're dishing the (very clean!) dirt on some best-practice to adopt when using Drupal hooks.
+</p>  </div>  
+  <div>        <div class="overlay-block"><a href="/blog/using-hooks">Read article</a></div>  </div>  
+  <div>        <div class="box--icon"><a href="/blog/using-hooks"><i class="fa fa-eye"></i></a></div>  </div>    </div>
+    </div>
+    </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+  </section>
+			
+		</div>
+		
+				<div id="sidebar-first-wrapper" class="grid-7 ">
+			
+  <aside id="sidebar-second" class="region region-sidebar-second">
+    
+<article id="block-taxonomy-tree-block-taxonomy-tree-block-vid-2" class="block block-taxonomy_tree_block ">
+
+            <header><h2><span>Categories</span></h2></header>
+      
+  <div class="taxonomy-tree-menu"><ul class="menu-2 menu-standard"><li><a href="/blog/business-stuff">Community &amp; Events</a><span>14</span></li><li><a href="/blog/drupal-development">Drupal</a><span>35</span></li><li><a href="/blog/front-end">Front-end &amp; Design</a><span>21</span></li><li><a href="/blog/digital-strategy">Strategy &amp; Management</a><span>12</span></li><li><a href="/blog/user-experience-design">User Experience</a><span>16</span></li></ul></div>
+</article>
+
+<article id="block-simple-twitter-simple-twitter-block" class="block block-simple_twitter ">
+
+            <header><h2><span>Recent Tweets</span></h2></header>
+      
+  <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Preparing Users for a Future of Wearables (Part 2) <a href="http://t.co/KlJl3E3CUW">http://t.co/KlJl3E3CUW</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=651785052066574337" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=651785052066574337" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=651785052066574337" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=651785052066574337" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/620618384712011776/8UgWemGQ_normal.jpg"/></span><div class="tweet-body">"Stop Cringing and Embrace the Unknown <a href="http://t.co/szTGgZcClM">http://t.co/szTGgZcClM</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=651747079103086592" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=651747079103086592" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=651747079103086592" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=651747079103086592" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa  fa-twitter-square"></i>Follow @CurveAgency<a>
+
+
+</article>
+  </aside>
+		</div>
+		    
+				
+		</div>
+		
+	</div> <!-- /#main-content -->
+	
+	        
+	
+		
+	
+  <section id="contact" class="region region-contact">
+  	<div class="wrapper">
+		
+<article id="block-block-1" class="clearfix grids block block-block ">
+
+            <header><h2><span>Discuss your project</span></h2></header>
+      
+  <div class="grid-12">
+  <div class="contact-info">
+    <div class="telephone"><p>0113 243 2259</p></div>
+    <div class="email-link"><a href="mailto:hello@curveagency.com">hello@curveagency.com</a></div>
+    <div class="curve-address">Curve Agency<br/>46 The Calls<br/>Leeds<br/>LS2 7EY</div>
+  </div>
+</div>
+
+<div class="grid-12">
+  <div class="contact-map">
+    <a class="map-link" href="https://www.google.co.uk/maps/place/Curve+Agency/@53.794628,-1.5374,17z/data=!3m1!4b1!4m2!3m1!1s0x48795c178345fad9:0x7a14688dc7ba0147">
+    <div class="map">map</div>
+</a>
+  </div>
+</div>
+</article>
+	</div>
+  </section>
+	
+        
+	
+	
+  <footer role="contentinfo" id="footer" class="region region-footer">
+	<div id="footer-inner" class="wrapper">
+    	
+<article id="block-block-13" class="block block-block ">
+
+            <header><h2><span>Connect with our community</span></h2></header>
+      
+  <ul class="footer-links-wrapper footer-links-social"><li class="google"><a rel="publisher" href="https://plus.google.com/+Curveagency/"><i class=" fa  fa-google-plus-square"></i></a></li>
+<li class="facebook"><a href="https://www.facebook.com/curveagency"><i class="fa  fa-facebook-square"></i></a></li>
+<li class="twitter"><a href="https://twitter.com/CurveAgency"><i class="fa  fa-twitter-square"></i></a></li>
+</ul><ul class="footer-links-wrapper footer-links-drupal"><li class="daom"><a rel="publisher" href="https://assoc.drupal.org/">Drupal Association Organisation Member</a></li>
+<li class="drupal_camp"><a href="http://drupalyorkshire.org.uk/">Drupal Yorkshire</a></li>
+<li class="acquia"><a href="http://www.acquia.com/partners/showcase/curve-agency">Acquia Partner</a></li>
+</ul>
+</article>
+
+<article id="block-block-14" class="footer-copyright block block-block ">
+
+        
+  <p>Curve Agency is a UK company limited by shares and incorporated in England and Wales.</p>
+<p>&copy; 2008 - 2015, Curve Agency. All rights reserved.</p>
+</article>
+	</div>
+  </footer>
+
+  </div> <!-- /#page -->
+
+</div> <!-- /#page-wrapper -->		
+				
+	</body><!-- /body -->
+
+</html><!-- /html -->
+<!--
+playback timings (ms):
+  captures_list: 91.579
+  exclusion.robots: 0.084
+  exclusion.robots.policy: 0.077
+  RedisCDXSource: 1.856
+  esindex: 0.007
+  LoadShardBlock: 69.194 (3)
+  PetaboxLoader3.datanode: 261.095 (4)
+  CDXLines.iter: 17.648 (3)
+  load_resource: 369.566
+  PetaboxLoader3.resolve: 118.06
+-->

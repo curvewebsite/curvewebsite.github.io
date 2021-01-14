@@ -1,0 +1,38 @@
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$SIMPLE TWITTER
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+.block-simple_twitter ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;  
+}
+
+.block-simple_twitter ul li {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.block-simple_twitter ul ul li {
+  border-bottom: none;
+  padding: 15px 20px 0 0;
+  margin: 0;
+  display: inline-block;
+  font-style: normal;
+}
+
+.block-simple_twitter ul ul li a { color: #bbb; }
+.block-simple_twitter ul ul li:hover a { color: #888; }
+.block-simple_twitter ul ul li a i { padding-right: 10px; }
+
+.block-simple_twitter ul li span.tweet-profile-image { display: none; }
+.block-simple_twitter ul li .tweet-body { 
+  font-style: italic;
+  line-height: 24px;
+}
+
+.block-simple_twitter a.follow i {
+  font-size: 50px;
+  padding-right: 15px;
+  vertical-align: middle;  
+}

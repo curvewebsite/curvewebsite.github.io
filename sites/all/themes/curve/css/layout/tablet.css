@@ -1,0 +1,138 @@
+/*--------------------------------------------------------------------------------------------------------------------------------*\
+	$TABLET PORTRAIT LAYOUT
+\*--------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 720px) and (max-width: 1023px) {
+
+  #logo-container {
+    width: 175px;
+    float: left;
+  }
+  /* --- NAVIGATION --- */
+  #navigation{
+    width: 530px;
+    float: right;
+  }
+
+  /* --- H1 --- */
+  .front h1#page-title {
+    font-size: 3em;
+    padding: 1em 1.5em 0.8em;
+  }
+
+  /* --- MAIN CONTENT --- */
+  p, #content p, #content li {
+    font-family: "Roboto", sans-serif;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.4em;
+  }
+
+  
+
+  /* --- BLOG SECTION --- */
+  .section-inner .blog-entry {
+    border-top: 1px solid white;
+  }
+
+  .section-inner .blog-entry .views-field-field-headshot {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .section-inner .blog-entry .views-field-field-user-first-name,
+  .section-inner .blog-entry .views-field-field-user-last-name {
+    float: left;
+    padding-bottom: 18px;
+  }
+
+  .section-inner .blog-entry .views-field-field-user-first-name {
+    padding-left: 122px;
+    padding-right: 6px;
+  }
+
+  .section-inner .blog-entry .views-field-field-user-last-name {
+    padding-right: 18px;
+  }
+
+  .section-inner .blog-entry .views-field-created {
+    float: right;
+    padding-top: 6px;
+  }
+
+  /* --- CONTACT --- */
+  .region-contact .grid-12 {
+    float: left;
+    width: 100%;
+  }
+  #block-block-1 .contact-info .telephone p,
+  #block-block-1 .contact-info .email-link,
+  #block-block-1 .contact-info .curve-address {
+    font-size: 2em;
+  }
+  #block-block-1 .contact-map .map {
+    top: 5px;
+    background: url("../../img/map--small.png") 0 0 no-repeat;
+    width: 265px;
+    height: 265px;
+  }
+
+  #block-block-1 .contact-info { padding-right: 10px; }
+  #block-block-1 .contact-map { padding-left: 10px; }
+
+  /* --- BRANDS --- */
+  #brands {
+    margin-top: 0;
+  }
+
+  #brands h3.brand-title {
+    margin-left: 0;
+  }
+
+  #brands .grid-4 {
+    float: left;
+    padding: 0 0 0 1.4em;
+  }
+
+
+  /* --- QUIRKS --- */
+  .ethos-title {
+    color: black;
+  }
+
+  /* --- PARALLAX --- */
+  #block-parallax-front-parallax .parallax--content { max-width: 719px; }
+
+  #block-parallax-front-parallax .parallax--content p {
+    max-width: 455px;
+    line-height: 26px;
+  }  
+
+  .front #content h1#page-title { 
+    font-size: 60px;
+    line-height: 75px;
+    margin-bottom: 30px;
+  }
+
+  /** --- FLEXSLIDER --- **/
+  .flex-nav-container { max-width: 705px; }
+  li.flexslider-views-slideshow-main-frame-row { width: 705px !important; }
+  ul.flex-direction-nav li a { display: none; }
+
+  /** --- NAV --- **/
+  .front #navigation ul.menu li a {
+    padding: 0 15px 25px 15px;
+    background: none;
+    font-size: 14px !important;
+  }
+
+  .layout--white-container #content-wrapper .grid-8, .layout--white-container #sidebar-first-wrapper .grid-8 { 
+    width: 100%;
+  }
+
+
+}
+
+
+

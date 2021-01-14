@@ -1,0 +1,35 @@
+
+.front .header--large #logo-container img {
+  max-width: 240px;
+  margin-top: 85px;
+}
+
+
+.front .header--large #navigation .navigation-wrapper { background: none; }
+.front .header--large #navigation ul.menu {
+  overflow: hidden;
+  padding-bottom: 14px;
+  padding-top: 97px;
+}
+.front .header--large #navigation ul.menu li a {
+  padding: 00 20px 21px 20px;
+  background: none;
+}
+
+.front #header.header--large {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 22;
+  background-color: rgba(0,0,0,0);
+}
+
+.front .header--large #navigation ul.menu li a {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+
+.front #header { height: auto!important; }

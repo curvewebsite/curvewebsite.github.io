@@ -1,0 +1,46 @@
+.button {
+	padding: 8px 12px;
+	background: #0086f7;
+	display: block;
+	color: white;
+	width: auto;
+	text-align: center;
+	font-weight: 300;
+  -webkit-transition: all 0.4s ease;
+     -moz-transition: all 0.4s ease;
+          transition: all 0.4s ease; 
+}
+
+.button a { color: white; }
+
+.button--home {
+	border: 1px solid white;
+	background-color: rgba(0,0,0,0.4);
+	text-transform: uppercase;
+	max-width: 300px;
+	margin: 0 auto;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	font-size: 28px;
+	font-weight: 100;
+}
+
+.button--home:hover {
+	background: #0086f7;
+	color: white;
+}
+
+.button--home__slider {
+	border-color: black;
+	background-color: white;
+	margin: 30px auto;
+}
+.button--home__slider a { 
+	color: black;
+}
+.button--home__slider:hover { 
+	border-color: #0086f7;
+}
+.button--home__slider:hover a { 
+	color: white;
+}

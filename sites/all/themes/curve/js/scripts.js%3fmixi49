@@ -1,0 +1,77 @@
+/* ======================== */
+/* --- scripts.js --------- */
+/* ------------------------ */
+
+(function ($) {
+   
+	$(document).ready(function() {
+
+		// $(".navigation-container").sticky({topSpacing:0});
+		
+		// var menuPadding = parseInt($( '#header-inner' ).css( 'padding-top' ).replace( "px","" ));
+		// var menuSpeed = 333;
+
+		$( '#menu-toggle a' ).click( function(e) {	
+			if ( $( '#header' ).hasClass( 'menu-expanded' ) ) {
+				// $( '#header-inner' ).stop(true, true).animate( { paddingTop: menuPadding }, menuSpeed, function() {} );
+				// $( '#navigation' ).stop(true, true).slideUp( menuSpeed );
+				$( '#header' ).removeClass( 'menu-expanded' );
+				$( this ).removeClass( 'active' );
+			} else {
+				// $( '#header-inner' ).stop(true, true).animate( { paddingTop: menuPadding + $( '#navigation' ).height() }, menuSpeed, function() {} );
+				// $( '#navigation' ).stop(true, true).slideDown( menuSpeed );
+				$( '#header' ).addClass( 'menu-expanded' );
+				$( this ).addClass( 'active' );
+			}
+			
+			e.preventDefault();
+		});
+		
+		detector = $('body');
+		compareWidth = detector.width();
+	
+		$(window).resize(function() {
+		
+			if(detector.width() != compareWidth) {
+				compareWidth = detector.width();
+				elementCheck();
+			}
+		
+		});
+	
+		function elementCheck() {
+			if (detector.width() > 720){
+				if ( $( '#header' ).hasClass( 'menu-expanded' ) ) { $( '#header' ).removeClass( 'menu-expanded' ); }
+			}
+		}
+		
+		elementCheck();
+		
+		$("#budget-slider").slider({
+			value:0,
+			min: 0,
+			max: 75000,
+			step: 5000,
+			slide: function(event, ui) {
+				$("#edit-submitted-general-information-your-new-site-budget-ex-vat").val(ui.value);
+				if (ui.value == 0) { $('#budget-amount').html("Don't know / No Set Budget"); } else { $('#budget-amount').html('£' + addCommas(ui.value)); }
+			}
+		});
+		
+		$('#budget-amount').html("Don't know / No Set Budget");
+		
+		function addCommas(nStr) {
+			nStr += '';
+			x = nStr.split('.');
+			x1 = x[0];
+			x2 = x.length > 1 ? '.' + x[1] : '';
+			var rgx = /(\d+)(\d{3})/;
+			while (rgx.test(x1)) {
+				x1 = x1.replace(rgx, '$1' + ',' + '$2');
+			}
+			return x1 + x2;
+		}
+
+});
+
+} )(jQuery);

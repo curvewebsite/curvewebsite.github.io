@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/*------------------------------------*\
+	IE6.CSS
+\*------------------------------------*/
+
+div{
+	/*border: 1px solid #f00;*/
+}
+
+
+/* --- Main region fixes --- */
+
+.intro-1,
+.intro-2,
+.usability,
+.can-do{
+	float: left;
+	border-left: 18px solid #fff;
+}
+
+/* --- Brands region fixes --- */
+
+.view-display-id-block_brands_worked_with{
+	padding-left: 20px;
+}
+
+.view-display-id-block_brands_worked_with .item-list ul li{
+	float: left;
+	padding-left: 18px;
+	border-left: 12px solid #000;
+}
+
+.view-display-id-block_brands_worked_with .item-list ul li img{
+	width: 140px;
+	height: 73px;
+}
+
+/* --- Contact fixes --- */
+
+#contact #block-block-1 .grid-12{
+	float: left;
+	border-left: 20px solid #fff;
+}
+
+#contact #block-block-1 .contact-info .telephone,
+#contact #block-block-1 .contact-info .email,
+#contact #block-block-1 .contact-info .address{
+	float: left;
+	text-indent: -9999px;
+}

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<!---------------------------------------------------------------------------------
+Curve Agency are a UK Drupal Website Design and Development Company based in Leeds.
+-----------------------------------------------------------------------------------
+
+Author: Curve Agency
+Author URL: curveagency.com
+Version: 3.0
+Copyright 2011-2014 Curve Agency Limited.
+
+-->
+
+<html lang="en" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+
+
+	<!-- Meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o?o:n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({QJf3ax:[function(t,n){function e(t){function n(n,e,o){t&&t(n,e,o),o||(o={});for(var a=i(n),u=a.length,c=o[r]||(o[r]={}),f=0;u>f;f++)a[f].apply(c,e);return c}function o(t,n){u[t]=i(t).concat(n)}function i(t){return u[t]||[]}function a(){return e(n)}var u={};return{on:o,emit:n,create:a,listeners:i,_events:u}}var r="nr@context";n.exports=e()},{}],ee:[function(t,n){n.exports=t("QJf3ax")},{}],D5DuLP:[function(t,n){function e(t,n,e){return r.listeners(t).length?r.emit(t,n,e):(o[t]||(o[t]=[]),void o[t].push(n))}var r=t("ee").create(),o={};n.exports=e,e.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,n){n.exports=t("D5DuLP")},{}],loader:[function(t,n){n.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,n){function e(){var t=l.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var n=c.createElement("script");n.src=l.proto+t.agent,c.body.appendChild(n)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),u=window,c=u.document,f="addEventListener",s="attachEvent",p=(""+location).split("?")[0],l=n.exports={offset:i(),origin:p,features:{}};c[f]?(c[f]("DOMContentLoaded",o,!1),u[f]("load",e,!1)):(c[s]("onreadystatechange",r),u[s]("onload",e)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}]},{},["G9z0Bl"]);</script>
+<link rel="canonical" href="/blog/installing-git-plesk"/>
+<link rel="shortlink" href="/node/595"/>
+<meta name="twitter:url" content="/blog/installing-git-plesk"/>
+<link rel="shortcut icon" href="/sites/all/themes/curve/favicon.ico" type="image/vnd.microsoft.icon"/>
+<meta name="generator" content="Drupal 7 (http://drupal.org)"/>
+<meta name="twitter:title" content="Installing Git on Plesk"/>
+<meta content="Installing Git on Plesk" about="/blog/installing-git-plesk" property="dc:title"/>
+<meta name="description" content="We've been putting up with using FTP to deploy sites for too long! Dan explains how we've recently moved all our sites to Git to improve our workflow."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="We've been putting up with using FTP to deploy sites for too long! Dan explains how we've recently moved all our sites to Git to improve our workflow."/>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	
+	<!-- Title -->
+	<title>Installing Git on Plesk | Drupal &amp; UX | Curve Agency UK</title>
+	
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/blog/feed"/>
+	
+	<!-- Styles -->
+	<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css__r408iefJFDp7tkJY64xde0BtyLdHU1-GytpTja6H4w.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_PYDCSebXcnvSgSzEX-Xs4CSmhpu2kBFhJBdNk-xNi4s.css" media="all"/>
+<link type="text/css" rel="stylesheet" href="/sites/default/files/css/css_gRZic6SRJdGW86gbAFVd7wqKMeDLINWnVRHhOlHU4m4.css" media="all"/>
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie.css?n9j34s" media="all" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie7.css?n9j34s" media="all" />
+<![endif]-->
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="http://www.curveagency.com/sites/all/themes/curve/css/ie/ie6.css?n9j34s" media="all" />
+<![endif]-->
+	
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.9/jquery.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_H7q2xORKmR9AN8Qx5spKEIBp7R_wG2apAswJoCUZY7I.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_JI6TT4VIYJYFe9OJdKt69g6wN-4WknzmZV0qPLv5yDw.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-27427361-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript" src="/sites/default/files/js/js_dr8zclEdzsdvqNg1V4ey7RczFW2mAoJKdmMD6_E-KCk.js"></script>
+<script type="text/javascript" src="/sites/default/files/js/js_YHNVfCO5xSFsaDhT-3178wNr5kQlUO0FZ4ANCAVfy4Q.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"curve","theme_token":"ewjqbx5t7a0VwnLyOm8ksNEQJBr99QEzwZ47ggCCAg4","js":{"https:\/\/web.archive.org\/web\/20140928231703\/https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.9.1\/jquery.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/curve\/taxonomy_tree_block\/template\/taxonomy_tree_block.jquery.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/modules\/radioactivity\/js\/radioactivity.js":1,"sites\/all\/themes\/curve\/js\/jquery.scrolly.js":1,"sites\/all\/themes\/curve\/js\/scripts.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/curve\/simple_twitter\/template\/simple_twitter.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/radioactivity\/css\/radioactivity.css":1,"sites\/all\/themes\/curve\/css\/gridinuit.css":1,"sites\/all\/themes\/curve\/css\/grid\/grid.inuit.css":1,"sites\/all\/themes\/curve\/fonts\/font-awesome.min.css":1,"sites\/all\/themes\/curve\/css\/blog.css":1,"sites\/all\/themes\/curve\/css\/brands.css":1,"sites\/all\/themes\/curve\/css\/box.css":1,"sites\/all\/themes\/curve\/css\/button.css":1,"sites\/all\/themes\/curve\/css\/case_study.css":1,"sites\/all\/themes\/curve\/css\/flexslider.css":1,"sites\/all\/themes\/curve\/css\/front.css":1,"sites\/all\/themes\/curve\/css\/global.css":1,"sites\/all\/themes\/curve\/css\/highlighted.css":1,"sites\/all\/themes\/curve\/css\/navigation.css":1,"sites\/all\/themes\/curve\/css\/parallax.css":1,"sites\/all\/themes\/curve\/css\/root.css":1,"sites\/all\/themes\/curve\/css\/simple_twitter.css":1,"sites\/all\/themes\/curve\/css\/white_container.css":1,"sites\/all\/themes\/curve\/css\/layout\/desktop.css":1,"sites\/all\/themes\/curve\/css\/layout\/tablet.css":1,"sites\/all\/themes\/curve\/css\/layout\/mobile.css":1,"sites\/all\/themes\/curve\/css\/layout\/social.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie7.css":1,"sites\/all\/themes\/curve\/css\/ie\/ie6.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"radioactivity":{"emitters":{"emitDefault":[{"accuracy":"100","bundle":"article","energy":10,"entity_id":"595","entity_type":"node","field_name":"field_radioactivity","language":"und","storage":"File","type":"none","checksum":"de91e6c6ce4e23ccd25adc9a3b2902e3"}]},"config":{"emitPath":"\/sites\/all\/modules\/radioactivity\/emit.php","fpEnabled":0,"fpTimeout":"15"}}});
+//--><!]]>
+</script>
+	
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+	<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-595 node-type-article blog section-inner">
+	
+		<div id="skip-link">
+			<a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+		</div>
+        
+        <!-- to overlay content when mobile nav is expanded -->
+        <div class="shadow-curtain active"><span></span></div> 
+		
+				
+		
+<div id="page-wrapper">
+
+  <div id="page">
+  
+    
+    <header role="banner" id="header">
+	
+		<div id="menu-toggle"><a href="#"><span class="strip first"></span><span class="strip mid"></span><span class="strip last"></span></a></div>
+	
+		<div id="header-inner" class="wrapper">
+		
+		  <div class="grids">
+		  
+		  			  <div id="logo-container" class="grid-6">
+			    <a href="/" title="Home" rel="home" id="logo">
+			      <img src="/sites/all/themes/curve/logo.png" alt="Home"/>
+			    </a>
+			  </div>
+		  		  
+						  <navigation role="navigation" id="navigation" class="grid-18">
+			    <div class="navigation-container">
+					<div class="navigation-wrapper">
+					  <div class="navigation-inner">
+						
+	
+<article id="block-system-main-menu" class="block block-system ">
+
+        
+  <ul class="menu"><li class="first leaf"><a href="/">Home</a></li>
+<li class="leaf"><a href="/drupal-case-studies" class="case-studies">Case Studies</a></li>
+<li class="leaf"><a href="/blog" class="blog">Blog</a></li>
+<li class="leaf"><a href="/about-curve">About</a></li>
+<li class="last leaf"><a href="/project-enquiry">Contact</a></li>
+</ul>
+</article>
+					  </div>
+					</div>
+				</div>
+			  </navigation>
+					  
+		  </div>
+		  
+		  		  
+		  		  
+		  		  
+		</div>
+		
+    </header> <!-- /#header -->
+
+    
+		  <nav id="breadcrumb">
+	  	<div id="breadcrumb-inner" class="wrapper">
+	    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><span class="breadcrumb-0"><a href="/">Home</a></span><span class="breadcrumb-separator breadcrumb-separator-0">›</span><span class="breadcrumb-1"><a href="/blog">Blog</a></span><span class="breadcrumb-separator breadcrumb-separator-1">›</span><span class="breadcrumb-2"><a href="/blog/drupal-development">Drupal Development</a></span><span class="breadcrumb-separator breadcrumb-separator-2">›</span><span class="breadcrumb-3">Installing Git on Plesk</span></div>		</div>
+	  </nav> <!-- /#breadcrumb -->
+	
+    			
+  
+	
+	
+		
+		
+	<div id="main-content" class="wrapper">
+	
+		<div class="grids">
+		
+			
+		
+		
+		<div id="content-wrapper" class="grid-16 suffix-1">
+		
+						
+							<h1 class="title" id="page-title">Installing Git on Plesk</h1>
+						
+					
+			
+  <section id="content" class="region region-content">
+	
+<section id="block-views-blog-block-3" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-block_3 view-dom-id-d32e3927b4daebafb68c734750f769fc">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-created">        <span class="field-content">Monday, 21<sup>st</sup> July, 2014</span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content summary"><p>We've been putting up with using FTP to deploy sites for too long! Dan explains how we've recently moved all our sites to Git to improve our workflow.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+
+<article id="block-system-main" class="block block-system ">
+
+        
+  <article id="node-595" class="node node-article clearfix" about="/blog/installing-git-plesk" typeof="sioc:Item foaf:Document">
+
+  
+  
+  <div class="content">
+    
+<div class="field field-name-body field-type-text-with-summary field-label-hidden clearfix">
+            <p><img alt="Fork commits - git symbolic diagram" height="481" src="/sites/default/files/blog/fork-01_0.jpg" width="899"/></p>
+<p>We've been putting up with using FTP to deploy sites for too long, the main problems with operating in this way are:</p>
+<ul><li>
+<p>Difficult for more than one user to work on a project at once and deploy independently.</p>
+</li>
+<li>
+<p>There is no audit trail for work completed or deployment history.</p>
+</li>
+<li>
+<p>Downloading a full site from ftp takes longer than cloning a git repo.</p>
+</li>
+<li>
+<p>No visibility of what state the code base is currently in.</p>
+</li>
+</ul><p>Most of our sites are now in Git repositories and this is something we have made a priority. To confirm our workflow the Development team sat down with a pen and paper and walked through a site build from start to finish. Although it took some time it was worth it, as we now have a workflow we're all comfortable with and one that can be fine tuned as we go. More importantly this workflow can be explained to others in the future whether that be contractors or new members of staff that come on board.</p>
+<p>We also agreed that when changes were required to any of our existing sites no matter how small we would take the time to move them into git.</p>
+<h2>Installing Git on Centos</h2>
+<p>Currently we’re still using a Centos server running Plesk for most of our sites so I had to install git on this server first.</p>
+<pre>
+$ yum-install git</pre><p>If that fails you need to download and add the repo to yum</p>
+<pre>
+$ wget http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
+
+$ rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt
+
+$ rpm -K rpmforge-release-0.5.2-2.el5.rf.i386.rpm
+
+$ rpm -i rpmforge-release-0.5.2-2.el5.rf.i386.rpm
+
+$ yum install git</pre><h2>Our Strategy</h2>
+<p>At Curve we pride ourselves at providing usable websites that meet high level UX testing criteria. The aim of streamlining our devops process is so that we can spend less time troubleshooting servers and deployments that have gone wrong and spend more time focused on the creative side of the front end. The end goal being to have a workflow that is easy to use for all and takes little or no administration time which reduces the time taken to build and maintain sites in any format.</p>
+<p><strong>References:</strong></p>
+<p><a href="https://gist.github.com/chappyhome/7593903">https://gist.github.com/chappyhome/7593903</a></p>
+    </div>
+  </div>
+
+  
+  
+</article>
+
+</article>
+
+<section id="block-views-blog-blog-post" class="block block-views ">
+
+        
+  <div class="view view-blog view-id-blog view-display-id-blog_post blog-footer view-dom-id-d0642e8604cc4af7db6f5aa74737331b">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-call-to-action-1">        <h3 class="field-content"></h3>  </div>  
+  <span class="views-field views-field-field-category">    <span class="views-label views-label-field-category">Category: </span>    <span class="field-content"><a href="/blog/drupal-development" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Drupal Development</a></span>  </span>  
+  <span class="views-field views-field-field-tags">    <span class="views-label views-label-field-tags">Tags: </span>    <span class="field-content"><a href="/tags/deployment" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">deployment</a>, <a href="/tags/development" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Development</a>, <a href="/tags/git" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">GIT</a>, <a href="/tags/workflow" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Workflow</a></span>  </span>  
+  <div class="views-field views-field-field-headshot">        <div class="field-content"><a href="/blog/contributors/dan"><img typeof="foaf:Image" src="/sites/default/files/styles/thumbnail/public/dan-harper.jpg?itok=2TD0SB-J" width="100" height="100" alt=""/></a></div>  </div>  
+  <span class="views-field views-field-field-user-first-name">        <span class="field-content">Dan</span>  </span>  
+  <span class="views-field views-field-field-user-last-name">        <span class="field-content">Harper</span>  </span>  
+  <div class="views-field views-field-field-job-title">        <div class="field-content">Digital Project Manager</div>  </div>  
+  <div class="views-field views-field-field-bio">        <div class="field-content"><p>Dan likes bikes and Drupal development.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <!--<p class="meet-link"><a href="/blog/contributors">Meet the people behind the Curve blog</a></p>-->    </div>
+  
+  
+</div>
+</section>
+
+<section id="block-views-blog-related-block-1" class="block block-views ">
+
+            <header><h2><span>Related Articles</span></h2></header>
+      
+  <div class="view view-blog-related view-id-blog_related view-display-id-block_1 blog-related-articles view-dom-id-69faf27786ce014714ef13e676fcf71d">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-responsive-grid views-responsive-grid-horizontal views-columns-2">
+      <div class="grids row equalheights views-row-1">
+      <div class="grid-8 blog-article box grid-equal views-column-1">
+        
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="views-field views-field-field-images">
+  <div class="field-content"><a href="/blog/leeds-front-end-design-and-development-event"><img typeof="foaf:Image" src="/sites/default/files/styles/blog_post_standard/public/blog/Leeds-belgrave-music-hall-bar-area.jpg?itok=M_H7BnfX" width="768" height="433" alt="Leeds belgrave music hall bar area"/></a></div>
+</div>
+<div class="views-field views-field-title">
+  <h2 class="field-content"><a href="/blog/leeds-front-end-design-and-development-event">Leeds front-end design and development event</a></h2>
+</div>
+<div class="views-field views-field-created">
+  <div class="field-content">Wednesday, 30<sup>th</sup> July, 2014</div>
+</div></span>  </div>  
+  <div class="views-field views-field-body">        <p class="field-content">Leeds’ front-end design and development community Forefront had their fifth event last night.  A couple of us headed over to check it out.</p>  </div>  
+  <div>        <div class="overlay-block"><a href="/blog/leeds-front-end-design-and-development-event">Read article</a></div>  </div>  
+  <div>        <div class="box--icon"><a href="/blog/leeds-front-end-design-and-development-event"><i class="fa fa-eye"></i></a></div>  </div>    </div>
+      <div class="grid-8 blog-article box grid-equal views-column-2">
+        
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="views-field views-field-field-images">
+  <div class="field-content"><a href="/blog/diary-drupal-beginner"><img typeof="foaf:Image" src="/sites/default/files/styles/blog_post_standard/public/blog/learningdrupal.jpg?itok=MPOU6o49" width="768" height="433" alt="Learning Drupal"/></a></div>
+</div>
+<div class="views-field views-field-title">
+  <h2 class="field-content"><a href="/blog/diary-drupal-beginner">Diary of a Drupal beginner</a></h2>
+</div>
+<div class="views-field views-field-created">
+  <div class="field-content">Tuesday, 6<sup>th</sup> May, 2014</div>
+</div></span>  </div>  
+  <div class="views-field views-field-body">        <p class="field-content">For the past year, Tom has been migrating his Wordpress knowledge to Drupal. Below, he recaps this experience of getting to grips with this powerful content management framework.
+</p>  </div>  
+  <div>        <div class="overlay-block"><a href="/blog/diary-drupal-beginner">Read article</a></div>  </div>  
+  <div>        <div class="box--icon"><a href="/blog/diary-drupal-beginner"><i class="fa fa-eye"></i></a></div>  </div>    </div>
+    </div>
+    </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section>
+  </section>
+			
+		</div>
+		
+				<div id="sidebar-first-wrapper" class="grid-7 ">
+			
+  <aside id="sidebar-second" class="region region-sidebar-second">
+    
+<article id="block-taxonomy-tree-block-taxonomy-tree-block-vid-2" class="block block-taxonomy_tree_block ">
+
+            <header><h2><span>Blog Topics</span></h2></header>
+      
+  <div class="taxonomy-tree-menu"><ul class="menu-2 menu-standard"><li><a href="/blog/business-stuff">Business Stuff</a><span>9</span></li><li><a href="/blog/events">Conferences &amp; Events</a><span>11</span></li><li><a href="/blog/content">Content Strategy</a><span>4</span></li><li><a href="/blog/drupal-development">Drupal Development</a><span>26</span></li><li><a href="/blog/front-end">Responsive Design</a><span>11</span></li><li><a href="/blog/usability">Usability Testing</a><span>10</span></li><li><a href="/blog/design">Wireframes &amp; Prototyping</a><span>11</span></li></ul></div>
+</article>
+
+<article id="block-simple-twitter-simple-twitter-block" class="block block-simple_twitter ">
+
+            <header><h2><span>Our Latest Tweets</span></h2></header>
+      
+  <ul class="simple-twitter-block">
+
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/471957264618631168/00iQf5D-_normal.png"/></span><div class="tweet-body">"Personal health metrics and good UX: Partners in healthcare <a href="http://t.co/UMxwJN8gfv">http://t.co/UMxwJN8gfv</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=515500313974145024" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=515500313974145024" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=515500313974145024" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=515500313974145024" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/471957264618631168/00iQf5D-_normal.png"/></span><div class="tweet-body">"Design for chronic conditions: From understanding to innovation <a href="http://t.co/ckc2KfUXth">http://t.co/ckc2KfUXth</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=515434105761452032" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=515434105761452032" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=515434105761452032" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=515434105761452032" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/471957264618631168/00iQf5D-_normal.png"/></span><div class="tweet-body">"RT <a href="http://www.twitter.com/nuxuk">@nuxuk</a>: It's almost pay day! Set a calendar reminder to buy your <a href="https://twitter.com/search/NUX3">#NUX3</a> ticket once you've been paid ;) <a href="http://t.co/MOfRZUAafz">http://t.co/MOfRZUAafz</a> <a href="http://t.c/">http://t.c</a>…"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=515134693403287552" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=515134693403287552" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=515134693403287552" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=515134693403287552" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+<li class="simple-twitter-tweet image">
+<span class="tweet-profile-image"><img src="http://pbs.twimg.com/profile_images/471957264618631168/00iQf5D-_normal.png"/></span><div class="tweet-body">"The ethics of UX research <a href="http://t.co/ftENglobtT">http://t.co/ftENglobtT</a>"</span>  <ul>
+    <li><a href="https://twitter.com/intent/tweet?in_reply_to=515052365796229120" class="reply"><i class="fa fa-reply"></i>Reply</a></li>
+    <li><a href="https://twitter.com/intent/retweet?tweet_id=515052365796229120" class="retweet"><i class="fa fa-retweet"></i>Retweet</a></li>
+    <li><a href="https://twitter.com/intent/favorite?tweet_id=515052365796229120" class="favourite"><i class="fa fa-star"></i>Favourite</a></li>
+  </ul>
+<!--<a href="https://twitter.com/intent/retweet?tweet_id=515052365796229120" class="retweet" target="_blank">Retweet this message to your followers.</a>-->
+</li>
+</ul>
+
+
+<!--<a href="https://twitter.com/curveagency" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @curveagency</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ -->
+
+
+<a class="follow" href="https://twitter.com/intent/user?screen_name=CurveAgency"><i class="fa  fa-twitter-square"></i>Follow @CurveAgency<a>
+
+
+</article>
+  </aside>
+		</div>
+		    
+				
+		</div>
+		
+	</div> <!-- /#main-content -->
+	
+	        
+	
+		
+	
+  <section id="contact" class="region region-contact">
+  	<div class="wrapper">
+		
+<article id="block-block-1" class="clearfix grids block block-block ">
+
+            <header><h2><span>Contact us</span></h2></header>
+      
+  <div class="grid-12">
+  <div class="contact-info">
+    <div class="telephone"><p>+44 (0)113 243 2259</p></div>
+    <div class="email-link"><a href="mailto:hello@curveagency.com">hello@curveagency.com</a></div>
+    <div class="curve-address">Curve Agency<br/>46 The Calls<br/>Leeds<br/>LS2 7EY</div>
+  </div>
+</div>
+
+<div class="grid-12">
+  <div class="contact-map">
+    <a class="map-link" href="https://www.google.co.uk/maps/place/Curve+Agency/@53.794628,-1.5374,17z/data=!3m1!4b1!4m2!3m1!1s0x48795c178345fad9:0x7a14688dc7ba0147">
+    <div class="map">map</div>
+</a>
+  </div>
+</div>
+</article>
+	</div>
+  </section>
+	
+        
+	
+	
+  <footer role="contentinfo" id="footer" class="region region-footer">
+	<div id="footer-inner" class="wrapper">
+    	
+<article id="block-block-13" class="block block-block ">
+
+            <header><h2><span>Our community</span></h2></header>
+      
+  <ul class="footer-links-wrapper footer-links-social"><li class="dribble"><a href="https://dribbble.com/curveagency"><i class="fa  fa-dribbble"></i></a></li>
+<li class="google"><a rel="publisher" href="https://plus.google.com/+Curveagency/"><i class=" fa  fa-google-plus-square"></i></a></li>
+<li class="facebook"><a href="https://www.facebook.com/curveagency"><i class="fa  fa-facebook-square"></i></a></li>
+<li class="twitter"><a href="https://twitter.com/CurveAgency"><i class="fa  fa-twitter-square"></i></a></li>
+</ul><ul class="footer-links-wrapper footer-links-drupal"><li class="daom"><a rel="publisher" href="https://assoc.drupal.org/">Drupal Association Organisation Member</a></li>
+<li class="yorkshire_digital"><a href="http://www.yorkshiredigital.com/">Yorkshire Digital</a></li>
+<li class="drupal_camp"><a href="http://drupalyorkshire.org.uk/">Drupal Yorkshire</a></li>
+<li class="acquia"><a href="http://www.acquia.com/partners/showcase/curve-agency">Acquia Partner</a></li>
+</ul>
+</article>
+
+<article id="block-block-14" class="footer-copyright block block-block ">
+
+        
+  <p>Curve Agency Limited is a company limited by shares and incorporated in England and Wales with company number 07859375. VAT number: GB 126704818</p>
+<p>&copy; 2011 - 2014, Curve Agency. All rights reserved.</p>
+<p>Proudly powered by <a href="https://drupal.org/">Drupal</a></p>
+</article>
+	</div>
+  </footer>
+
+  </div> <!-- /#page -->
+
+</div> <!-- /#page-wrapper -->		
+				
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-6.newrelic.com","licenseKey":"565d0544f7","applicationID":"3818654","transactionName":"M10BZ0ICVkZQB0BfXQoXIlBECldbHgpbUlc7SAJUVTxOXFQT","queueTime":0,"applicationTime":1970,"ttGuid":"","agentToken":"","atts":"HxoCEQoYRUg=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-460.min.js"}</script></body><!-- /body -->
+
+</html><!-- /html -->
+<!--
+playback timings (ms):
+  exclusion.robots.policy: 0.2
+  RedisCDXSource: 1.152
+  LoadShardBlock: 38.544 (3)
+  captures_list: 69.473
+  PetaboxLoader3.resolve: 796.612
+  esindex: 0.014
+  exclusion.robots: 0.214
+  load_resource: 933.246
+  CDXLines.iter: 25.762 (3)
+  PetaboxLoader3.datanode: 125.088 (4)
+-->
